@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../">
+<title>Liquid I.V. Launch — Internal Ad (HD)</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .page{max-width:900px;margin:0 auto;padding:40px 32px 120px}
+  h1{font-family:var(--font-display);font-weight:700;font-size:26px;margin:0 0 6px;color:#10202e}
+  .lede{font-size:15px;line-height:1.6;color:#5C6B77;margin:0 0 4px;max-width:740px}
+  .row{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;margin-top:28px}
+  .item{display:flex;flex-direction:column;gap:10px}
+  .cap{font-family:var(--font-condensed);font-size:12px;color:#5C6B77}
+  .cap b{font-weight:700;color:#10202e;font-family:var(--font-primary)}
+
+  .ad{position:relative;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(16,32,46,.22);background:#305b7d}
+  .ad-port{width:300px;height:470px}
+  .ad-sm{width:350px;height:350px}
+  .hero{position:relative;flex:1;overflow:hidden;background:#eef3f8}
+  .photo{position:absolute;inset:0;width:100%;height:100%;z-index:0;background-repeat:no-repeat;background-size:cover}
+  .tag{position:absolute;top:26px;left:50%;transform:translateX(-50%);z-index:3;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:#305b7d;background:transparent;border:1.5px solid #305b7d;padding:6px 13px 5px;border-radius:5px;white-space:nowrap;line-height:1}
+  .foot{flex:none;background:#305b7d;padding:22px 24px 24px;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+  .head{font-family:var(--font-condensed);font-weight:500;text-transform:uppercase;line-height:1.0;color:#fff;margin:0;font-size:34px}
+  .head em{font-style:normal;font-weight:700;color:#fff}
+  .cta{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;background:var(--brand-cta);border:0;border-radius:8px;font-size:15px;padding:13px 24px;white-space:nowrap}
+  .cta-float{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:3}
+
+  @media (prefers-reduced-motion: no-preference){
+    .anim .tag{opacity:0;transform:translateX(-50%) scale(.86);animation:pop .5s cubic-bezier(.22,.9,.3,1.2) .15s forwards}
+    .anim .head{opacity:0;transform:translateY(14px) scale(.97);animation:pop2 .55s cubic-bezier(.22,.9,.3,1.2) .15s forwards}
+    .anim .cta{opacity:0;transform:translateY(16px);animation:rise .5s ease .6s forwards}
+    .anim .cta-float{opacity:0;transform:translateX(-50%) translateY(16px);animation:riseC .5s ease .6s forwards}
+  }
+  @keyframes pop{to{opacity:1;transform:translateX(-50%) scale(1)}}
+  @keyframes pop2{to{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  @keyframes riseC{to{opacity:1;transform:translateX(-50%) translateY(0)}}
+</style>
+</head>
+<body>
+<div class="page" data-brand="hd">
+  <h1>Liquid I.V. Launch — Internal Ad</h1>
+  <p class="lede">Hydration Depot &middot; Template 1 (split panel). Both required sizes below &mdash; portrait <b>300&times;470</b> and square <b>350&times;350</b>. New product launch.</p>
+
+  <div class="row">
+
+    <div class="item">
+      <div class="ad ad-port anim">
+        <div class="hero">
+          <div class="photo" style="background-image:url('assets/imagery/hd/liquid-iv-lineup-sq.jpg');background-position:center 30%;background-size:120%"></div>
+          <span class="tag">New Featured Brand</span>
+        </div>
+        <div class="foot">
+          <h3 class="head">Hydration,<br><em>Multiplied.</em></h3>
+          <span class="cta">Shop Liquid I.V.</span>
+        </div>
+      </div>
+      <div class="cap"><b>ad1 &middot; portrait</b> &middot; 300&times;470</div>
+    </div>
+
+    <div class="item">
+      <div class="ad ad-sm anim">
+        <div class="hero">
+          <div class="photo" style="background-image:url('assets/imagery/hd/liquid-iv-lineup-sq.jpg');background-position:center 60%"></div>
+          <span class="tag">New Featured Brand</span>
+          <span class="cta cta-float">Shop Liquid I.V.</span>
+        </div>
+      </div>
+      <div class="cap"><b>ad2 &middot; square</b> &middot; 350&times;350 &middot; tag + button only</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

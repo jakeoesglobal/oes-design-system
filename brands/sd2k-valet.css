@@ -1,0 +1,26 @@
+/* SD2K VALET — Valet Services
+   sd2kvalet.com
+   Personality: bold, premium, confident. Orange + black + silver. */
+[data-brand="sd2k"]{
+  --brand-name:          "SD2K Valet"; /* @kind other */
+  --brand-primary:       #FF5100;   /* orange — PRIMARY */
+  --brand-primary-hover: #D94500;
+  --brand-accent:        #D2D2D1;   /* silver — premium details */
+  --brand-accent-hover:  #BCBCBA;
+  --brand-cta:           #FF5100;   /* SHOP NOW pill — orange on premium black */
+  --brand-bar-bg:        #000000;   /* black article top-bar (badge logo) */
+  --brand-bar-logo:      url("assets/logos/sd2k/sd2k-horizontal.png"); /* @kind other */
+  --brand-ink:           #232323;
+  --brand-muted:         #7F7F7F;   /* mid gray */
+  --brand-bg:            #FFFFFF;
+  --brand-bg-subtle:     #EEEEEE;
+  --brand-border:        #DCDCDC;
+  --brand-hero-bg:       #000000;   /* premium black moments */
+  --brand-hero-grad:     linear-gradient(135deg, #000000 0%, #161616 55%, #2B2B2B 100%); /* @kind color */
+  --brand-accent-grad:   linear-gradient(135deg, #000000 0%, #FF5100 100%); /* @kind color */
+  --brand-on-dark:       #FFFFFF;
+  --brand-on-dark-muted: #D2D2D1;
+  --brand-logo:          url("assets/logos/sd2k/sd2k-horizontal.png"); /* @kind other */
+  --brand-logo-dark:     url("assets/logos/sd2k/sd2k-horizontal-white.svg"); /* @kind other */
+  --brand-icon:          url("assets/logos/sd2k/sd2k-horizontal.png"); /* @kind other */
+}

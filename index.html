@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OES Global — Brand & Content System</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f3f4f6;font-family:var(--font-primary);color:#232323}
+  .hero{background:var(--grad-oes-deep);color:#fff;padding:64px 40px 56px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .hero img{height:38px;margin-bottom:28px}
+  .hero h1{font-family:var(--font-display);font-weight:700;font-size:40px;margin:0 0 12px;letter-spacing:-.01em}
+  .hero p{font-size:17px;line-height:1.6;color:var(--oes-accent);max-width:620px;margin:0;font-weight:300}
+  .main{max-width:1080px;margin:0 auto;padding:48px 40px 100px}
+  .eyebrow{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--oes-primary);margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #e2e6ea;border-radius:14px;padding:26px 28px;transition:box-shadow .2s,transform .2s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,#7C9CB6)}
+  .card:hover{box-shadow:0 14px 36px rgba(16,32,46,.14);transform:translateY(-3px)}
+  .card h3{font-family:var(--font-primary);font-weight:700;font-size:19px;margin:0 0 6px;color:#10202e}
+  .card .dims{font-family:var(--font-condensed);font-weight:700;font-size:12px;letter-spacing:.04em;color:var(--oes-primary);margin:0 0 10px}
+  .card p{font-size:14px;line-height:1.55;color:#5C6B77;margin:0}
+  .sys{margin-top:48px}
+  .sysrow{display:flex;gap:14px;flex-wrap:wrap}
+  .chip{display:inline-flex;align-items:center;text-decoration:none;color:#10202e;background:#fff;border:1px solid #e2e6ea;border-radius:999px;padding:11px 20px;font-weight:500;font-size:14px;transition:background .2s}
+  .chip:hover{background:#eef1f4}
+  .note{font-size:13px;color:#5C6B77;margin-top:14px;line-height:1.6}
+  .zone{margin-top:14px}
+  .zone-h{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid #d4d8dd;padding-bottom:12px;margin:0 0 24px}
+  .zone-h h2{font-family:var(--font-display);font-weight:700;font-size:22px;margin:0;color:#10202e}
+  .zone-h span{font-size:13px;color:#8a97a1}
+  .divider{height:1px;background:none;margin:60px 0 0}
+  .weekcard{display:flex;align-items:center;gap:18px;background:#fff;border:1px solid #e2e6ea;border-radius:14px;padding:22px 26px;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s;position:relative;overflow:hidden}
+  .weekcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#2E6CB4}
+  .weekcard:hover{box-shadow:0 14px 36px rgba(16,32,46,.14);transform:translateY(-3px)}
+  .weekcard .wk{font-family:var(--font-condensed);font-weight:700;font-size:30px;color:#10202e;line-height:1;letter-spacing:.01em}
+  .weekcard .wd{flex:1}
+  .weekcard .wd b{display:block;font-weight:700;font-size:16px;color:#10202e;margin-bottom:3px}
+  .weekcard .wd p{margin:0;font-size:13.5px;color:#5C6B77}
+  .weekcard .go{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:#2E6CB4}
+  .badge{display:inline-block;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:10px;color:#1F8A5B;background:rgba(31,138,91,.12);padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:middle}
+  .callout{background:#fff;border:1px solid #e2e6ea;border-left:5px solid #FF5100;border-radius:14px;padding:30px 34px;margin-bottom:16px}
+  .callout .tag{display:inline-block;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:#FF5100;margin:0 0 12px}
+  .callout h2{font-family:var(--font-display);font-weight:700;font-size:25px;margin:0 0 10px;color:#10202e}
+  .callout>p{font-size:15px;line-height:1.62;color:#5C6B77;margin:0 0 22px;max-width:700px}
+  .callout>p b{color:#10202e}
+  .steps{display:flex;flex-direction:column;gap:11px;margin:0 0 24px;padding:0;list-style:none;counter-reset:step;max-width:720px}
+  .steps li{display:flex;gap:13px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:#324049}
+  .steps li b{color:#10202e}
+  .steps li::before{counter-increment:step;content:counter(step);flex:none;width:25px;height:25px;border-radius:50%;background:var(--oes-primary);color:#fff;font-family:var(--font-condensed);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .promptlabel{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:#8a97a1;margin:0 0 9px}
+  .promptbox{position:relative;background:var(--oes-navy);border-radius:11px;padding:22px 24px}
+  .promptbox pre{margin:0;font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;font-size:13px;line-height:1.65;white-space:pre-wrap;color:#dce6ef}
+  .copybtn{position:absolute;top:14px;right:14px;background:#FF5100;color:#fff;border:0;border-radius:7px;padding:8px 15px;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:11px;cursor:pointer;transition:background .2s}
+  .copybtn:hover{background:#e04800}
+  .archive{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center}
+  .archive .lbl{font-size:13px;color:#8a97a1}
+  .archive a{font-family:var(--font-condensed);font-weight:700;font-size:13px;color:#2E6CB4;text-decoration:none;border:1px solid #d4e0ee;border-radius:999px;padding:5px 14px;transition:background .2s}
+  .archive a:hover{background:#eef4fb}
+</style>
+</head>
+<body>
+  <div class="hero"><div class="wrap">
+    <img src="assets/oes-logo-white.svg" alt="OES Global">
+    <h1>Brand &amp; Template System</h1>
+    <p>The <b>master factory</b> for OES Global&rsquo;s five brands — build and manage core templates, component libraries, and brand tokens here. <b>This project is not where weekly content is made</b> — that&rsquo;s a separate workflow (see below).</p>
+  </div></div>
+
+  <div class="main">
+
+    <!-- ============ WEEKLY CONTENT = SEPARATE WORKFLOW ============ -->
+    <div class="callout">
+      <p class="tag">Read this first</p>
+      <h2>Making weekly content? Use this project, new chat session.</h2>
+      <p>Weekly pieces are built <b>right here</b> in the <code>weeks/</code> folder — they depend on this project&rsquo;s CSS, fonts, and logos. A separate project breaks the HTML preview. Each weekly session is a fresh conversation with short history; old turns are trimmed so context stays lean.</p>
+      <ol class="steps">
+        <li>Start the chat here with <b>&ldquo;start q#-w##&rdquo;</b> (e.g. <em>start q2-w14</em>). That&rsquo;s the only trigger needed — no setup, no template descriptions.</li>
+        <li>Tell it which template number (1, 2, or 3) per piece, paste your copy, and drop images one at a time.</li>
+        <li>Review the HTML preview in <code>weeks/q#-w##.html</code>. Request any edits before approving.</li>
+        <li>Say <b>&ldquo;export it&rdquo;</b> — you&rsquo;ll get a zipped folder of full-resolution JPGs to download.</li>
+      </ol>
+      <p class="promptlabel">The only prompt you need</p>
+      <div class="promptbox">
+        <button class="copybtn" onclick="navigator.clipboard.writeText(document.getElementById('bootprompt').innerText);this.textContent='Copied';setTimeout(()=>{this.textContent='Copy'},1600)">Copy</button>
+        <pre id="bootprompt">start q#-w## (e.g. start q2-w14)
+
+Then tell me:
+  - Which brands this week (TCFL / HD / AFL / SD2K / OES)
+  - Template number per piece (1, 2, or 3)
+  - Copy for each piece
+  - Drop images one at a time when asked</pre>
+      </div>
+      <div class="archive">
+        <span class="lbl">Past weeks (reference only):</span>
+        <a href="weeks/q2-w12.html">Q2 · W12</a>
+        <a href="weeks/q2-w11.html">Q2 · W11</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ============ BRAND SYSTEM ============ -->
+    <div class="zone">
+      <div class="zone-h"><h2>Brand System</h2><span>the factory · stable · rarely changes</span></div>
+    </div>
+
+    <p class="eyebrow">Templates · ready formats <span class="badge">6 of 6 approved</span></p>
+    <div class="grid">
+      <a class="card" href="Blog Header Templates.html" style="--accent:#2E6CB4"><h3>Blog Header Templates <span class="badge">✓ Approved</span></h3><p class="dims">1200×240</p><p>Editorial header for website blog posts — content-driven split panel (width follows the headline) + full-bleed variant. One per brand.</p></a>
+      <a class="card" href="Banner Templates.html" style="--accent:#10465B"><h3>Banner Templates <span class="badge">✓ Approved</span></h3><p class="dims">1400×275</p><p>Promotional hero — content-driven split (panel follows headline) + CTA button, plus full-bleed variant. One per brand.</p></a>
+      <a class="card" href="LinkedIn Article Templates.html" style="--accent:#005371"><h3>LinkedIn Article Templates <span class="badge">✓ Approved</span></h3><p class="dims">1200×675 · 75px top bar</p><p>Constant brand bar + canvas. Template 1 editorial split (panel + seam) and Template 2 full-image hero. Brand switcher.</p></a>
+      <a class="card" href="LinkedIn Post Templates.html" style="--accent:#5BA6DD"><h3>LinkedIn Post Templates <span class="badge">✓ Approved</span></h3><p class="dims">1000×1000</p><p>Square posts — full-bleed image, centered headline + optional CTA + centered logo. Brand switcher.</p></a>
+      <a class="card" href="Internal Ad Templates.html" style="--accent:#FF5100"><h3>Internal Ad Templates <span class="badge">✓ Approved</span></h3><p class="dims">300×470 · 350×350 · 500×500</p><p>Promo ads — logo bar, photo + tag + accent wedge, headline + CTA. Plus full-bleed variant. Brand switcher.</p></a>
+      <a class="card" href="Thumbnail Templates.html" style="--accent:#F2C811"><h3>YouTube Thumbnail Templates <span class="badge">✓ Approved</span></h3><p class="dims">1280×720 · 1080×1920</p><p>Horizontal + vertical covers. T1 photo-led, T2 text-only, T3 diagonal wedge ("Who We Are"). Brand switcher.</p></a>
+      <a class="card" href="Campaign Set Example.html" style="--accent:#10202e"><h3>Campaign Set · Example</h3><p class="dims">one concept · every size</p><p>Reference: how one idea reformats across blog ↔ article and banner ↔ ad 1 ↔ ad 2, staying coherent.</p></a>
+    </div>
+
+    <div class="sys">
+      <p class="eyebrow">Component Library · mix &amp; match</p>
+      <div class="grid">
+        <a class="card" href="Backgrounds & Layouts.html" style="--accent:#0F60B2"><h3>Backgrounds &amp; Layouts</h3><p class="dims">arrange the photo</p><p>Pick by image type — only product, several products, product on a scene, scene only — plus spec/stat layouts and a product card.</p></a>
+        <a class="card" href="Headlines & Text.html" style="--accent:#232323"><h3>Headlines &amp; Text</h3><p class="dims">title + subtitle groups</p><p>Ready text groups — title-only, title+subtitle, eyebrow+title+CTA, two-tone, color-blocked. Plus the faded background logo.</p></a>
+        <a class="card" href="Badges & Callouts.html" style="--accent:#E42845"><h3>Badges &amp; Callouts</h3><p class="dims">prices &amp; sale shapes</p><p>Sale stars, stamps, ribbons, price tags, "Save 40%" — with fill styles and a per-brand section. Plus text-over-image.</p></a>
+        <a class="card" href="Panels & Graphics.html" style="--accent:#7C9CB6"><h3>Panels &amp; Graphics</h3><p class="dims">color blocks &amp; accents</p><p>Color panels behind text (solid, frosted, diagonal, band) and accent shapes — stripes, wedges, edge bars, chevrons.</p></a>
+      </div>
+    </div>
+
+    <div class="sys">
+      <p class="eyebrow">Brand System Foundations</p>
+      <div class="sysrow">
+        <a class="chip" href="README.md">README — brand &amp; usage rules</a>
+        <a class="chip" href="colors_and_type.css">Tokens — colors_and_type.css</a>
+        <a class="chip" href="ui_kits/oes-global/index.html">OES Global UI kit</a>
+      </div>
+      <p class="note">Five themes: <b>oes</b> · <b>tcfl</b> · <b>hd</b> · <b>afl</b> · <b>sd2k</b>. Templates use <code>--brand-*</code> tokens, so switching <code>data-brand</code> re-skins any piece. On dark/photo backgrounds, logos render white or a single light tint (per your rule). Filenames follow <b>q#-w#-type-brand</b> · export as JPG.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banner Templates — OES</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .switch{position:sticky;top:0;z-index:50;background:#10202e;padding:13px 32px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .switch .sl{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#7f97a8;margin-right:6px}
+  .switch button{font-family:var(--font-primary);font-weight:500;font-size:13px;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;background:rgba(255,255,255,.1);color:#cdd8e2;transition:background .15s}
+  .switch button:hover{background:rgba(255,255,255,.2)}
+  .switch button.on{background:#fff;color:#10202e}
+  .page{max-width:1120px;margin:0 auto;padding:30px 32px 120px}
+  h1{font-family:var(--font-display);font-weight:700;font-size:28px;margin:0 0 6px;color:#10202e}
+  .lede{font-size:15px;line-height:1.6;color:#5C6B77;margin:0 0 8px;max-width:780px}
+  .section-title{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#2E6CB4;border-bottom:2px solid #d4d8dd;padding-bottom:10px;margin:34px 0 22px}
+  .item{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+  .cap{font-family:var(--font-condensed);font-size:12px;color:#5C6B77}
+  .cap b{font-weight:700;color:#10202e;font-family:var(--font-primary)}
+  .frame{box-shadow:0 8px 24px rgba(16,32,46,.16);overflow:hidden;border-radius:5px}
+  .ref{background:#fff;border:1px solid #dfe3e7;border-radius:10px;padding:16px 20px;margin:6px 0 8px;max-width:780px}
+  .ref b{font-family:var(--font-primary);color:#10202e;font-size:14px}
+  .ref ul{margin:8px 0 0;padding-left:18px;color:#5C6B77;font-size:13.5px;line-height:1.7}
+  .ref code{font-family:var(--font-condensed);font-weight:700;color:#2E6CB4}
+
+  .banner{position:relative;overflow:hidden;transform-origin:top left;background:#10202e}
+
+  /* Template 1 · content-driven split + CTA */
+  .split{display:flex}
+  .split .bp{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;
+             background:var(--brand-hero-bg);padding:0 96px 0 72px;
+             clip-path:polygon(0 0,100% 0,calc(100% - 56px) 100%,0 100%)}
+  .split .bi{flex:1;position:relative;margin-left:-56px;background:var(--brand-bg-subtle);overflow:hidden}
+  .split .bi .photo{position:absolute;inset:0;width:100%;height:100%}
+  .kicker{font-family:var(--font-condensed);font-weight:400;text-transform:uppercase;letter-spacing:.16em;color:#fff;opacity:.85;line-height:1;margin:0}
+  .head{font-family:var(--font-primary);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.02;letter-spacing:-.005em;margin:13px 0 0;white-space:nowrap}
+  .cta{align-self:flex-start;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap;color:#fff;background:var(--brand-cta);border:0;border-radius:8px;margin-top:20px}
+
+  /* Template 2 · full-bleed photo + scrim */
+  .banner .photo{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+
+  /* Template 3 · mirrored split (image LEFT, panel RIGHT) */
+  .t3{display:flex}
+  .t3 .bi3{flex:1;position:relative;background:var(--brand-bg-subtle);overflow:hidden;margin-right:-56px}
+  .t3 .bi3 .photo{position:absolute;inset:0;width:100%;height:100%}
+  .t3 .bp3{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right;
+           background:var(--brand-hero-bg);padding:0 72px 0 96px;
+           clip-path:polygon(56px 0,100% 0,100% 100%,0 100%)}
+  .t3 .bp3 .head{white-space:normal;margin:10px 0 0}
+  .t3 .eyebrow-rule{display:flex;align-items:center;gap:14px;justify-content:flex-end}
+  .t3 .eyebrow-rule hr{width:34px;height:1.5px;border:0;background:rgba(255,255,255,.6);margin:0}
+  .t3 .eyebrow-rule span{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:13px;color:rgba(255,255,255,.85)}
+  .acc{color:var(--brand-accent)}
+  .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,16,26,.88) 0%,rgba(8,16,26,.66) 34%,rgba(8,16,26,.18) 60%,rgba(8,16,26,0) 80%)}
+  .overlay{position:absolute;left:0;top:0;bottom:0;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:0 7% 0 54px}
+  .overlay .head{white-space:normal}
+
+  /* Template 5 · split sides + open center */
+  .t5{position:relative}
+  .t5 .photo{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .t5 .fade-l{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,36,74,.95) 0%,rgba(10,36,74,.88) 30%,rgba(10,36,74,.4) 48%,rgba(10,36,74,0) 58%)}
+  .t5 .fade-r{position:absolute;inset:0;z-index:1;background:linear-gradient(270deg,rgba(10,36,74,.88) 0%,rgba(10,36,74,.7) 18%,rgba(10,36,74,.2) 36%,rgba(10,36,74,0) 48%)}
+  .t5 .t5l{position:absolute;left:0;top:0;bottom:0;width:38%;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:0 40px 0 44px}
+  .t5 .t5pill{display:inline-flex;align-items:center;gap:6px;border:1.5px solid rgba(255,255,255,.5);border-radius:999px;padding:4px 12px 3px;width:fit-content;margin-bottom:10px;white-space:nowrap;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:rgba(255,255,255,.85)}
+  .t5 .t5head{font-family:var(--font-condensed);font-weight:900;text-transform:uppercase;font-size:54px;line-height:.9;color:#fff;margin:0;white-space:nowrap}
+  .t5 .t5sub{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:12px;color:rgba(255,255,255,.7);margin:7px 0 16px;white-space:nowrap}
+  .t5 .t5r{position:absolute;right:36px;top:50%;transform:translateY(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .t5 .t5box{background:rgba(8,28,64,.78);border:1.5px solid rgba(255,255,255,.2);border-radius:10px;padding:12px 18px 8px;text-align:center;min-width:140px}
+  .t5 .t5num{font-family:var(--font-condensed);font-weight:900;font-size:58px;line-height:.82;color:#fff;display:block}
+  .t5 .t5lbl{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:rgba(255,255,255,.9);line-height:1.3;display:block;margin-top:5px}
+  .t5 .t5logo{height:20px;width:150px;background:var(--brand-logo-dark) no-repeat center/contain;opacity:.85}
+
+  /* Template 4 · full-bleed, centered text */
+  .t4b .photo{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .t4b .softdark{position:absolute;inset:0;z-index:1;background:rgba(8,16,26,.58)}
+  .t4b .cw{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:0 320px}
+</style>
+</head>
+<body>
+<div class="switch">
+  <span class="sl">Brand</span>
+  <button data-b="oes">OES Global</button>
+  <button data-b="tcfl" class="on">Traffic Cones</button>
+  <button data-b="hd">Hydration Depot</button>
+  <button data-b="afl">Absorbents</button>
+  <button data-b="sd2k">SD2K Valet</button>
+</div>
+<div class="page">
+  <h1>Banner Templates</h1>
+  <p class="lede">Website hero banner — <b>1400×275</b>. Promotional sibling of the blog header: same <b>content-driven</b> split (panel width follows the headline, image fills the rest) with a <b>CTA button</b>. Switch brand above to re-theme. Copy + image swap at build.</p>
+
+  <div class="ref">
+    <b>Image placement vocabulary</b> — tell me one and I&rsquo;ll set the crop so the subject reads best:
+    <ul>
+      <li><code>CENTER</code> · <code>LEFT</code> · <code>RIGHT</code> · <code>TOP</code> · <code>BOTTOM</code> (and combos like <code>TOP-RIGHT</code>, <code>BOTTOM-LEFT</code>)</li>
+      <li>Plus <code>ZOOM IN</code> / <code>ZOOM OUT</code> to tighten or loosen the crop.</li>
+    </ul>
+  </div>
+
+  <div id="stage" data-brand="tcfl">
+
+  <div class="section-title">Template 1 · Content-driven split + CTA</div>
+  <div class="item">
+    <div class="frame"><div class="banner split" data-w="1400" data-h="275" data-disp="980">
+      <div class="bp">
+        <div class="kicker">Short Impactful Supporting Title</div>
+        <h2 class="head">A Short Punchy<br>Headline Here</h2>
+        <span class="cta">Call To Action</span>
+      </div>
+      <div class="bi"><image-slot class="photo" id="b1" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image (RIGHT)"></image-slot></div>
+    </div></div>
+    <div class="cap"><b>hero · Template 1</b> · 1400×275 · panel follows headline · image RIGHT</div>
+  </div>
+
+  <div class="section-title">Template 2 · Full-bleed photo + scrim</div>
+  <div class="item">
+    <div class="frame"><div class="banner t2" data-w="1400" data-h="275" data-disp="980">
+      <image-slot class="photo" id="b2" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop full-bleed image"></image-slot>
+      <div class="scrim"></div>
+      <div class="overlay">
+        <div class="kicker">Short Impactful Supporting Title</div>
+        <h2 class="head">A Short Punchy<br>Headline Here</h2>
+        <span class="cta">Call To Action</span>
+      </div>
+    </div></div>
+    <div class="cap"><b>hero · Template 2</b> · 1400×275 · full-bleed + scrim</div>
+  </div>
+
+  <div class="section-title">Template 3 · Mirrored split (image left, panel right) + eyebrow rule</div>
+  <div class="item">
+    <div class="frame"><div class="banner t3" data-w="1400" data-h="275" data-disp="980">
+      <div class="bi3"><image-slot class="photo" id="bn3" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image (LEFT)"></image-slot></div>
+      <div class="bp3">
+        <div class="eyebrow-rule"><hr><span>Eyebrow Label</span><hr></div>
+        <h2 class="head">Short Punchy Title<br>With an <span class="acc">Emphasis</span> Word</h2>
+        <span class="cta" style="align-self:flex-end">Call To Action</span>
+      </div>
+    </div></div>
+    <div class="cap"><b>hero · Template 3</b> · 1400×275 · image LEFT · panel RIGHT · eyebrow rule + accent word + CTA</div>
+  </div>
+
+  <div class="section-title">Template 4 · Full-bleed + centered text + CTA</div>
+  <div class="item">
+    <div class="frame"><div class="banner t4b" data-w="1400" data-h="275" data-disp="980">
+      <image-slot class="photo" id="bn4" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop full-bleed image"></image-slot>
+      <div class="softdark"></div>
+      <div class="cw">
+        <div style="display:flex;align-items:center;gap:14px"><hr style="width:34px;height:2px;border:0;background:rgba(255,255,255,.55);margin:0"><span style="font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:13px;color:rgba(255,255,255,.85)">Eyebrow Label</span><hr style="width:34px;height:2px;border:0;background:rgba(255,255,255,.55);margin:0"></div>
+        <h2 class="head" style="font-size:38px;white-space:normal;text-align:center">Short Punchy Title With an <span class="acc">Emphasis</span> Word</h2>
+        <span class="cta" style="align-self:center">Call To Action</span>
+      </div>
+    </div></div>
+    <div class="cap"><b>hero · Template 4</b> · 1400×275 · full-bleed · centered eyebrow rule + headline + CTA</div>
+  </div>
+
+  <div class="section-title">Template 5 · Split sides + open center</div>
+  <div class="item">
+    <div class="frame"><div class="banner t5" data-w="1400" data-h="275" data-disp="980">
+      <image-slot class="photo" id="bn5" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop center image"></image-slot>
+      <div class="fade-l"></div>
+      <div class="fade-r"></div>
+      <div class="t5l">
+        <span class="t5pill">+ New Featured Brand</span>
+        <h2 class="t5head">Product Name</h2>
+        <p class="t5sub">Supporting Tagline Here</p>
+        <span class="cta">Shop Now</span>
+      </div>
+      <div class="t5r">
+        <div class="t5box">
+          <span class="t5num">2</span>
+          <span class="t5lbl">Key Callout<br>Detail Here</span>
+        </div>
+        <div class="t5logo"></div>
+      </div>
+    </div></div>
+    <div class="cap"><b>hero · Template 5</b> · 1400×275 · left brand panel + open center + right callout</div>
+  </div>
+
+  </div>
+</div>
+<script src="image-slot.js"></script>
+<script>
+  const stage=document.getElementById('stage');
+  document.querySelectorAll('.switch button').forEach(b=>{
+    b.addEventListener('click',()=>{document.querySelectorAll('.switch button').forEach(x=>x.classList.remove('on'));b.classList.add('on');stage.dataset.brand=b.dataset.b;});
+  });
+  function styleBanner(b){
+    const k=b.querySelector('.kicker'); if(k){k.style.fontSize='17px';}
+    const h=b.querySelector('.head'); if(h){h.style.fontSize='46px';}
+    const cta=b.querySelector('.cta'); if(cta){cta.style.fontSize='18px';cta.style.padding='14px 28px';}
+  }
+  function layout(){
+    document.querySelectorAll('.banner').forEach(b=>{
+      const w=+b.dataset.w,h=+b.dataset.h; b.style.width=w+'px';b.style.height=h+'px';
+      styleBanner(b);
+      const disp=+b.dataset.disp||980; const s=Math.min(1,disp/w);
+      b.style.transform='scale('+s+')';
+      const fr=b.closest('.frame'); fr.style.width=Math.round(w*s)+'px'; fr.style.height=Math.round(h*s)+'px';
+    });
+  }
+  layout(); window.addEventListener('resize',layout);
+</script>
+</body>
+</html>

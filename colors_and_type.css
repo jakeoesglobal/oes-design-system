@@ -1,0 +1,216 @@
+/* ============================================================
+   OES GLOBAL — Design Tokens
+   "We're the Find a Way Company"
+   Parent corporate palette. Never mix with sub-brand colors.
+   Source: OES Brand Guidelines 2026
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Condensed:wght@400;500;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* ---- Core brand (parent) ---- */
+  --oes-primary:      #305B7D;  /* Medium Blue — primary actions, key UI, wordmark */
+  --oes-accent:       #7C9CB6;  /* Steel Blue — secondary accent, light globe bands */
+  --oes-mid:          #314352;  /* Mid slate-blue — secondary surfaces */
+
+  /* ---- Full palette ---- */
+  --oes-white:        #FFFFFF;  /* Backgrounds */
+  --oes-light-gray:   #EEEEEE;  /* Dividers, subtle backgrounds */
+  --oes-steel:        #7C9CB6;  /* Accent (alias of accent) */
+  --oes-blue:         #305B7D;  /* Primary (alias) */
+  --oes-deeper-dark:  #10465B;  /* Alt hero background */
+  --oes-navy:         #0A2737;  /* Hero background */
+  --oes-near-black:   #232323;  /* Body text */
+
+  /* ---- Semantic surfaces ---- */
+  --bg:               var(--oes-white);
+  --bg-subtle:        var(--oes-light-gray);
+  --bg-hero:          var(--oes-navy);
+  --bg-hero-alt:      var(--oes-deeper-dark);
+  --surface:          var(--oes-white);
+  --border:           var(--oes-light-gray);
+  --divider:          #DDE3E8;
+
+  /* ---- Semantic text ---- */
+  --fg:               var(--oes-near-black); /* body */
+  --fg-strong:        var(--oes-navy);       /* headings on light */
+  --fg-muted:         #5C6B77;               /* secondary text */
+  --fg-on-dark:       var(--oes-white);
+  --fg-on-dark-muted: #B7C6D2;
+  --fg-link:          var(--oes-primary);
+
+  /* ---- Approved gradients (hero / overlays / backgrounds ONLY — never on text or interactive elements) ---- */
+  --grad-oes-deep:    linear-gradient(135deg, #000000 0%, #0A2737 55%, #214662 100%); /* @kind color */
+  --grad-oes-deeper:  linear-gradient(135deg, #0A2737 0%, #10465B 55%, #536C87 100%); /* @kind color */
+  --grad-oes-steel:   linear-gradient(135deg, #10465B 0%, #305B7D 55%, #7B9CB6 100%); /* @kind color */
+
+  /* ---- Typography ---- */
+  --font-primary:   'Roboto', system-ui, -apple-system, sans-serif;
+  --font-condensed: 'Roboto Condensed', 'Roboto', sans-serif; /* impact headlines, labels */
+  --font-display:   'Poppins', 'Roboto', sans-serif;          /* secondary / display */
+
+  --fw-light:   300; /* @kind font */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  500; /* @kind font */
+  --fw-bold:    700; /* @kind font */
+  --fw-black:   900; /* @kind font */
+
+  /* Type scale (rem @ 16px base) */
+  --text-xs:   0.75rem;   /* 12px — labels */
+  --text-sm:   0.875rem;  /* 14px — body min */
+  --text-base: 1rem;      /* 16px — body */
+  --text-lg:   1.125rem;  /* 18px — lead */
+  --text-xl:   1.5rem;    /* 24px — subhead */
+  --text-2xl:  2rem;      /* 32px — h3 */
+  --text-3xl:  2.75rem;   /* 44px — h2 */
+  --text-4xl:  4rem;      /* 64px — h1 */
+  --text-5xl:  5.5rem;    /* 88px — display */
+
+  --leading-tight: 1.05; /* @kind font */
+  --leading-snug:  1.2; /* @kind font */
+  --leading-body:  1.6; /* @kind font */
+
+  --tracking-label: 0.16em; /* @kind font */
+  --tracking-tight: -0.01em; /* @kind font */
+
+  /* ---- Spacing scale (8pt base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ---- Radii (structural, modest) ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* ---- Elevation (soft, cool-tinted) ---- */
+  --shadow-sm: 0 1px 2px rgba(10,39,55,0.06), 0 1px 3px rgba(10,39,55,0.08);
+  --shadow-md: 0 4px 12px rgba(10,39,55,0.08), 0 2px 4px rgba(10,39,55,0.06);
+  --shadow-lg: 0 16px 40px rgba(10,39,55,0.14), 0 4px 10px rgba(10,39,55,0.08);
+
+  /* ---- Motifs ---- */
+  --edge-block-width: 4px; /* @kind spacing */
+  --edge-block-color: var(--brand-accent); /* @kind color */
+
+  /* ---- Motion (restrained, professional) ---- */
+  --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --dur-fast: 140ms; /* @kind other */
+  --dur-base: 220ms; /* @kind other */
+  --dur-slow: 360ms; /* @kind other */
+
+  --container-max: 1200px; /* @kind spacing */
+
+  /* ============================================================
+     THEMEABLE BRAND CONTRACT
+     Every brand provides these. :root carries the OES Global
+     (parent) defaults; a brands/<brand>.css file overrides them
+     under [data-brand="…"]. Templates & components should ALWAYS
+     reference --brand-* tokens (never a raw hex), so swapping the
+     theme re-skins everything automatically.
+     Active brands: oes · tcfl · hd · afl · sd2k
+     ============================================================ */
+  --brand-name:           "OES Global"; /* @kind other */
+  --brand-primary:        #305B7D;   /* primary actions, key UI */
+  --brand-primary-hover:  #264A66;
+  --brand-accent:         #7C9CB6;   /* accent / CTA highlight */
+  --brand-accent-hover:   #6a8aa4;
+  --brand-ink:            #232323;   /* body text (shared across brands) */
+  --brand-muted:          #5C6B77;   /* supporting text / borders */
+  --brand-bg:             #FFFFFF;
+  --brand-bg-subtle:      #EEEEEE;
+  --brand-border:         #DDE3E8;
+  --brand-hero-bg:        #0A2737;   /* dark hero / section bg */
+  --brand-hero-grad:      linear-gradient(135deg, #000000 0%, #0A2737 55%, #214662 100%); /* @kind color */
+  --brand-accent-grad:    linear-gradient(135deg, #10465B 0%, #305B7D 55%, #7B9CB6 100%); /* @kind color */
+  --brand-on-dark:        #FFFFFF;
+  --brand-on-dark-muted:  #B7C6D2;
+  --brand-cta:            #305B7D;  /* SHOP NOW / primary action */
+  --brand-bar-bg:         #EEEEEE;  /* constant article top-bar background */
+  --brand-bar-logo:       url("assets/logos/oes/oes-horizontal.svg"); /* @kind other */
+  /* logo asset URLs (relative to a file in project root) */
+  --brand-logo:           url("assets/logos/oes/oes-horizontal.svg"); /* @kind other */
+  --brand-logo-dark:      url("assets/logos/oes/oes-horizontal-white.svg"); /* @kind other */
+  --brand-icon:           url("assets/logos/oes/oes-icon.svg"); /* @kind other */
+}
+
+/* ============================================================
+   SEMANTIC TYPE CLASSES
+   Headlines: Roboto Black/Bold (Condensed for impact)
+   Body: Roboto Regular/Light, 14–16pt
+   Labels: Condensed Bold, letter-spacing 2–3px
+   ============================================================ */
+
+.oes-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-strong);
+}
+.oes-h1 {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-black);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-strong);
+}
+.oes-h2 {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+  color: var(--fg-strong);
+}
+.oes-h3 {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  color: var(--fg-strong);
+}
+.oes-subhead {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  color: var(--fg);
+}
+.oes-lead {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-light);
+  font-size: var(--text-lg);
+  line-height: var(--leading-body);
+  color: var(--fg);
+}
+.oes-body {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--fg);
+}
+.oes-label {
+  font-family: var(--font-condensed);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--oes-primary);
+}
+
+/* ---- Motif utilities ---- */
+.oes-edge-block { position: relative; }
+.oes-edge-block::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: var(--edge-block-width); background: var(--edge-block-color);
+}

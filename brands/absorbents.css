@@ -1,0 +1,27 @@
+/* ABSORBENTS FOR LESS — Industrial Absorbents
+   absorbentsforless.com
+   Personality: dependable, authoritative, no-nonsense. Deep teal + red. */
+[data-brand="afl"]{
+  --brand-name:          "Absorbents For Less"; /* @kind other */
+  --brand-primary:       #005371;   /* deep teal — PRIMARY */
+  --brand-primary-hover: #00425A;
+  --brand-accent:        #E42845;   /* red — CTAs, urgency */
+  --brand-accent-hover:  #C41D38;
+  --brand-cta:           #E42845;   /* SHOP NOW pill — red */
+  --brand-bar-bg:        #EEEEEE;   /* light-gray article top-bar (color logo) */
+  --brand-bar-logo:      url("assets/logos/afl/afl-horizontal.png"); /* @kind other */
+  --brand-ink:           #232323;
+  --brand-muted:         #ADADAD;   /* mid gray */
+  --brand-bg:            #FFFFFF;
+  --brand-bg-subtle:     #EEEEEE;
+  --brand-border:        #DEDEDE;
+  --brand-hero-bg:       #005371;
+  --brand-hero-grad:     linear-gradient(135deg, #00374B 0%, #005371 55%, #1B7C9C 100%); /* @kind color */
+  --brand-accent-grad:   linear-gradient(135deg, #005371 0%, #1B7C9C 100%); /* @kind color */
+  --brand-on-dark:       #FFFFFF;
+  --brand-on-dark-muted: #9FC2CF;
+  --brand-logo:          url("assets/logos/afl/afl-horizontal.png"); /* @kind other */
+  --brand-logo-dark:     url("assets/logos/afl/afl-horizontal-white.png"); /* @kind other */
+  --brand-icon:          url("assets/logos/afl/afl-icon.png"); /* @kind other */
+  --brand-icon-dark:     url("assets/logos/afl/afl-icon-white.png"); /* @kind other */
+}

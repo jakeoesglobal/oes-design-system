@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OES — Panels & Motifs Library</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .page{max-width:1120px;margin:0 auto;padding:40px 32px 120px}
+  h1{font-family:var(--font-display);font-weight:700;font-size:30px;margin:0 0 6px;color:#10202e}
+  .lede{font-size:15px;line-height:1.6;color:#5C6B77;margin:0;max-width:800px}
+  .section-title{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#2E6CB4;border-bottom:2px solid #d4d8dd;padding-bottom:10px;margin:44px 0 8px}
+  .section-note{font-size:13.5px;color:#5C6B77;margin:0 0 22px;max-width:760px;line-height:1.55}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tile{position:relative;height:210px;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(16,32,46,.12)}
+  .nm{font-family:var(--font-condensed);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5C6B77;margin:8px 2px 0}
+  .ph{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+  .lbl{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;line-height:1}
+
+  /* ---- PANELS ---- */
+  .p-solid{position:absolute;left:24px;bottom:24px;z-index:2;background:var(--brand-primary);padding:16px 22px}
+  .p-frost{position:absolute;left:24px;bottom:24px;z-index:2;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);padding:16px 22px;border:1px solid rgba(255,255,255,.3)}
+  .p-stack i{position:absolute;z-index:2}
+  .p-stack i.a{left:24px;bottom:60px;background:rgba(48,91,125,.55);width:150px;height:50px}
+  .p-stack i.b{left:40px;bottom:34px;background:rgba(48,91,125,.9);width:170px;height:56px;display:flex;align-items:center;padding-left:18px}
+  .p-side{position:absolute;left:0;top:0;bottom:0;z-index:2;width:46%;background:var(--brand-primary);display:flex;align-items:center;padding:0 20px}
+  .p-diag{position:absolute;left:0;top:0;bottom:0;z-index:2;width:58%;background:var(--brand-primary);clip-path:polygon(0 0,100% 0,72% 100%,0 100%);display:flex;align-items:center;padding:0 20px}
+  .p-band{position:absolute;left:0;right:0;bottom:0;z-index:2;background:var(--brand-cta);padding:14px 20px;display:flex;align-items:center;justify-content:center}
+  .p-angle{position:absolute;left:30px;bottom:40px;z-index:2;background:var(--brand-cta);padding:14px 30px;transform:skewX(-12deg)}
+  .p-angle .lbl{display:inline-block;transform:skewX(12deg)}
+  .p-ghost{position:absolute;left:24px;bottom:24px;z-index:2;border:2px solid #fff;padding:16px 22px}
+
+  /* ---- MOTIFS ---- */
+  .blk{position:absolute;inset:0;z-index:0;background:#141414}
+  .m-wedge .tl{position:absolute;top:0;left:0;width:55%;height:46%;background:var(--brand-accent);clip-path:polygon(0 0,100% 0,0 100%);z-index:1}
+  .m-wedge .br{position:absolute;bottom:0;right:0;width:60%;height:50%;background:var(--brand-accent);clip-path:polygon(100% 0,100% 100%,0 100%);z-index:1}
+  .m-seam .l{position:absolute;left:0;top:0;bottom:0;width:54%;background:var(--brand-primary);clip-path:polygon(0 0,100% 0,78% 100%,0 100%);z-index:1}
+  .m-seam .s{position:absolute;left:54%;top:-12%;height:124%;width:4px;background:var(--brand-accent);transform:rotate(11deg);transform-origin:top;z-index:2}
+  .m-edge{position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--brand-accent);z-index:2}
+  .m-swoosh{position:absolute;right:0;bottom:0;z-index:2;width:150px;height:96px;background:#fff;border-top-left-radius:100% 90%;display:flex;align-items:flex-end;justify-content:flex-end;padding:12px 16px}
+  .m-dash{position:absolute;left:24px;bottom:40px;z-index:2;width:60%;height:9px;background:repeating-linear-gradient(90deg,var(--brand-primary) 0 26px,transparent 26px 42px)}
+  .m-wave{position:absolute;left:24px;bottom:40px;z-index:2;width:62%;height:22px;background:no-repeat center/contain url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='22' viewBox='0 0 200 22'><path d='M0 11 Q 12.5 0 25 11 T 50 11 T 75 11 T 100 11 T 125 11 T 150 11 T 175 11 T 200 11' fill='none' stroke='%23919191' stroke-width='3'/></svg>")}
+  .m-chev{position:absolute;left:28px;bottom:34px;z-index:2;display:flex;gap:10px}
+  .m-chev span{width:20px;height:20px;border-left:4px solid var(--brand-accent);border-bottom:4px solid var(--brand-accent);transform:rotate(45deg)}
+  .m-hdwave i{position:absolute;left:-1px;bottom:-1px;border-top-right-radius:100%;z-index:2}
+  .m-hdwave .w1{width:150px;height:150px;background:rgba(15,96,178,.92)}
+  .m-hdwave .w2{width:104px;height:104px;background:rgba(91,166,221,.94)}
+  .m-hdwave .w3{width:60px;height:60px;background:rgba(162,199,225,.96)}
+  .hazard{background:repeating-linear-gradient(135deg,#141414 0 13px,var(--brand-accent) 13px 26px)}
+  .hazard.thin{background:repeating-linear-gradient(135deg,#141414 0 9px,var(--brand-accent) 9px 18px)}
+
+  /* compose demo */
+  .comp{position:relative;height:300px;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(16,32,46,.12)}
+  .seal{position:absolute;z-index:6;display:grid;place-items:center;width:118px;height:118px}
+  .seal i{position:absolute;inset:0;background:var(--brand-cta);border-radius:14%}
+  .seal i:nth-child(2){transform:rotate(30deg)}.seal i:nth-child(3){transform:rotate(60deg)}
+  .seal b{position:relative;z-index:2;color:#fff;font-family:var(--font-condensed);font-weight:700;text-align:center;line-height:.82;text-transform:uppercase;font-size:30px}
+  .seal b small{display:block;font-size:.42em;letter-spacing:.12em;margin-top:3px}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Panels &amp; Motifs Library</h1>
+  <p class="lede">The mix-and-match parts. Combine a background (imagery mode) + a <b>panel</b> + a <b>text group</b> + a <b>callout</b> + an optional <b>motif</b> = a finished piece. This page fleshes out the two structural libraries; text groups, callouts, and the ghost mark live on their own pages.</p>
+
+  <!-- PANELS -->
+  <div class="section-title">Layered panels · options</div>
+  <p class="section-note">Containers that hold text over an image — for legibility and hierarchy. Swap fill, opacity, and shape.</p>
+  <div class="grid">
+    <div><div class="tile" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="p-solid"><span class="lbl" style="font-size:15px">Solid block</span></div></div><div class="nm">Solid block</div></div>
+    <div><div class="tile" data-brand="hd"><div class="ph" style="background-image:url('assets/placeholders/hd.jpg')"></div><div class="p-frost"><span class="lbl" style="font-size:15px">Frosted</span></div></div><div class="nm">Frosted / translucent</div></div>
+    <div><div class="tile" data-brand="oes"><div class="ph" style="background-image:url('assets/placeholders/oes.jpg')"></div><div class="p-stack"><i class="a"></i><i class="b"><span class="lbl" style="font-size:14px">Stacked</span></i></div></div><div class="nm">Stacked / offset depth</div></div>
+    <div><div class="tile" data-brand="afl"><div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div><div class="p-side"><span class="lbl" style="font-size:15px">Side panel</span></div></div><div class="nm">Full-height side panel</div></div>
+    <div><div class="tile" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="p-diag"><span class="lbl" style="font-size:15px">Diagonal</span></div></div><div class="nm">Diagonal panel</div></div>
+    <div><div class="tile" data-brand="afl"><div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div><div class="p-band"><span class="lbl" style="font-size:15px">Bottom band</span></div></div><div class="nm">Full-width bottom band</div></div>
+    <div><div class="tile" data-brand="sd2k"><div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div><div class="p-angle"><span class="lbl" style="font-size:15px">Angled</span></div></div><div class="nm">Angled / skewed block</div></div>
+    <div><div class="tile" data-brand="hd"><div class="ph" style="background-image:url('assets/placeholders/hd.jpg')"></div><div class="p-ghost"><span class="lbl" style="font-size:15px">Outlined</span></div></div><div class="nm">Outlined / ghost panel</div></div>
+  </div>
+
+  <!-- MOTIFS -->
+  <div class="section-title">Motifs &amp; accents · options</div>
+  <p class="section-note">Graphic accents, several pulled straight from the brand logos (TCFL dashes, AFL waves, OES chevrons, HD waves). Use sparingly as a branded finishing touch.</p>
+  <div class="grid">
+    <div><div class="tile" data-brand="tcfl"><div class="blk"></div><div class="m-wedge"><span class="tl"></span><span class="br"></span></div></div><div class="nm">Industrial wedges</div></div>
+    <div><div class="tile" data-brand="sd2k"><div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div><div class="m-seam"><span class="l"></span><span class="s"></span></div></div><div class="nm">Diagonal seam line</div></div>
+    <div><div class="tile" data-brand="oes" style="background:#fff"><div class="m-edge"></div><div style="position:absolute;left:30px;top:50%;transform:translateY(-50%);z-index:3"><span class="lbl" style="color:#1b2630;font-size:16px">Edge block</span></div></div><div class="nm">Edge block (accent stripe)</div></div>
+    <div><div class="tile" data-brand="afl"><div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div><div class="m-swoosh"><img src="assets/logos/afl/afl-icon.png" style="height:38px"></div></div><div class="nm">Corner swoosh (logo)</div></div>
+    <div><div class="tile" data-brand="tcfl" style="background:#fff"><div class="m-dash"></div><div style="position:absolute;left:24px;top:34px;z-index:3"><span class="lbl" style="color:#1b2630;font-size:15px">Dashed rule</span></div></div><div class="nm">TCFL dashed line</div></div>
+    <div><div class="tile" data-brand="afl" style="background:#fff"><div class="m-wave"></div><div style="position:absolute;left:24px;top:34px;z-index:3"><span class="lbl" style="color:#1b2630;font-size:15px">Wave rule</span></div></div><div class="nm">AFL wave line</div></div>
+    <div><div class="tile" data-brand="oes"><div class="ph" style="background:var(--brand-hero-grad)"></div><div class="m-chev"><span></span><span></span><span></span></div></div><div class="nm">OES chevrons</div></div>
+    <div><div class="tile" data-brand="hd"><div class="ph" style="background-image:url('assets/placeholders/hd.jpg')"></div><div class="m-hdwave"><i class="w1"></i><i class="w2"></i><i class="w3"></i></div></div><div class="nm">HD layered waves</div></div>
+    <div><div class="tile" data-brand="tcfl" style="background:#fff"><div class="hazard" style="position:absolute;top:0;left:0;right:0;height:22px;z-index:2"></div><div class="hazard thin" style="position:absolute;bottom:0;left:0;right:0;height:14px;z-index:2"></div><div style="position:absolute;left:24px;top:50%;transform:translateY(-50%);z-index:3"><span class="lbl" style="color:#1b2630;font-size:16px">Chevron stripe</span></div></div><div class="nm">Hazard / chevron stripe (edge accent)</div></div>
+  </div>
+
+  <!-- GHOST MARK -->
+  <div class="section-title">Ghost mark · its own motif</div>
+  <p class="section-note">The logo icon ghosted (~10% opacity) as a background texture. Use alone for subtle branding or behind a type lockup — placed so they don&rsquo;t collide.</p>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+    <div><div class="tile" data-brand="oes" style="height:240px"><div class="ph" style="background:var(--brand-hero-grad)"></div><img src="assets/oes-icon-white.svg" style="position:absolute;right:-60px;top:-44px;width:280px;opacity:.10;z-index:1"><span class="lbl" style="position:absolute;left:24px;bottom:22px;z-index:3;font-size:14px">Corner bleed</span></div><div class="nm">Top-right, bleeding off</div></div>
+    <div><div class="tile" data-brand="afl" style="height:240px"><div class="ph" style="background:var(--brand-hero-grad)"></div><img src="assets/logos/afl/afl-icon-white.png" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:240px;opacity:.12;z-index:1"><span class="lbl" style="position:absolute;left:24px;bottom:22px;z-index:3;font-size:14px">Centered</span></div><div class="nm">Centered watermark</div></div>
+    <div><div class="tile" data-brand="hd" style="height:240px"><div class="ph" style="background:var(--brand-hero-grad)"></div><img src="assets/logos/hd/hd-stacked-white.png" style="position:absolute;left:-30px;bottom:-30px;width:200px;opacity:.12;z-index:1"><span class="lbl" style="position:absolute;left:24px;bottom:22px;z-index:3;font-size:14px">Anchor corner</span></div><div class="nm">Bottom-left anchor</div></div>
+  </div>
+
+  <!-- COMPOSE -->
+  <div class="section-title">Compose · background + panel + text group + callout</div>
+  <p class="section-note">How the parts stack into a finished piece. Same recipe, any brand or format.</p>
+  <div class="grid3">
+    <div><div class="comp" data-brand="afl">
+      <div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div>
+      <div class="p-diag" style="width:62%;clip-path:polygon(0 0,100% 0,78% 100%,0 100%);flex-direction:column;align-items:flex-start;justify-content:center;padding:0 12% 0 30px">
+        <span class="lbl" style="color:var(--brand-accent);font-size:13px;letter-spacing:.16em">Spill Control</span>
+        <h2 class="lbl" style="font-size:38px;margin-top:12px">Contain<br>Every Spill</h2>
+        <span style="margin-top:18px;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.07em;color:#fff;background:var(--brand-cta);padding:10px 18px;border-radius:999px">Order Today ›</span>
+      </div>
+      <div class="seal" style="right:24px;top:30px"><i></i><i></i><i></i><b>40%<small>Off</small></b></div>
+    </div><div class="nm">Diagonal panel + eyebrow/title/CTA + seal</div></div>
+
+    <div><div class="comp" data-brand="hd">
+      <div class="ph" style="background-image:url('assets/placeholders/hd.jpg')"></div>
+      <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,38,63,.7),rgba(0,38,63,0) 60%)"></div>
+      <div class="m-hdwave"><i class="w1"></i><i class="w2"></i><i class="w3"></i></div>
+      <div style="position:absolute;left:28px;bottom:30px;z-index:3">
+        <h2 class="lbl" style="font-size:40px">Cool Down.<br><span style="color:var(--brand-soft)">Power Up.</span></h2>
+      </div>
+      <div class="seal" style="right:24px;top:24px"><i></i><i></i><i></i><b>New</b></div>
+    </div><div class="nm">Lifestyle + HD waves + two-tone title + badge</div></div>
+
+    <div><div class="comp" data-brand="sd2k">
+      <div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div>
+      <div style="position:absolute;inset:0;z-index:1;background:rgba(0,0,0,.45)"></div>
+      <div class="p-band" style="background:var(--brand-cta);bottom:auto;top:0"><span class="lbl" style="font-size:14px">Premium Valet</span></div>
+      <div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:3;text-align:center">
+        <h2 class="lbl" style="font-size:44px">Arrive in Style</h2>
+      </div>
+      <img src="assets/logos/sd2k/sd2k-horizontal.png" style="position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:4;height:40px">
+    </div><div class="nm">Top band + centered title + logo</div></div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internal Ad Templates — OES</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .switch{position:sticky;top:0;z-index:50;background:#10202e;padding:13px 32px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .switch .sl{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#7f97a8;margin-right:6px}
+  .switch button{font-family:var(--font-primary);font-weight:500;font-size:13px;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;background:rgba(255,255,255,.1);color:#cdd8e2;transition:background .15s}
+  .switch button:hover{background:rgba(255,255,255,.2)}
+  .switch button.on{background:#fff;color:#10202e}
+  .page{max-width:1120px;margin:0 auto;padding:30px 32px 120px}
+  h1{font-family:var(--font-display);font-weight:700;font-size:28px;margin:0 0 6px;color:#10202e}
+  .lede{font-size:15px;line-height:1.6;color:#5C6B77;margin:0 0 8px;max-width:780px}
+  .ref{background:#fff;border:1px solid #dfe3e7;border-radius:10px;padding:16px 20px;margin:6px 0 8px;max-width:780px}
+  .ref b{font-family:var(--font-primary);color:#10202e;font-size:14px}
+  .ref ul{margin:8px 0 0;padding-left:18px;color:#5C6B77;font-size:13.5px;line-height:1.7}
+  .ref code{font-family:var(--font-condensed);font-weight:700;color:#2E6CB4}
+  .section-title{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#2E6CB4;border-bottom:2px solid #d4d8dd;padding-bottom:10px;margin:34px 0 24px}
+  .row{display:flex;flex-wrap:wrap;gap:34px;align-items:flex-start}
+  .item{display:flex;flex-direction:column;gap:10px}
+  .cap{font-family:var(--font-condensed);font-size:12px;color:#5C6B77}
+  .cap b{font-weight:700;color:#10202e;font-family:var(--font-primary)}
+
+  .ad{position:relative;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(16,32,46,.22);background:var(--brand-hero-bg)}
+  .ad-port{width:300px;height:470px}
+  .ad-sm{width:350px;height:350px}
+  .ad-lg{width:500px;height:500px}
+  .hero{position:relative;flex:1;overflow:hidden;background:var(--brand-bg-subtle)}
+  .hero .photo{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .tag{position:absolute;top:26px;left:50%;transform:translateX(-50%);z-index:3;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:#fff;background:var(--brand-cta);padding:7px 13px 6px;border-radius:5px;white-space:nowrap;line-height:1}
+  .foot{flex:none;background:var(--brand-hero-bg);padding:22px 24px 24px;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+  .head{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:1.0;color:#fff;margin:0}
+  .ad-port .head,.ad-sm .head{font-size:30px}
+  .ad-lg .head{font-size:40px}
+  .head em{font-style:normal;color:var(--brand-accent)}
+  .cta{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;background:var(--brand-cta);border:0;border-radius:8px;font-size:15px;padding:13px 24px}
+
+  /* Template 2 · full-bleed */
+  .bleed .hero{flex:1}
+  .bleed .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(8,12,18,.85) 0%,rgba(8,12,18,.3) 44%,rgba(8,12,18,.15) 100%)}
+
+  /* Template 3 · diagonal wedge (full-bleed, wedge across bottom) */
+  .wedge3a{position:absolute;left:0;right:0;bottom:0;z-index:4;pointer-events:none}
+  .wedge3a svg{position:absolute;inset:0;width:100%;height:100%}
+  .wc3a{position:absolute;right:22px;z-index:5;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+  .ad-port .wc3a{bottom:24px}
+  .ad-sm .wc3a{bottom:20px}
+  .acc{color:var(--brand-accent)}
+  .ad-port .wedge3a{height:220px}
+  .ad-sm .wedge3a{height:190px}
+
+  /* Template 4 · right-heavy gradient, right-aligned */
+  .t4ad .scrimR{position:absolute;inset:0;z-index:1;background:linear-gradient(315deg,rgba(8,16,26,.78) 0%,rgba(8,16,26,.38) 50%,rgba(8,16,26,0) 80%)}
+  .t4ad .rw{position:absolute;right:22px;bottom:80px;z-index:3;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:14px;max-width:80%}
+  .bleed .foot{position:absolute;left:0;right:0;bottom:0;z-index:3;background:transparent;align-items:center;text-align:center}
+
+  /* ===== Template entrance animation (subtle) ===== */
+  @media (prefers-reduced-motion: no-preference){
+    .anim .tag{opacity:0;transform:translateX(-50%) scale(.86);animation:pop .5s cubic-bezier(.22,.9,.3,1.2) .15s forwards}
+    .anim .head{opacity:0;transform:translateY(14px) scale(.97);animation:pop2 .55s cubic-bezier(.22,.9,.3,1.2) .15s forwards}
+    .anim .cta{opacity:0;transform:translateY(16px);animation:rise .5s ease .6s forwards}
+    .anim .cta-float{opacity:0;transform:translateX(-50%) translateY(16px);animation:riseC .5s ease .6s forwards}
+  }
+  @keyframes pop{to{opacity:1;transform:translateX(-50%) scale(1)}}
+  @keyframes pop2{to{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  @keyframes riseC{to{opacity:1;transform:translateX(-50%) translateY(0)}}
+  /* square variant: button floats over image, bottom-center */
+  .cta-float{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:3}
+  .ad-sm .hero{flex:1}
+</style>
+</head>
+<body>
+<div class="switch">
+  <span class="sl">Brand</span>
+  <button data-b="oes">OES Global</button>
+  <button data-b="tcfl" class="on">Traffic Cones</button>
+  <button data-b="hd">Hydration Depot</button>
+  <button data-b="afl">Absorbents</button>
+  <button data-b="sd2k">SD2K Valet</button>
+  <button onclick="replayAnims()" style="margin-left:auto;background:var(--brand-cta,#FF5100);color:#fff">↻ Replay animation</button>
+</div>
+<div class="page">
+  <h1>Internal Ad Templates</h1>
+  <p class="lede">Promo ads — <b>300×470</b> (portrait), <b>350×350</b> (square; <b>Absorbents 500×500</b>). Brand-colored panel (pops against the white site), product photo with a brand tag + accent wedge, large condensed headline, CTA button. Switch brand above to re-theme. Copy + image swap at build.</p>
+  <div class="ref">
+    <b>Image placement vocabulary</b> — tell me one and I&rsquo;ll set the crop so the subject reads best:
+    <ul>
+      <li><code>CENTER</code> · <code>LEFT</code> · <code>RIGHT</code> · <code>TOP</code> · <code>BOTTOM</code> (and combos like <code>TOP-RIGHT</code>, <code>BOTTOM-LEFT</code>)</li>
+      <li>Plus <code>ZOOM IN</code> / <code>ZOOM OUT</code> to tighten or loosen the crop.</li>
+    </ul>
+  </div>
+
+  <div id="stage" data-brand="tcfl">
+  <div class="section-title">Template 1 · Photo hero + text panel</div>
+  <div class="row">
+
+    <div class="item">
+      <div class="ad ad-port anim">
+        <div class="hero">
+          <image-slot class="photo" id="ad-port" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop product photo"></image-slot>
+          <span class="tag">Eyebrow Tag</span>
+        </div>
+        <div class="foot">
+          <h3 class="head">Short Punchy<br><em>Headline</em></h3>
+          <span class="cta">Call To Action</span>
+        </div>
+      </div>
+      <div class="cap"><b>ad1 · portrait</b> · 300×470</div>
+    </div>
+
+    <div class="item">
+      <div class="ad ad-sm anim">
+        <div class="hero">
+          <image-slot class="photo" id="ad-sq" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop product photo"></image-slot>
+          <span class="tag">Eyebrow Tag</span>
+          <span class="cta cta-float">Call To Action</span>
+        </div>
+      </div>
+      <div class="cap"><b>ad2 · square</b> · 350×350 (Absorbents 500×500) · tag + button only</div>
+    </div>
+
+  </div>
+
+  <div class="section-title">Template 2 · Full-bleed photo + scrim</div>
+  <div class="row">
+    <div class="item">
+      <div class="ad ad-port bleed anim">
+        <div class="hero">
+          <image-slot class="photo" id="ad-bleed" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop full-bleed photo"></image-slot>
+          <div class="scrim"></div>
+        </div>
+        <div class="foot">
+          <h3 class="head">Short Punchy<br><em>Headline</em></h3>
+          <span class="cta">Call To Action</span>
+        </div>
+      </div>
+      <div class="cap"><b>ad1 · portrait</b> · 300×470</div>
+    </div>
+
+    <div class="item">
+      <div class="ad ad-sm bleed anim">
+        <div class="hero">
+          <image-slot class="photo" id="ad-bleed-sq" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop full-bleed photo"></image-slot>
+          <div class="scrim" style="background:linear-gradient(0deg,rgba(8,12,18,.88) 0%,rgba(8,12,18,.3) 55%,rgba(8,12,18,.1) 100%)"></div>
+          <div style="position:absolute;left:0;right:0;bottom:40px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:14px;padding:0 24px">
+            <h3 class="head" style="font-size:26px;margin-bottom:14px">Short Punchy<br><em>Headline</em></h3>
+            <span class="cta" style="font-size:13px;padding:10px 20px">Call To Action</span>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><b>ad2 · square</b> · 350×350 · full-bleed + scrim</div>
+    </div>
+  </div>
+
+  <div class="section-title">Template 3 · Logo top + centered headline</div>
+  <div class="row">
+
+    <div class="item">
+      <div class="ad ad-port anim" style="background:#10202e">
+        <image-slot class="photo" id="ad3-port" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop photo" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></image-slot>
+        <div style="position:absolute;inset:0;z-index:1;background:rgba(8,16,26,.52)"></div>
+        <div style="position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:0 28px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <hr style="width:28px;height:1.5px;border:0;background:rgba(255,255,255,.6);margin:0">
+            <span style="font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:rgba(255,255,255,.85)">Eyebrow Tag</span>
+            <hr style="width:28px;height:1.5px;border:0;background:rgba(255,255,255,.6);margin:0">
+          </div>
+          <h3 class="head" style="font-size:32px;line-height:.94">Short Punchy<br><span class="acc">Headline</span></h3>
+          <span class="cta" style="white-space:nowrap">Call To Action</span>
+        </div>
+      </div>
+      <div class="cap"><b>ad1 · portrait</b> · 300×470 · centered eyebrow rule + headline</div>
+    </div>
+
+    <div class="item">
+      <div class="ad ad-sm anim" style="background:#10202e">
+        <image-slot class="photo" id="ad3-sq" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop photo" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></image-slot>
+        <div style="position:absolute;inset:0;z-index:1;background:rgba(8,16,26,.52)"></div>
+        <div style="position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:0 24px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <hr style="width:24px;height:1.5px;border:0;background:rgba(255,255,255,.6);margin:0">
+            <span style="font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:rgba(255,255,255,.85)">Eyebrow Tag</span>
+            <hr style="width:24px;height:1.5px;border:0;background:rgba(255,255,255,.6);margin:0">
+          </div>
+          <h3 class="head" style="font-size:28px;line-height:.94">Short Punchy<br><span class="acc">Headline</span></h3>
+          <span class="cta" style="font-size:13px;padding:10px 18px;white-space:nowrap">Call To Action</span>
+        </div>
+      </div>
+      <div class="cap"><b>ad2 · square</b> · 350×350 · centered eyebrow rule + headline</div>
+    </div>
+
+  </div>
+
+  <div class="section-title">Template 4 · Right-aligned + right-heavy gradient</div>
+  <div class="row">
+
+    <div class="item">
+      <div class="ad ad-port t4ad anim" style="background:#10202e">
+        <image-slot class="photo" id="ad4-port" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop photo" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></image-slot>
+        <div class="scrimR"></div>
+        <div class="rw">
+          <div style="display:flex;align-items:center;gap:10px;justify-content:flex-end">
+            <hr style="width:22px;height:1.5px;border:0;background:rgba(255,255,255,.6);margin:0">
+            <span style="font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:rgba(255,255,255,.85)">Eyebrow</span>
+            <hr style="width:22px;height:1.5px;border:0;background:rgba(255,255,255,.6);margin:0">
+          </div>
+          <h3 class="head" style="font-size:30px;line-height:.94">Short Punchy<br><span class="acc">Headline</span></h3>
+        </div>
+        <span class="cta" style="position:absolute;bottom:24px;right:22px;z-index:4;white-space:nowrap;font-size:14px">Call To Action</span>
+      </div>
+      <div class="cap"><b>ad1 · portrait</b> · 300×470 · right-aligned + gradient</div>
+    </div>
+
+    <div class="item">
+      <div class="ad ad-sm t4ad anim" style="background:#10202e">
+        <image-slot class="photo" id="ad4-sq" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop photo" style="position:absolute;inset:0;width:100%;height:100%;z-index:0"></image-slot>
+        <div class="scrimR"></div>
+        <div class="rw">
+          <div style="display:flex;align-items:center;gap:10px;justify-content:flex-end">
+            <hr style="width:20px;height:1.5px;border:0;background:rgba(255,255,255,.6);margin:0">
+            <span style="font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:11px;color:rgba(255,255,255,.85)">Eyebrow</span>
+            <hr style="width:20px;height:1.5px;border:0;background:rgba(255,255,255,.6);margin:0">
+          </div>
+          <h3 class="head" style="font-size:26px;line-height:.94">Short Punchy<br><span class="acc">Headline</span></h3>
+        </div>
+        <span class="cta" style="position:absolute;bottom:20px;right:20px;z-index:4;white-space:nowrap;font-size:13px;padding:10px 18px">Call To Action</span>
+      </div>
+      <div class="cap"><b>ad2 · square</b> · 350×350 · right-aligned + gradient</div>
+    </div>
+
+  </div>
+  </div>
+</div>
+<script src="image-slot.js"></script>
+<script>
+  const stage=document.getElementById('stage');
+  document.querySelectorAll('.switch button').forEach(b=>{
+    b.addEventListener('click',()=>{document.querySelectorAll('.switch button').forEach(x=>x.classList.remove('on'));b.classList.add('on');stage.dataset.brand=b.dataset.b;});
+  });
+</script>
+<script>
+  function replayAnims(){
+    document.querySelectorAll('.ad.anim').forEach(a=>{a.classList.remove('anim');void a.offsetWidth;a.classList.add('anim');});
+  }
+</script>
+</body>
+</html>

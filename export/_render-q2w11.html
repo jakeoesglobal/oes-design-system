@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="../">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Render — q2-w11 TCFL</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#fff}
+  .art{position:relative;overflow:hidden;background:#10202e}
+  .img{position:absolute;inset:0;z-index:0;background-size:cover}
+  .cond{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:.94;margin:0;color:#fff}
+  .rule{width:46px;height:3px;border:0;margin:0;background:var(--brand-accent)}
+  .kick{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.85)}
+  .bdy{font-family:var(--font-primary);font-weight:300;line-height:1.5;margin:0;color:rgba(255,255,255,.9)}
+  .pill{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:var(--brand-cta);border-radius:8px;display:inline-flex;align-items:center;gap:9px;white-space:nowrap;align-self:flex-start}
+  .barlogo{height:42px;width:240px;background:var(--brand-bar-logo) no-repeat center/contain}
+  .scrimB{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(8,16,26,.9) 0%,rgba(8,16,26,.3) 42%,rgba(8,16,26,0) 70%)}
+  .logo-c{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);z-index:4;height:54px;width:300px;background:var(--brand-logo-dark) no-repeat center/contain}
+  .panel{position:absolute;left:0;top:0;bottom:0;z-index:2;display:flex;flex-direction:column;justify-content:center;background:var(--brand-primary);clip-path:polygon(0 0,100% 0,calc(100% - 64px) 100%,0 100%);padding:0 7% 0 48px}
+  .ekick{font-family:var(--font-condensed);font-weight:400;text-transform:uppercase;letter-spacing:.16em;color:#fff;opacity:.85;line-height:1}
+  .head{font-family:var(--font-primary);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.02;letter-spacing:-.005em;margin:0}
+  .vcol{position:absolute;left:0;top:0;bottom:0;width:50%;z-index:2;background:var(--brand-hero-bg);clip-path:polygon(0 0,100% 0,calc(100% - 86px) 100%,0 100%);display:flex;flex-direction:column;justify-content:center;gap:20px;padding:0 12% 0 54px}
+  .vseam{position:absolute;left:50%;top:-14%;height:128%;width:5px;background:var(--brand-accent);transform:rotate(8.2deg);transform-origin:top center;z-index:3}
+  .tt{font-family:var(--font-display);font-weight:700;line-height:1.06;letter-spacing:-.015em;margin:0;color:#fff}
+  /* each render block stacked; capture by id */
+  .render{display:block}
+</style>
+</head>
+<body data-brand="tcfl">
+
+<!-- BLOG 1200x240 -->
+<div class="render"><div class="art" id="blog" style="width:1200px;height:240px">
+  <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-crew-clipboard.jpg');background-position:100% 14%;background-size:80%"></div>
+  <div class="panel" style="width:46%;background:var(--brand-hero-bg)">
+    <div class="ekick" style="font-size:15px;margin-bottom:13px">National Safety Month</div>
+    <h2 class="head" style="font-size:38px">Is Your Work Zone<br>MUTCD-Compliant?</h2>
+  </div>
+</div></div>
+
+<!-- ARTICLE 1200x675 -->
+<div class="render"><div class="art" id="article" style="width:1200px;height:675px">
+  <div style="height:75px;background:var(--brand-bar-bg);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(0,0,0,.08)"><div class="barlogo"></div></div>
+  <div style="position:absolute;top:75px;left:0;right:0;bottom:0;overflow:hidden">
+    <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-crew-clipboard.jpg');background-position:60% 0%;background-size:120%"></div>
+    <div class="vcol">
+      <div style="display:flex;align-items:center;gap:14px"><hr class="rule"><span class="kick" style="font-size:16px">National Safety Month</span></div>
+      <h2 class="tt" style="font-size:50px">Is Your Work Zone<br>MUTCD-Compliant?</h2>
+      <p class="bdy" style="font-size:20px;max-width:90%">The requirements crews miss most — and what to audit right now.</p>
+      <span class="pill" style="font-size:18px;padding:14px 26px;margin-top:4px">Read the Breakdown →</span>
+    </div>
+    <div class="vseam"></div>
+  </div>
+</div></div>
+
+<!-- POST 1000x1000 -->
+<div class="render"><div class="art" id="post" style="width:1000px;height:1000px">
+  <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-sunset-excavator.jpg');background-position:50% 30%"></div>
+  <div class="scrimB"></div>
+  <div style="position:absolute;left:0;right:0;bottom:150px;z-index:3;text-align:center;padding:0 70px">
+    <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">National Safety Month</span><hr class="rule"></div>
+    <h2 class="cond" style="font-size:62px">5 MUTCD Rules<br>Crews Miss</h2>
+  </div>
+  <div class="logo-c"></div>
+</div></div>
+
+</body>
+</html>

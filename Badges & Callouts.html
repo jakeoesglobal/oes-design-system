@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Badges & Callouts — OES Library</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .page{max-width:1120px;margin:0 auto;padding:40px 32px 120px}
+  h1{font-family:var(--font-display);font-weight:700;font-size:30px;margin:0 0 6px;color:#10202e}
+  .lede{font-size:15px;line-height:1.6;color:#5C6B77;margin:0;max-width:800px}
+  .section-title{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#2E6CB4;border-bottom:2px solid #d4d8dd;padding-bottom:10px;margin:46px 0 10px}
+  .section-note{font-size:13.5px;color:#5C6B77;margin:0 0 22px;max-width:780px;line-height:1.5}
+  .row{display:flex;flex-wrap:wrap;gap:30px}
+  .item{display:flex;flex-direction:column;gap:10px}
+  .cap{font-family:var(--font-condensed);font-size:12px;color:#5C6B77;max-width:340px}
+  .cap b{font-weight:700;color:#10202e;font-family:var(--font-primary)}
+  .frame{box-shadow:0 8px 24px rgba(16,32,46,.16);overflow:hidden;border-radius:6px}
+  .art{position:relative;transform-origin:top left;overflow:hidden;background:#10202e}
+  .art .photo{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .cond{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:.9;margin:0}
+  .pop{font-family:var(--font-display);font-weight:700;margin:0;line-height:1.05}
+
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .tile{background:#fff;border:1px solid #e2e6ea;border-radius:12px;height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .tile.dark{background:#1d2733}
+  .tile .name{position:absolute;left:0;right:0;bottom:0;font-family:var(--font-condensed);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#5C6B77;text-align:center;padding:8px;background:#fff;border-top:1px solid #eef1f3}
+  .tile.dark .name{background:#1d2733;color:#9fb4c4;border-top-color:#2a3744}
+
+  /* sunburst seal */
+  .seal{position:relative;width:140px;height:140px;display:grid;place-items:center}
+  .seal i{position:absolute;inset:0;background:var(--brand-cta);border-radius:16px}
+  .seal i:nth-child(2){transform:rotate(30deg)}
+  .seal i:nth-child(3){transform:rotate(60deg)}
+  .seal b{position:relative;z-index:2;color:#fff;font-family:var(--font-condensed);font-weight:700;text-align:center;line-height:.86;text-transform:uppercase}
+  .seal b small{display:block;font-size:.42em;letter-spacing:.12em;opacity:.92;margin-top:4px}
+
+  /* sharp many-point starburst */
+  .burst{position:relative;width:148px;height:148px;display:grid;place-items:center}
+  .burst i{position:absolute;inset:0;background:var(--brand-cta);
+    clip-path:polygon(50.00% 0.00%,55.94% 12.47%,65.45% 2.45%,67.25% 16.14%,79.39% 9.55%,76.87% 23.13%,90.45% 20.61%,83.86% 32.75%,97.55% 34.55%,87.53% 44.06%,100.00% 50.00%,87.53% 55.94%,97.55% 65.45%,83.86% 67.25%,90.45% 79.39%,76.87% 76.87%,79.39% 90.45%,67.25% 83.86%,65.45% 97.55%,55.94% 87.53%,50.00% 100.00%,44.06% 87.53%,34.55% 97.55%,32.75% 83.86%,20.61% 90.45%,23.13% 76.87%,9.55% 79.39%,16.14% 67.25%,2.45% 65.45%,12.47% 55.94%,0.00% 50.00%,12.47% 44.06%,2.45% 34.55%,16.14% 32.75%,9.55% 20.61%,23.13% 23.13%,20.61% 9.55%,32.75% 16.14%,34.55% 2.45%,44.06% 12.47%)}
+  .burst b{position:relative;z-index:2;color:#fff;font-family:var(--font-condensed);font-weight:700;text-align:center;line-height:.84;text-transform:uppercase}
+  .burst b small{display:block;font-size:.42em;letter-spacing:.12em;opacity:.92;margin-top:4px}
+  .burst.pointy i{clip-path:polygon(50.00% 0.00%,57.76% 21.02%,75.00% 6.70%,71.21% 28.79%,93.30% 25.00%,78.98% 42.24%,100.00% 50.00%,78.98% 57.76%,93.30% 75.00%,71.21% 71.21%,75.00% 93.30%,57.76% 78.98%,50.00% 100.00%,42.24% 78.98%,25.00% 93.30%,28.79% 71.21%,6.70% 75.00%,21.02% 57.76%,0.00% 50.00%,21.02% 42.24%,6.70% 25.00%,28.79% 28.79%,25.00% 6.70%,42.24% 21.02%)}
+
+  .stamp{width:140px;height:140px;border-radius:50%;background:var(--brand-cta);display:grid;place-items:center;text-align:center;box-shadow:inset 0 0 0 4px rgba(255,255,255,.55)}
+  .stamp b{color:#fff;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:.9}
+  .stamp b small{display:block;font-size:.4em;letter-spacing:.16em;opacity:.9;margin-bottom:4px}
+  .ribcard{width:170px;height:140px;border-radius:12px;overflow:hidden;position:relative;background:var(--brand-bg-subtle)}
+  .ribbon{position:absolute;top:20px;right:-52px;transform:rotate(45deg);background:var(--brand-cta);color:#fff;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:14px;padding:7px 60px}
+  .ptag{position:relative;background:var(--brand-cta);color:#fff;padding:16px 26px 16px 34px;clip-path:polygon(18px 0,100% 0,100% 100%,18px 100%,0 50%);font-family:var(--font-condensed);font-weight:700;line-height:.9;text-align:center}
+  .ptag::before{content:"";position:absolute;left:9px;top:50%;transform:translateY(-50%);width:8px;height:8px;border-radius:50%;background:#fff}
+  .ptag small{display:block;font-size:.42em;letter-spacing:.14em;opacity:.9;margin-bottom:3px}
+  .ptag span{font-size:40px}
+  .abanner{background:var(--brand-cta);color:#fff;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:18px;padding:12px 26px;transform:skewX(-12deg)}
+  .abanner span{display:inline-block;transform:skewX(12deg)}
+  .statchip{display:flex;align-items:center;gap:14px;background:#fff;border-radius:12px;padding:16px 22px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  .statchip .n{font-family:var(--font-condensed);font-weight:700;font-size:52px;line-height:.8;color:var(--brand-primary)}
+  .statchip .t{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:#5C6B77;line-height:1.05}
+  .choice{display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--brand-primary);color:#fff;border-radius:14px;padding:14px 22px;text-align:center}
+  .choice .big{font-family:var(--font-condensed);font-weight:700;font-size:34px;line-height:.8}
+  .choice .sm{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:11px;opacity:.92}
+  .opill{background:var(--brand-cta);color:#fff;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:14px;padding:11px 22px;border-radius:999px;display:inline-flex;align-items:center;gap:8px}
+
+  .scrim{position:absolute;inset:0;z-index:1;pointer-events:none}
+  .wm{position:absolute;z-index:1;opacity:.10;pointer-events:none}
+  .logo{position:absolute;z-index:4;height:auto}
+  .knockfield{position:absolute;inset:0;z-index:1;background:var(--brand-primary);opacity:.86}
+  .knock{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:.82;background-image:var(--ph);background-size:cover;background-position:center;-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* ============ FILL STYLES + BY BRAND (scoped .bf) ============ */
+  .bf .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .bf .tile{height:180px}
+  .bf .tile.dk{background:#1b232c}
+  .bf .tile.field{background:var(--brand-hero-grad)}
+  .bf .tile .nm{position:absolute;left:0;right:0;bottom:0;font-family:var(--font-condensed);font-weight:700;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#5C6B77;text-align:center;padding:7px;background:#fff;border-top:1px solid #eef1f3}
+  .bf .tile.dk .nm,.bf .tile.field .nm{background:rgba(0,0,0,.25);color:#cdd8e2;border-top-color:rgba(255,255,255,.12)}
+  .bf .brandhdr{display:flex;align-items:baseline;gap:12px;margin:34px 0 16px}
+  .bf .brandhdr b{font-family:var(--font-display);font-weight:700;font-size:20px;color:#10202e}
+  .bf .brandhdr span{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:#5C6B77}
+  .bf .cond{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:.86}
+  .bf .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 22px;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:14px}
+  .bf .seal{position:relative;width:118px;height:118px;display:grid;place-items:center}
+  .bf .seal i{position:absolute;inset:0;border-radius:14%}
+  .bf .seal i:nth-child(2){transform:rotate(30deg)}.bf .seal i:nth-child(3){transform:rotate(60deg)}
+  .bf .seal b{position:relative;z-index:2;text-align:center;line-height:.84}
+  .bf .seal b small{display:block;font-size:.42em;letter-spacing:.12em;margin-top:3px}
+  .bf .tag{position:relative;padding:13px 22px 13px 30px;clip-path:polygon(16px 0,100% 0,100% 100%,16px 100%,0 50%);font-family:var(--font-condensed);font-weight:700;text-align:center;line-height:.9}
+  .bf .tag small{display:block;font-size:.4em;letter-spacing:.14em;margin-bottom:3px}
+  .bf .tag span{font-size:30px}
+  .f-solid{background:var(--brand-cta);color:#fff}
+  .f-grad{background:var(--brand-cta);background-image:linear-gradient(180deg,rgba(255,255,255,.18),rgba(0,0,0,.16));color:#fff}
+  .f-brandgrad{background:var(--brand-hero-grad);color:#fff}
+  .f-outline{background:transparent;border:2px solid var(--brand-cta);color:var(--brand-cta)}
+  .f-outline-dk{background:transparent;border:2px solid #fff;color:#fff}
+  .f-tint{background:rgba(48,91,125,.10);border:1.5px solid var(--brand-cta);color:var(--brand-cta)}
+  .f-elev{background:var(--brand-cta);color:#fff;box-shadow:0 8px 18px rgba(0,0,0,.22)}
+  .wave-rule{height:18px;background:no-repeat center/contain url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='18' viewBox='0 0 160 18'><path d='M0 9 Q10 0 20 9 T40 9 T60 9 T80 9 T100 9 T120 9 T140 9 T160 9' fill='none' stroke='%23E42845' stroke-width='3'/></svg>")}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Badges &amp; Callouts</h1>
+  <p class="lede">Droppable shapes for prices, savings, and short phrases — plus the fill styles and per-brand versions. Pick one, drop it on a photo or panel; color follows whichever brand you build in. The last sections show text-over-image treatments.</p>
+
+  <!-- ===== 1 · SALE & PRICE BADGES ===== -->
+  <div class="section-title">1 · Sale &amp; price badges</div>
+  <p class="section-note">The core shapes for an offer. All re-color to the active brand.</p>
+  <div class="swatches">
+    <div class="tile" data-brand="tcfl"><div class="seal"><i></i><i></i><i></i><b style="font-size:42px">50%<small>OFF</small></b></div><div class="name">Sale star (soft)</div></div>
+    <div class="tile" data-brand="afl"><div class="burst"><i></i><b style="font-size:42px">50%<small>OFF</small></b></div><div class="name">Sale star (sharp)</div></div>
+    <div class="tile" data-brand="tcfl"><div class="burst pointy"><i></i><b style="font-size:40px">50%<small>OFF</small></b></div><div class="name">Sale star (pointy)</div></div>
+    <div class="tile" data-brand="hd"><div class="stamp"><b style="font-size:30px"><small>Save</small>$200</b></div><div class="name">Round stamp</div></div>
+    <div class="tile" data-brand="afl"><div class="ribcard"><span class="ribbon">New</span></div><div class="name">Corner ribbon</div></div>
+    <div class="tile" data-brand="sd2k"><div class="ptag"><small>From</small><span>$49</span></div><div class="name">Price tag</div></div>
+    <div class="tile" data-brand="tcfl"><div class="abanner"><span>Bulk Pricing</span></div><div class="name">Angled banner</div></div>
+    <div class="tile" data-brand="hd"><div class="statchip"><span class="n">3&times;</span><span class="t">Faster<br>Rehydration</span></div><div class="name">Stat chip</div></div>
+    <div class="tile" data-brand="hd"><div class="choice"><span class="big">#1</span><span class="sm">Choice for Crews</span></div><div class="name">Choice badge</div></div>
+    <div class="tile" data-brand="afl"><div class="opill">Free Shipping ›</div><div class="name">Phrase pill</div></div>
+  </div>
+  <p class="cap" style="max-width:none;margin-top:14px"><b>Same shapes, on a dark / photo background:</b></p>
+  <div class="swatches">
+    <div class="tile dark" data-brand="tcfl"><div class="seal"><i></i><i></i><i></i><b style="font-size:36px">Save<small>$1,000</small></b></div><div class="name">Star · savings</div></div>
+    <div class="tile dark" data-brand="hd"><div class="opill">Now in Stock ›</div><div class="name">Pill · phrase</div></div>
+    <div class="tile dark" data-brand="sd2k"><div class="stamp" style="box-shadow:inset 0 0 0 4px rgba(255,255,255,.7)"><b style="font-size:24px"><small>Limited</small>Offer</b></div><div class="name">Stamp · offer</div></div>
+    <div class="tile dark" data-brand="afl"><div class="ptag"><small>Save up to</small><span>40%</span></div><div class="name">Tag · percent</div></div>
+  </div>
+
+  <!-- ===== 2 · FILL STYLES ===== -->
+  <div class="bf">
+  <div class="section-title">2 · Fill styles</div>
+  <p class="section-note">How a badge or button is filled. A subtle top-light <b>sheen</b> adds dimension without looking cheap; <b>outline</b> and <b>tint</b> read premium / technical; <b>solid</b> is the confident default.</p>
+  <div class="grid">
+    <div class="tile" data-brand="tcfl"><span class="pill f-solid">Bulk Pricing ›</span><span class="nm">Solid (default)</span></div>
+    <div class="tile" data-brand="tcfl"><span class="pill f-grad">Bulk Pricing ›</span><span class="nm">Subtle sheen</span></div>
+    <div class="tile" data-brand="hd"><span class="pill f-brandgrad">Shop Cold ›</span><span class="nm">Full brand gradient</span></div>
+    <div class="tile" data-brand="tcfl"><span class="pill f-outline">Learn More ›</span><span class="nm">Outline</span></div>
+    <div class="tile" data-brand="afl"><span class="tag f-grad"><small>Save</small><span>40%</span></span><span class="nm">Tag · sheen</span></div>
+    <div class="tile" data-brand="afl"><span class="tag f-outline" style="background:#fff"><small>Save</small><span>40%</span></span><span class="nm">Tag · outline</span></div>
+    <div class="tile dk" data-brand="sd2k"><span class="pill f-outline-dk">Reserve ›</span><span class="nm">Outline on dark</span></div>
+    <div class="tile" data-brand="tcfl"><span class="pill f-elev">Shop Now ›</span><span class="nm">Solid + shadow</span></div>
+  </div>
+
+  <!-- ===== 3 · BY BRAND ===== -->
+  <div class="section-title">3 · By brand</div>
+  <p class="section-note">The same toolkit with each brand&rsquo;s own personality — so a callout feels native to the brand it&rsquo;s on.</p>
+
+  <div class="brandhdr"><b>Traffic Cones For Less</b><span>Industrial · bold</span></div>
+  <div class="grid">
+    <div class="tile" data-brand="tcfl"><div class="seal"><i class="f-grad"></i><i class="f-grad"></i><i class="f-grad"></i><b class="cond" style="color:#fff;font-size:34px">40%<small>OFF</small></b></div><span class="nm">Bold sheen star</span></div>
+    <div class="tile" data-brand="tcfl"><div style="background:repeating-linear-gradient(45deg,#FF5100 0 18px,#162750 18px 36px);padding:13px 22px"><span class="cond" style="color:#fff;font-size:18px;background:#162750;padding:6px 12px">Caution: Deal</span></div><span class="nm">Hazard-stripe banner</span></div>
+    <div class="tile" data-brand="tcfl"><span class="tag f-solid"><small>From</small><span>$49</span></span><span class="nm">Chunky tag</span></div>
+    <div class="tile" data-brand="tcfl" style="background:#fff"><div style="width:80%"><div style="height:9px;background:repeating-linear-gradient(90deg,#2E6CB4 0 24px,transparent 24px 40px)"></div><div class="cond" style="color:#162750;font-size:20px;margin-top:12px">Built Tough</div></div><span class="nm">Dashed rule</span></div>
+  </div>
+
+  <div class="brandhdr"><b>Absorbents For Less</b><span>Technical · dependable</span></div>
+  <div class="grid">
+    <div class="tile" data-brand="afl"><div class="seal" style="width:118px;height:118px"><i style="background:transparent;border:3px solid var(--brand-primary);border-radius:50%"></i><b class="cond" style="color:var(--brand-primary);font-size:26px">Lab<small style="color:var(--brand-accent)">Tested</small></b></div><span class="nm">Certification stamp</span></div>
+    <div class="tile" data-brand="afl"><span class="tag f-outline" style="background:#fff"><small>Save up to</small><span>40%</span></span><span class="nm">Thin-rule tag</span></div>
+    <div class="tile" data-brand="afl" style="background:#fff"><div style="text-align:center"><div class="cond" style="color:var(--brand-primary);font-size:30px">Spill-Ready</div><div class="wave-rule" style="margin-top:8px"></div></div><span class="nm">Wave underline</span></div>
+    <div class="tile" data-brand="afl"><span class="pill f-grad" style="background:var(--brand-primary);background-image:linear-gradient(180deg,rgba(255,255,255,.16),rgba(0,0,0,.16))">Get the Facts ›</span><span class="nm">Primary sheen pill</span></div>
+  </div>
+
+  <div class="brandhdr"><b>Hydration Depot</b><span>Fresh · fluid</span></div>
+  <div class="grid">
+    <div class="tile field" data-brand="hd"><div class="seal"><i style="background:var(--brand-hero-grad);border-radius:42% 42% 46% 46%/40% 40% 55% 55%"></i><b class="cond" style="color:#fff;font-size:26px;z-index:3">New<small>Flavor</small></b></div><span class="nm">Droplet badge</span></div>
+    <div class="tile" data-brand="hd"><span class="pill f-brandgrad" style="border-radius:999px">Stay Cool ›</span><span class="nm">Ocean-gradient pill</span></div>
+    <div class="tile" data-brand="hd"><div style="display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:0 6px 16px rgba(0,77,147,.18)"><span class="cond" style="font-size:44px;color:var(--brand-primary)">3&times;</span><span class="cond" style="font-size:13px;color:#5C6B77;letter-spacing:.06em">Faster<br>Hydration</span></div><span class="nm">Stat chip</span></div>
+    <div class="tile field" data-brand="hd"><div style="position:relative;width:140px;height:90px"><i style="position:absolute;left:-1px;bottom:-1px;width:120px;height:120px;border-top-right-radius:100%;background:rgba(91,166,221,.9)"></i><i style="position:absolute;left:-1px;bottom:-1px;width:74px;height:74px;border-top-right-radius:100%;background:rgba(162,199,225,.95)"></i></div><span class="nm">Layered wave corner</span></div>
+  </div>
+
+  <div class="brandhdr"><b>SD2K Valet</b><span>Sleek · premium</span></div>
+  <div class="grid">
+    <div class="tile dk" data-brand="sd2k"><span class="pill" style="background:transparent;border:1.5px solid #D2D2D1;color:#fff;letter-spacing:.18em;font-weight:500">Reserve</span><span class="nm">Thin monoline pill</span></div>
+    <div class="tile dk" data-brand="sd2k"><span class="pill f-solid" style="border-radius:6px;letter-spacing:.14em">Book Valet ›</span><span class="nm">Sharp orange chip</span></div>
+    <div class="tile dk" data-brand="sd2k"><div style="text-align:center;color:#fff"><div class="cond" style="font-size:13px;letter-spacing:.3em;color:#D2D2D1">— Est. 2018 —</div><div class="cond" style="font-size:26px;margin-top:8px;letter-spacing:.04em">Built to Last</div></div><span class="nm">Premium rule lockup</span></div>
+    <div class="tile dk" data-brand="sd2k"><div class="seal" style="width:112px;height:112px"><i style="background:transparent;border:1.5px solid #D2D2D1;border-radius:50%"></i><b class="cond" style="color:#fff;font-size:22px;letter-spacing:.08em">VIP<small style="color:var(--brand-cta)">Service</small></b></div><span class="nm">Silver-ring seal</span></div>
+  </div>
+  </div>
+
+  <!-- ===== 4 · TEXT OVER IMAGE ===== -->
+  <div class="section-title">4 · Text over image · faded logo</div>
+  <p class="section-note">Headline-led treatments with the faded background logo. Drop your image; the rest follows the brand.</p>
+  <div class="row">
+    <div class="item">
+      <div class="frame"><div class="art" data-brand="tcfl" data-w="1000" data-h="1000" data-disp="330">
+        <image-slot class="photo" id="cl-th1" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image"></image-slot>
+        <div class="scrim" style="background:linear-gradient(0deg,rgba(8,18,30,.78),rgba(8,18,30,.15) 55%,rgba(8,18,30,.35))"></div>
+        <img class="wm" src="assets/logos/tcfl/tcfl-stacked-white.png" style="right:-40px;top:-30px;width:360px">
+        <h2 class="cond" style="position:absolute;left:60px;bottom:150px;z-index:3;color:#fff;font-size:90px">Stay<br>Visible.</h2>
+        <img class="logo" src="assets/logos/tcfl/tcfl-horizontal-white.png" style="left:60px;bottom:58px;height:52px">
+      </div></div>
+      <div class="cap"><b>Bottom-left</b> · headline low, faded logo top-right</div>
+    </div>
+    <div class="item">
+      <div class="frame"><div class="art" data-brand="afl" data-w="1000" data-h="1000" data-disp="330">
+        <image-slot class="photo" id="cl-th2" shape="rect" src="assets/placeholders/afl.jpg" placeholder="Drop image"></image-slot>
+        <div class="scrim" style="background:rgba(0,55,75,.5)"></div>
+        <img class="wm" src="assets/logos/afl/afl-icon-white.png" style="left:50%;top:50%;transform:translate(-50%,-50%);width:520px;opacity:.12">
+        <h2 class="cond" style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-size:84px">Be<br>Ready.</h2>
+        <img class="logo" src="assets/logos/afl/afl-horizontal-white.png" style="left:50%;bottom:54px;transform:translateX(-50%);height:50px">
+      </div></div>
+      <div class="cap"><b>Centered</b> · full faded logo behind, headline centered</div>
+    </div>
+    <div class="item">
+      <div class="frame"><div class="art" data-brand="hd" data-w="1000" data-h="1000" data-disp="330">
+        <image-slot class="photo" id="cl-th3" shape="rect" src="assets/placeholders/hd.jpg" placeholder="Drop image"></image-slot>
+        <div class="scrim" style="background:linear-gradient(90deg,rgba(0,77,147,.8),rgba(0,77,147,0) 70%)"></div>
+        <img class="wm" src="assets/logos/hd/hd-stacked-white.png" style="left:-30px;bottom:-20px;width:300px">
+        <h2 class="cond" style="position:absolute;left:60px;top:50%;transform:translateY(-50%);z-index:3;color:#fff;font-size:78px">Hydrate<br>the<br>Crew.</h2>
+        <img class="logo" src="assets/logos/hd/hd-horizontal-white.png" style="right:54px;top:54px;height:46px">
+      </div></div>
+      <div class="cap"><b>Left-anchored</b> · centered headline, faded logo low-left</div>
+    </div>
+  </div>
+
+  <!-- ===== 5 · KNOCKOUT TYPE ===== -->
+  <div class="section-title">5 · Knockout type over image</div>
+  <div class="row">
+    <div class="item">
+      <div class="frame"><div class="art" data-brand="sd2k" data-w="1000" data-h="1000" data-disp="330" style="--ph:url('assets/placeholders/sd2k.jpg')">
+        <div style="position:absolute;inset:0;z-index:0;background-image:var(--ph);background-size:cover;background-position:center"></div>
+        <div class="knockfield" style="background:#000;opacity:.62"></div>
+        <div class="knock" style="font-size:188px"><span>Built</span><span>to Last</span></div>
+        <img class="logo" src="assets/logos/sd2k/sd2k-horizontal.png" style="left:50%;bottom:56px;transform:translateX(-50%);height:66px">
+      </div></div>
+      <div class="cap"><b>Knockout over photo</b> · the image shows through the letters; the rest sits under a wash</div>
+    </div>
+    <div class="item">
+      <div class="frame"><div class="art" data-brand="afl" data-w="1200" data-h="240" data-disp="700" style="--ph:url('assets/placeholders/afl.jpg')">
+        <div style="position:absolute;inset:0;z-index:0;background-image:var(--ph);background-size:cover;background-position:center"></div>
+        <div class="knockfield" style="background:var(--brand-primary);opacity:.85"></div>
+        <div class="knock" style="font-size:130px;flex-direction:row;gap:.2em"><span>Contain It.</span></div>
+        <img class="logo" src="assets/logos/afl/afl-horizontal-white.png" style="right:40px;top:50%;transform:translateY(-50%);height:34px">
+      </div></div>
+      <div class="cap"><b>Knockout banner</b> · same effect in the wide blog format</div>
+    </div>
+  </div>
+
+  <!-- ===== 6 · PANEL + BADGE ===== -->
+  <div class="section-title">6 · Panels + a badge</div>
+  <div class="row">
+    <div class="item">
+      <div class="frame"><div class="art" data-brand="hd" data-w="1000" data-h="1000" data-disp="330">
+        <image-slot class="photo" id="cl-lp2" shape="rect" src="assets/placeholders/hd.jpg" placeholder="Drop image"></image-slot>
+        <div class="scrim" style="background:linear-gradient(120deg,rgba(0,77,147,.5),rgba(0,77,147,0) 60%)"></div>
+        <div style="position:absolute;left:56px;bottom:150px;z-index:2;background:rgba(0,77,147,.86);padding:16px 24px"><span class="cond" style="color:var(--brand-soft);font-size:18px;letter-spacing:.14em">Workforce Program</span></div>
+        <div style="position:absolute;left:56px;bottom:58px;z-index:2;background:rgba(91,166,221,.94);padding:20px 26px"><h2 class="pop" style="color:#fff;font-size:42px">Hydration,<br>Handled.</h2></div>
+        <div class="seal" style="position:absolute;right:48px;top:48px;z-index:3;width:150px;height:150px"><i></i><i></i><i></i><b style="font-size:30px">Save<small>20%</small></b></div>
+      </div></div>
+      <div class="cap"><b>Panels + star</b> · layered blocks for hierarchy, plus a savings star</div>
+    </div>
+  </div>
+
+</div>
+<script src="image-slot.js"></script>
+<script>
+  function layout(){
+    document.querySelectorAll('.art').forEach(a=>{
+      const w=+a.dataset.w,h=+a.dataset.h; a.style.width=w+'px';a.style.height=h+'px';
+      const disp=+a.dataset.disp||330; const s=Math.min(1,disp/w);
+      a.style.transform='scale('+s+')';
+      const fr=a.closest('.frame'); fr.style.width=Math.round(w*s)+'px'; fr.style.height=Math.round(h*s)+'px';
+    });
+  }
+  layout(); window.addEventListener('resize',layout);
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Form Inputs" subtitle="Labels, fields, focus ring, select" viewport="700x290" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--oes-white);padding:22px;display:flex;flex-direction:column;gap:14px;max-width:420px}
+  label{font-family:var(--font-condensed);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oes-primary);display:block;margin-bottom:6px}
+  input,select{width:100%;box-sizing:border-box;font-family:var(--font-primary);font-size:15px;padding:11px 14px;border:1.5px solid var(--divider);border-radius:var(--radius-md);color:var(--fg);background:#fff;outline:none}
+  input:focus{border-color:var(--oes-primary);box-shadow:0 0 0 3px rgba(48,91,125,.12)}
+  input::placeholder{color:#9aa7b1}
+  .focused{border-color:var(--oes-primary);box-shadow:0 0 0 3px rgba(48,91,125,.12)}
+</style></head>
+<body>
+  <div><label>Company</label><input value="OES Global Inc."></div>
+  <div><label>Email</label><input class="focused" placeholder="you@oesglobalinc.com"></div>
+  <div><label>Division</label><select><option>Parent Company</option><option>Safety Supply</option></select></div>
+</body></html>

@@ -1,0 +1,24 @@
+[
+  {
+    "type":"thumb","file":"q2-w12-thumbnail-h-hd-liquidiv","W":1280,"H":720,
+    "grad":[[0,"#0F60B2"],[0.55,"#3D8FCE"],[1,"#5BA6DD"]],
+    "starColor":"#6E8AE0","gold":"#F2C811",
+    "logoWhite":"assets/logos/hd/hd-horizontal-white.png","iconWhite":"assets/logos/hd/hd-stacked-white.png",
+    "iconBox":520,"iconAnchor":"br","iconBleed":90,"iconOpacity":0.08,
+    "pad":50,"logoH":40,"logoMaxW":230,"logoY":42,
+    "eyebrow":"Rumors Are True","ebSize":21,"ebAlign":"right","ebY":48,
+    "lines":[{"t":"Hydration Depot"},{"t":"Now Has"},{"t":"Liquid I.V.","accent":true}],
+    "hSize":100,"headMaxPad":150,"starSize":40,"starGap":22,"mb":26
+  },
+  {
+    "type":"thumb","file":"q2-w12-thumbnail-v-hd-liquidiv","W":1080,"H":1920,
+    "grad":[[0,"#0F60B2"],[0.55,"#3D8FCE"],[1,"#5BA6DD"]],
+    "starColor":"#6E8AE0","gold":"#F2C811",
+    "logoWhite":"assets/logos/hd/hd-horizontal-white.png","iconWhite":"assets/logos/hd/hd-stacked-white.png",
+    "iconBox":760,"iconAnchor":"center","iconOpacity":0.09,
+    "pad":54,"logoH":46,"logoMaxW":300,"logoY":60,
+    "eyebrow":"Rumors Are True","ebSize":30,"ebAlign":"left","ebY":154,
+    "lines":[{"t":"Hydration Depot"},{"t":"Now Has"},{"t":"Liquid I.V.","accent":true}],
+    "hSize":150,"headMaxPad":108,"starSize":60,"starGap":28,"mb":40
+  }
+]

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Thumbnail Templates — OES</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .switch{position:sticky;top:0;z-index:50;background:#10202e;padding:13px 32px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .switch .sl{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#7f97a8;margin-right:6px}
+  .switch button{font-family:var(--font-primary);font-weight:500;font-size:13px;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;background:rgba(255,255,255,.1);color:#cdd8e2;transition:background .15s}
+  .switch button:hover{background:rgba(255,255,255,.2)}
+  .switch button.on{background:#fff;color:#10202e}
+  .page{max-width:1120px;margin:0 auto;padding:30px 32px 120px}
+  h1{font-family:var(--font-display);font-weight:700;font-size:28px;margin:0 0 6px;color:#10202e}
+  .lede{font-size:15px;line-height:1.6;color:#5C6B77;margin:0 0 8px;max-width:780px}
+  .ref{background:#fff;border:1px solid #dfe3e7;border-radius:10px;padding:16px 20px;margin:6px 0 8px;max-width:780px}
+  .ref b{font-family:var(--font-primary);color:#10202e;font-size:14px}
+  .ref ul{margin:8px 0 0;padding-left:18px;color:#5C6B77;font-size:13.5px;line-height:1.7}
+  .ref code{font-family:var(--font-condensed);font-weight:700;color:#2E6CB4}
+  .group-h{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#2E6CB4;border-bottom:2px solid #d4d8dd;padding-bottom:10px;margin:34px 0 24px}
+  .row{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start}
+  .item{display:flex;flex-direction:column;gap:10px;margin-bottom:8px}
+  .cap{font-family:var(--font-condensed);font-size:12px;color:#5C6B77;max-width:560px}
+  .cap b{font-weight:700;color:#10202e;font-family:var(--font-primary)}
+  .frame{box-shadow:0 8px 24px rgba(16,32,46,.18);overflow:hidden;border-radius:5px}
+
+  #stage{--th-gold:#F2C811;--th-star:#6E8AE0}
+  .tn{position:relative;transform-origin:top left;overflow:hidden;background:#10202e}
+  .img{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+  .corner-logo{position:absolute;z-index:6;background:var(--brand-logo-dark) no-repeat left center/contain}
+  .eyebrow{position:absolute;z-index:6;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:#fff}
+  .huge{font-family:var(--font-condensed);font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:-.005em;color:#fff;margin:0}
+  .huge .gold{color:var(--th-gold)}
+  .stars{display:flex;z-index:5}
+  .stars span{display:block;background:var(--th-star);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+  .scrimB{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(8,16,26,.82) 0%,rgba(8,16,26,.18) 46%,rgba(8,16,26,.28) 100%)}
+  .field{position:absolute;inset:0;z-index:0;background:var(--brand-hero-grad)}
+  .wm{position:absolute;z-index:1;opacity:.08;pointer-events:none}
+  /* Template 3 — diagonal brand wedge across the bottom */
+  .wedge{position:absolute;left:0;right:0;bottom:0;z-index:4}
+  .wedge-fill{position:absolute;inset:0;background:var(--brand-hero-bg)}
+  .w-eyebrow{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#fff}
+  .w-line{height:4px;background:#fff;border:0;margin:0}
+  .w-head{font-family:var(--font-condensed);font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:-.005em;color:#fff;margin:0}
+  .w-head .acc{color:var(--brand-accent)}
+
+  /* Template 4 — right-aligned, bottom-right gradient */
+  .t4scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(315deg,rgba(8,16,26,.90) 0%,rgba(8,16,26,.48) 42%,rgba(8,16,26,0) 72%)}
+</style>
+</head>
+<body>
+<div class="switch">
+  <span class="sl">Brand</span>
+  <button data-b="oes" class="on">OES Global</button>
+  <button data-b="tcfl">Traffic Cones</button>
+  <button data-b="hd">Hydration Depot</button>
+  <button data-b="afl">Absorbents</button>
+  <button data-b="sd2k">SD2K Valet</button>
+</div>
+<div class="page">
+  <h1>YouTube Thumbnail Templates</h1>
+  <p class="lede">Two crops per concept: <b>horizontal</b> 1280×720 (desktop) and <b>vertical</b> 1080×1920 (mobile / Shorts). Brand logo top-left, oversized condensed headline, star motif + gold accent word. <b>Template 1</b> photo-led · <b>Template 2</b> text-only · <b>Template 3</b> diagonal brand wedge ("Who We Are"). Switch brand above to re-theme.</p>
+  <div class="ref">
+    <b>Image placement vocabulary</b> — tell me one and I&rsquo;ll set the crop so the subject reads best:
+    <ul>
+      <li><code>CENTER</code> · <code>LEFT</code> · <code>RIGHT</code> · <code>TOP</code> · <code>BOTTOM</code> (and combos like <code>TOP-RIGHT</code>, <code>BOTTOM-LEFT</code>)</li>
+      <li>Plus <code>ZOOM IN</code> / <code>ZOOM OUT</code> to tighten or loosen the crop.</li>
+    </ul>
+  </div>
+
+  <div id="stage" data-brand="oes">
+
+  <div class="group-h">Template 1 · Photo-led</div>
+  <div class="row">
+    <!-- H1 -->
+    <div class="item">
+      <div class="frame"><div class="tn" data-w="1280" data-h="720" data-disp="520">
+        <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-sunset-team.jpg');background-position:50% 30%"></div>
+        <div class="scrimB"></div>
+        <div class="corner-logo" style="left:46px;top:40px;height:40px;width:230px"></div>
+        <div class="eyebrow" style="right:46px;top:46px;font-size:21px">Eyebrow &middot; 2026</div>
+        <div class="stars" style="position:absolute;left:46px;bottom:215px;gap:26px">
+          <span style="width:54px;height:54px"></span><span style="width:54px;height:54px"></span><span style="width:54px;height:54px"></span><span style="width:54px;height:54px"></span><span style="width:54px;height:54px"></span>
+        </div>
+        <h2 class="huge" style="position:absolute;left:42px;bottom:46px;z-index:5;font-size:130px">Punchy <span class="gold">Title</span></h2>
+      </div></div>
+      <div class="cap"><b>Horizontal · 1280×720</b> — full-bleed photo + giant headline</div>
+    </div>
+    <!-- V1 -->
+    <div class="item">
+      <div class="frame"><div class="tn" data-w="1080" data-h="1920" data-disp="240">
+        <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-sunset-team.jpg');background-position:50% 28%"></div>
+        <div class="scrimB" style="background:linear-gradient(0deg,rgba(8,16,26,.86) 0%,rgba(8,16,26,.15) 45%,rgba(8,16,26,.4) 100%)"></div>
+        <div class="corner-logo" style="left:54px;top:60px;height:46px;width:300px"></div>
+        <div class="eyebrow" style="left:54px;top:128px;font-size:26px;color:var(--th-star)">Eyebrow &middot; 2026</div>
+        <div class="stars" style="position:absolute;left:54px;bottom:430px;gap:30px"><span style="width:64px;height:64px"></span><span style="width:64px;height:64px"></span><span style="width:64px;height:64px"></span><span style="width:64px;height:64px"></span><span style="width:64px;height:64px"></span></div>
+        <h2 class="huge" style="position:absolute;left:50px;right:50px;bottom:70px;z-index:5;font-size:150px">Punchy <span class="gold">Title</span></h2>
+      </div></div>
+      <div class="cap"><b>Vertical · 1080×1920</b> — mobile / Shorts</div>
+    </div>
+  </div>
+
+  <div class="group-h">Template 2 · Text-only (no photo)</div>
+  <div class="row">
+    <!-- H2 -->
+    <div class="item">
+      <div class="frame"><div class="tn" data-w="1280" data-h="720" data-disp="520">
+        <div class="field"></div>
+        <div class="wm" style="right:-90px;bottom:-90px;width:520px;height:520px;background:var(--brand-icon-dark) no-repeat center/contain"></div>
+        <div class="corner-logo" style="left:50px;top:42px;height:40px;width:230px"></div>
+        <div class="eyebrow" style="right:50px;top:48px;font-size:21px;color:var(--th-star)">Episode 04</div>
+        <div style="position:absolute;left:50px;top:50%;transform:translateY(-50%);z-index:5">
+          <div class="stars" style="gap:22px;margin-bottom:26px"><span style="width:40px;height:40px"></span><span style="width:40px;height:40px"></span><span style="width:40px;height:40px"></span><span style="width:40px;height:40px"></span><span style="width:40px;height:40px"></span></div>
+          <h2 class="huge" style="font-size:104px">Built To<br>Do <span class="gold">More.</span></h2>
+        </div>
+      </div></div>
+      <div class="cap"><b>Horizontal · 1280×720</b> — text-only on the brand field + ghost icon</div>
+    </div>
+    <!-- V2 -->
+    <div class="item">
+      <div class="frame"><div class="tn" data-w="1080" data-h="1920" data-disp="240">
+        <div class="field"></div>
+        <div class="wm" style="left:50%;top:50%;transform:translate(-50%,-50%);width:760px;height:760px;background:var(--brand-icon-dark) no-repeat center/contain;opacity:.09"></div>
+        <div class="corner-logo" style="left:54px;top:60px;height:46px;width:300px"></div>
+        <div style="position:absolute;left:54px;right:54px;top:50%;transform:translateY(-50%);z-index:5">
+          <div class="stars" style="gap:28px;margin-bottom:40px"><span style="width:60px;height:60px"></span><span style="width:60px;height:60px"></span><span style="width:60px;height:60px"></span><span style="width:60px;height:60px"></span><span style="width:60px;height:60px"></span></div>
+          <h2 class="huge" style="font-size:150px">Built To<br>Do <span class="gold">More.</span></h2>
+        </div>
+      </div></div>
+      <div class="cap"><b>Vertical · 1080×1920</b> — text-only</div>
+    </div>
+  </div>
+
+  <div class="group-h">Template 3 · Diagonal wedge (the "Who We Are" format)</div>
+  <div class="row">
+    <!-- H3 -->
+    <div class="item">
+      <div class="frame"><div class="tn" data-w="1280" data-h="720" data-disp="520">
+        <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-sunset-team.jpg');background-position:62% 35%"></div>
+        <div class="wm" style="background:radial-gradient(circle at 70% 30%,rgba(8,16,26,0),rgba(8,16,26,.45));inset:0;opacity:1"></div>
+        <div class="wedge" style="height:360px">
+          <svg viewBox="0 0 1280 360" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><polygon points="0,160 1280,0 1280,360 0,360" fill="var(--brand-hero-bg)"></polygon></svg>
+          <div style="position:absolute;left:70px;bottom:60px;right:70px">
+            <div class="w-eyebrow" style="font-size:26px;margin-bottom:14px">Eyebrow Label</div>
+            <hr class="w-line" style="width:90px;margin-bottom:20px">
+            <h2 class="w-head" style="font-size:72px">Punchy Headline<br>In <span class="acc">Two Lines</span></h2>
+          </div>
+        </div>
+      </div></div>
+      <div class="cap"><b>Horizontal · 1280×720</b> — photo + brand wedge, eyebrow over accent line, accent emphasis word</div>
+    </div>
+    <!-- V3 -->
+    <div class="item">
+      <div class="frame"><div class="tn" data-w="1080" data-h="1920" data-disp="240">
+        <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-sunset-team.jpg');background-position:58% 30%"></div>
+        <div class="wm" style="background:radial-gradient(circle at 70% 25%,rgba(8,16,26,0),rgba(8,16,26,.4));inset:0;opacity:1"></div>
+        <div class="wedge" style="height:760px">
+          <svg viewBox="0 0 1080 760" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><polygon points="0,230 1080,0 1080,760 0,760" fill="var(--brand-hero-bg)"></polygon></svg>
+          <div style="position:absolute;left:70px;bottom:90px">
+            <div class="w-eyebrow" style="font-size:38px;margin-bottom:18px">Eyebrow Label</div>
+            <hr class="w-line" style="width:120px;height:6px;margin-bottom:30px">
+            <h2 class="w-head" style="font-size:118px">Punchy<br>Headline<br>In <span class="acc">Lines</span></h2>
+          </div>
+        </div>
+      </div></div>
+      <div class="cap"><b>Vertical · 1080×1920</b> — mobile / Shorts; headline above eyebrow stacking avoided</div>
+    </div>
+  </div>
+
+  <div class="group-h">Template 4 · Right-aligned headline + bottom-right gradient</div>
+  <div class="row">
+    <!-- H4 -->
+    <div class="item">
+      <div class="frame"><div class="tn" data-w="1280" data-h="720" data-disp="520">
+        <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-sunset-team.jpg');background-position:30% 35%"></div>
+        <div class="t4scrim"></div>
+        <div class="corner-logo" style="left:46px;top:40px;height:40px;width:230px"></div>
+        <div style="position:absolute;right:60px;bottom:60px;z-index:5;text-align:right">
+          <h2 class="huge" style="font-size:110px">Big <span class="gold">Title</span><br>Goes Here</h2>
+        </div>
+      </div></div>
+      <div class="cap"><b>Horizontal · 1280×720</b> — right-aligned headline + bottom-right gradient</div>
+    </div>
+    <!-- V4 -->
+    <div class="item">
+      <div class="frame"><div class="tn" data-w="1080" data-h="1920" data-disp="240">
+        <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-sunset-team.jpg');background-position:35% 30%"></div>
+        <div class="t4scrim"></div>
+        <div class="corner-logo" style="left:54px;top:60px;height:46px;width:300px"></div>
+        <div style="position:absolute;right:60px;bottom:120px;z-index:5;text-align:right">
+          <h2 class="huge" style="font-size:140px;line-height:.92">Big <span class="gold">Title</span><br>Goes Here</h2>
+        </div>
+      </div></div>
+      <div class="cap"><b>Vertical · 1080×1920</b> — mobile / Shorts</div>
+    </div>
+  </div>
+
+  </div>
+</div>
+<script>
+  const stage=document.getElementById('stage');
+  document.querySelectorAll('.switch button').forEach(b=>{
+    b.addEventListener('click',()=>{document.querySelectorAll('.switch button').forEach(x=>x.classList.remove('on'));b.classList.add('on');stage.dataset.brand=b.dataset.b;});
+  });
+  function layout(){
+    document.querySelectorAll('.tn').forEach(a=>{
+      const w=+a.dataset.w,h=+a.dataset.h; a.style.width=w+'px';a.style.height=h+'px';
+      const disp=+a.dataset.disp||520; const s=Math.min(1,disp/w);
+      a.style.transform='scale('+s+')';
+      const fr=a.closest('.frame'); fr.style.width=Math.round(w*s)+'px'; fr.style.height=Math.round(h*s)+'px';
+    });
+  }
+  layout(); window.addEventListener('resize',layout);
+</script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="../">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q2 · Week 11 — Weekly Content</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .top{background:#10202e;color:#fff;padding:30px 40px}
+  .top .wrap{max-width:1120px;margin:0 auto;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .top h1{font-family:var(--font-display);font-weight:700;font-size:26px;margin:0}
+  .top .meta{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#7f97a8}
+  .top a.back{margin-left:auto;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:#cdd8e2;text-decoration:none;background:rgba(255,255,255,.1);padding:8px 16px;border-radius:999px}
+  .page{max-width:1120px;margin:0 auto;padding:30px 40px 120px}
+
+  .brand-sec{margin-top:40px;border-top:3px solid #d4d8dd;padding-top:8px}
+  .brand-head{display:flex;align-items:center;gap:14px;margin:14px 0 22px}
+  .brand-chip{width:30px;height:30px;border-radius:7px;flex:none}
+  .brand-head b{font-family:var(--font-display);font-weight:700;font-size:20px;color:#10202e}
+  .brand-head span{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:#5C6B77}
+
+  .group-h{font-family:var(--font-condensed);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#2E6CB4;margin:22px 0 16px}
+  .row{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start}
+  .item{display:flex;flex-direction:column;gap:9px;margin-bottom:6px}
+  .cap{font-family:var(--font-condensed);font-size:12px;color:#5C6B77}
+  .cap b{font-weight:700;color:#10202e;font-family:var(--font-primary)}
+  .frame{box-shadow:0 8px 24px rgba(16,32,46,.16);overflow:hidden;border-radius:5px}
+  .await{font-family:var(--font-primary);font-size:14px;color:#8a97a1;background:#fff;border:1px dashed #c4ccd3;border-radius:10px;padding:22px 26px}
+
+  /* shared piece styling */
+  .art{position:relative;transform-origin:top left;overflow:hidden;background:#10202e}
+  .img{position:absolute;inset:0;z-index:0;background-size:cover}
+  .cond{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:.94;margin:0;color:#fff}
+  .rule{width:46px;height:3px;border:0;margin:0;background:var(--brand-accent)}
+  .kick{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.85)}
+  .bdy{font-family:var(--font-primary);font-weight:300;line-height:1.5;margin:0;color:rgba(255,255,255,.9)}
+  .pill{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:var(--brand-cta);border-radius:8px;display:inline-flex;align-items:center;gap:9px;white-space:nowrap;align-self:flex-start}
+  .barlogo{height:42px;width:240px;background:var(--brand-bar-logo) no-repeat center/contain}
+  .scrimB{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(8,16,26,.9) 0%,rgba(8,16,26,.3) 42%,rgba(8,16,26,0) 70%)}
+  .logo-c{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);z-index:4;height:54px;width:300px;background:var(--brand-logo-dark) no-repeat center/contain}
+  /* Blog Template 1 — solid color panel, Roboto Black headline, no CTA */
+  .panel{position:absolute;left:0;top:0;bottom:0;z-index:2;display:flex;flex-direction:column;justify-content:center;background:var(--brand-primary);clip-path:polygon(0 0,100% 0,calc(100% - 64px) 100%,0 100%);padding:0 5% 0 48px}
+  .ekick{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#fff;line-height:1;background:var(--brand-cta);padding:7px 12px 6px;align-self:flex-start;border-radius:4px}
+  .head{font-family:var(--font-primary);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.02;letter-spacing:-.005em;margin:0}
+  /* LinkedIn Article Template 1 — navy angled panel + accent seam, Poppins title */
+  .vcol{position:absolute;left:0;top:0;bottom:0;width:50%;z-index:2;background:var(--brand-hero-bg);clip-path:polygon(0 0,100% 0,calc(100% - 86px) 100%,0 100%);display:flex;flex-direction:column;justify-content:center;gap:20px;padding:0 12% 0 54px}
+  .vseam{position:absolute;left:50%;top:-14%;height:128%;width:5px;background:var(--brand-accent);transform:rotate(8.2deg);transform-origin:top center;z-index:3}
+  .tt{font-family:var(--font-display);font-weight:700;line-height:1.06;letter-spacing:-.015em;margin:0;color:#fff}
+  /* content-driven split: panel hugs text, image fills remaining space (no white gaps) */
+  .bw{display:flex;overflow:hidden}
+  .bw .bp{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;background:var(--brand-hero-bg);padding:0 90px 0 48px;clip-path:polygon(0 0,100% 0,calc(100% - 44px) 100%,0 100%)}
+  .bw .bi{flex:1;background-size:cover;background-position:center;margin-left:-48px}
+  /* HD curved panel (blog signature) */
+  .panel.curve{clip-path:none;overflow:visible}
+  .panel.curve::after{content:"";position:absolute;right:-7%;top:-30%;height:160%;width:42%;background:inherit;border-radius:50%;z-index:-1}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <h1>Week 11</h1>
+  <span class="meta">Q2 · 2026 · all brands</span>
+  <a class="back" href="index.html">← System Home</a>
+</div></div>
+
+<div class="page">
+
+  <!-- ===================== TRAFFIC CONES FOR LESS ===================== -->
+  <div class="brand-sec" data-brand="tcfl">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>Traffic Cones For Less</b><span>B11 · MUTCD / National Safety Month</span></div>
+
+    <div class="group-h">Blog header + LinkedIn article · Template 1 · 1200×240 / 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="240" data-disp="540">
+          <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-flagger-cones.jpg');background-position:72% 100%"></div>
+          <div class="panel" style="width:54%;background:var(--brand-hero-bg)">
+            <div class="ekick" style="font-size:16px;margin-bottom:13px">National Safety Month</div>
+            <h2 class="head" style="font-size:46px">Is Your Work Zone<br>MUTCD-Compliant?</h2>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w11-blog-tcfl</b> · 1200×240</div>
+      </div>
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="540">
+          <div style="height:75px;background:var(--brand-bar-bg);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(0,0,0,.08)"><div class="barlogo"></div></div>
+          <div style="position:absolute;top:75px;left:0;right:0;bottom:0;overflow:hidden">
+            <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-flagger-cones.jpg');background-position:64% 100%"></div>
+            <div class="vcol">
+              <div style="display:flex;align-items:center;gap:14px"><hr class="rule"><span class="kick" style="font-size:16px">National Safety Month</span></div>
+              <h2 class="tt" style="font-size:50px">Is Your Work Zone<br>MUTCD-Compliant?</h2>
+              <p class="bdy" style="font-size:20px;max-width:90%">Keep your crew, and everyone around the work zone, safe this season.</p>
+              <span class="pill" style="font-size:20px;padding:15px 28px;margin-top:4px">Read the Breakdown →</span>
+            </div>
+            <div class="vseam"></div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w11-article-tcfl</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="360">
+          <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-sunset-excavator.jpg');background-position:50% 30%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:150px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">National Safety Month</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:62px">5 MUTCD Rules<br>Crews Miss</h2>
+            <span class="pill" style="font-size:19px;padding:14px 28px;margin-top:24px;align-self:center">Shop Safety →</span>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w11-post-tcfl</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HYDRATION DEPOT ===================== -->
+  <div class="brand-sec" data-brand="hd">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>Hydration Depot</b><span>W11 · OSHA Heat NEP / National Safety Month</span></div>
+
+    <div class="group-h">Blog header + LinkedIn article · Template 1 · 1200×240 / 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art bw" data-w="1200" data-h="240" data-disp="540" style="background:var(--brand-hero-bg)">
+          <div class="bp">
+            <div class="ekick" style="font-size:16px;margin-bottom:13px">National Safety Month</div>
+            <h2 class="head" style="font-size:46px">Is Your Heat Plan<br>OSHA-Ready?</h2>
+          </div>
+          <div class="bi" style="background-image:url('assets/imagery/hd/hd-worker-brow.jpg');background-position:center 32%"></div>
+        </div></div>
+        <div class="cap"><b>q2-w11-blog-hd</b> · 1200×240</div>
+      </div>
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="540">
+          <div style="height:75px;background:var(--brand-bar-bg);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(0,0,0,.08)"><div class="barlogo"></div></div>
+          <div style="position:absolute;top:75px;left:0;right:0;bottom:0;overflow:hidden">
+            <div class="img" style="background-image:url('assets/imagery/hd/hd-worker-brow.jpg');background-position:80% 32%"></div>
+            <div class="vcol">
+              <div style="display:flex;align-items:center;gap:14px"><hr class="rule"><span class="kick" style="font-size:16px">National Safety Month</span></div>
+              <h2 class="tt" style="font-size:50px">Is Your<br>Heat Plan<br>OSHA-Ready?</h2>
+              <p class="bdy" style="font-size:20px;max-width:90%">Water, rest, and shade, plus what OSHA&rsquo;s Heat NEP now expects of your crew.</p>
+              <span class="pill" style="font-size:20px;padding:15px 28px;margin-top:4px">Read the Guide →</span>
+            </div>
+            <div class="vseam"></div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w11-article-hd</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · W11P2 · heat-season urgency · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="360">
+          <div class="img" style="background-image:url('assets/imagery/hd/hd-worker-heat.jpg');background-position:50% 30%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:140px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">Heat Season Is Here</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:64px">A Cooler Isn&rsquo;t<br>a Plan.</h2>
+            <span class="pill" style="font-size:19px;padding:14px 28px;margin-top:24px;align-self:center">Stock Hydration →</span>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w11-post-hd</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== ABSORBENTS FOR LESS ===================== -->
+  <div class="brand-sec" data-brand="afl">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>Absorbents For Less</b><span>B11 · Spill Response / National Safety Month</span></div>
+
+    <div class="group-h">Blog header + LinkedIn article · Template 1 · 1200×240 / 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art bw" data-w="1200" data-h="240" data-disp="540" style="background:var(--brand-hero-bg)">
+          <div class="bp">
+            <div class="ekick" style="font-size:16px;margin-bottom:13px">National Safety Month</div>
+            <h2 class="head" style="font-size:46px">Cleanup Speed<br>Is a Safety Metric</h2>
+          </div>
+          <div class="bi" style="background-image:url('assets/imagery/afl/afl-wet-floor.jpg');background-position:center 40%"></div>
+        </div></div>
+        <div class="cap"><b>q2-w11-blog-afl</b> · 1200×240</div>
+      </div>
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="540">
+          <div style="height:75px;background:var(--brand-bar-bg);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(0,0,0,.08)"><div class="barlogo"></div></div>
+          <div style="position:absolute;top:75px;left:0;right:0;bottom:0;overflow:hidden">
+            <div class="img" style="left:42%;background-image:url('assets/imagery/afl/afl-wet-floor.jpg');background-size:cover;background-position:30% 42%"></div>
+            <div class="vcol">
+              <div style="display:flex;align-items:center;gap:14px"><hr class="rule"><span class="kick" style="font-size:16px">National Safety Month</span></div>
+              <h2 class="tt" style="font-size:50px">Cleanup Speed<br>Is a Safety Metric</h2>
+              <p class="bdy" style="font-size:20px;max-width:90%">The seconds between a spill and a contained floor decide whether someone gets hurt.</p>
+              <span class="pill" style="font-size:20px;padding:15px 28px;margin-top:4px">Read the Breakdown →</span>
+            </div>
+            <div class="vseam"></div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w11-article-afl</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · W11P2 · spill-response readiness · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="360">
+          <div class="img" style="background-image:url('assets/imagery/afl/afl-lobby-spill.jpg');background-position:50% 60%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:140px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">National Safety Month</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:50px">A Few Paper Towels<br>Isn&rsquo;t a Response Plan.</h2>
+            <span class="pill" style="font-size:19px;padding:14px 28px;margin-top:24px;align-self:center">Shop Absorbents →</span>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w11-post-afl</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SD2K VALET ===================== -->
+  <div class="brand-sec" data-brand="sd2k">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>SD2K Valet</b><span>B11 · Entry-Zone Safety / National Safety Month</span></div>
+
+    <div class="group-h">Blog header + LinkedIn article · Template 1 · 1200×240 / 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="240" data-disp="540" style="background:#000">
+          <div style="position:absolute;right:0;top:0;bottom:0;width:54%;z-index:0;background-image:url('assets/imagery/sd2k/sd2k-entrance-wide.jpg');background-size:cover;background-position:center"></div>
+          <div class="panel" style="width:52%;background:#000;clip-path:polygon(0 0,100% 0,calc(100% - 64px) 100%,0 100%)">
+            <div class="ekick" style="font-size:16px;margin-bottom:13px">National Safety Month</div>
+            <h2 class="head" style="font-size:46px">Safety Starts<br>Before the Door</h2>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w11-blog-sd2k</b> · 1200×240</div>
+      </div>
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="540">
+          <div style="height:75px;background:var(--brand-bar-bg);display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(255,255,255,.08)"><div class="barlogo"></div></div>
+          <div style="position:absolute;top:75px;left:0;right:0;bottom:0;overflow:hidden">
+            <div class="img" style="background-image:url('assets/imagery/sd2k/sd2k-entrance.jpg');background-position:72% 100%;background-size:cover"></div>
+            <div class="vcol" style="background:#000">
+              <div style="display:flex;align-items:center;gap:14px"><hr class="rule"><span class="kick" style="font-size:16px">National Safety Month</span></div>
+              <h2 class="tt" style="font-size:50px">Safety Starts<br>Before the Door</h2>
+              <p class="bdy" style="font-size:20px;max-width:90%">Surface, drainage, matting, lighting, and clear paths: the five fundamentals of a safe entry zone.</p>
+              <span class="pill" style="font-size:20px;padding:15px 28px;margin-top:4px">Read the Guide →</span>
+            </div>
+            <div class="vseam"></div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w11-article-sd2k</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · W11P2 · entry-zone / design-first · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="360">
+          <div class="img" style="background-image:url('assets/imagery/sd2k/sd2k-valet-sunset.jpg');background-position:50% 42%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:140px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">National Safety Month</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:50px">Every Guest Should<br>Arrive Safely.</h2>
+            <span class="pill" style="font-size:19px;padding:14px 28px;margin-top:24px;align-self:center">Shop Valet Safety →</span>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w11-post-sd2k</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== OES GLOBAL (umbrella) ===================== -->
+  <div class="brand-sec" data-brand="oes">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>OES Global</b><span>W11 · Umbrella / National Safety Month Week 2</span></div>
+
+    <div class="group-h">LinkedIn article · Template 1 · 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="840">
+          <div style="height:75px;background:var(--brand-bar-bg);display:flex;align-items:center;justify-content:center"><div class="barlogo"></div></div>
+          <div style="position:absolute;top:75px;left:0;right:0;bottom:0;overflow:hidden">
+            <div class="img" style="background-image:url('assets/imagery/oes/oes-slow-flagger.jpg');background-position:72% 100%"></div>
+            <div class="vcol">
+              <div style="display:flex;align-items:center;gap:14px"><hr class="rule"><span class="kick" style="font-size:16px">National Safety Month</span></div>
+              <h2 class="tt" style="font-size:48px">Are Your Operations<br>Compliant?</h2>
+              <p class="bdy" style="font-size:20px;max-width:92%">The operations leaders who treat June as a forcing function, not a calendar event.</p>
+              <span class="pill" style="font-size:20px;padding:15px 28px;margin-top:4px">Read the Perspective →</span>
+            </div>
+            <div class="vseam"></div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w11-article-oes</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · W11P2 · umbrella wrap · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="360">
+          <div class="img" style="background-image:url('assets/imagery/oes/oes-worker-water-sunset.jpg');background-position:50% 40%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:140px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">National Safety Month</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:56px">Audit Your<br>Safety Now.</h2>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w11-post-oes</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  function layout(){
+    document.querySelectorAll('.art').forEach(a=>{
+      const w=+a.dataset.w,h=+a.dataset.h; a.style.width=w+'px';a.style.height=h+'px';
+      const disp=+a.dataset.disp||540; const s=Math.min(1,disp/w);
+      a.style.transform='scale('+s+')';
+      const fr=a.closest('.frame'); fr.style.width=Math.round(w*s)+'px'; fr.style.height=Math.round(h*s)+'px';
+    });
+  }
+  layout(); window.addEventListener('resize',layout);
+</script>
+</body>
+</html>

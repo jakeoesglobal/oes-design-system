@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="../">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q2 · Week 12 — Weekly Content</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .top{background:#10202e;color:#fff;padding:30px 40px}
+  .top .wrap{max-width:1120px;margin:0 auto;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .top h1{font-family:var(--font-display);font-weight:700;font-size:26px;margin:0}
+  .top .meta{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#7f97a8}
+  .top a.back{margin-left:auto;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:#cdd8e2;text-decoration:none;background:rgba(255,255,255,.1);padding:8px 16px;border-radius:999px}
+  .note{max-width:1120px;margin:0 auto;padding:18px 40px 0}
+  .note .card{background:#fff;border:1px solid #dfe3e7;border-left:4px solid #2E6CB4;border-radius:8px;padding:14px 18px;font-size:13.5px;line-height:1.6;color:#5C6B77}
+  .note .card b{color:#10202e}
+  .page{max-width:1120px;margin:0 auto;padding:24px 40px 120px}
+
+  .brand-sec{margin-top:44px;border-top:3px solid #d4d8dd;padding-top:8px}
+  .brand-head{display:flex;align-items:center;gap:14px;margin:14px 0 22px}
+  .brand-chip{width:30px;height:30px;border-radius:7px;flex:none}
+  .brand-head b{font-family:var(--font-display);font-weight:700;font-size:20px;color:#10202e}
+  .brand-head span{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:#5C6B77}
+
+  .group-h{font-family:var(--font-condensed);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#2E6CB4;margin:24px 0 16px}
+  .row{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start}
+  .item{display:flex;flex-direction:column;gap:9px;margin-bottom:6px}
+  .cap{font-family:var(--font-condensed);font-size:12px;color:#5C6B77}
+  .cap b{font-weight:700;color:#10202e;font-family:var(--font-primary)}
+  .frame{box-shadow:0 8px 24px rgba(16,32,46,.16);overflow:hidden;border-radius:5px}
+
+  /* shared piece scaffold */
+  .art{position:relative;transform-origin:top left;overflow:hidden;background:#10202e}
+  .photo{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .img{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+  .rule{width:46px;height:3px;border:0;margin:0;background:var(--brand-accent)}
+  .cond{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:.94;margin:0;color:#fff}
+  .head{font-family:var(--font-primary);font-weight:900;text-transform:uppercase;color:#fff;line-height:1.04;letter-spacing:-.005em;margin:13px 0 0}
+  .kick{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.92)}
+  .bdy{font-family:var(--font-primary);font-weight:300;line-height:1.5;margin:0;color:rgba(255,255,255,.92)}
+  .pill{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:var(--brand-cta);border-radius:8px;display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
+  [data-brand="hd"] .pill{background:var(--brand-primary)}
+
+  /* Blog / Banner Template 2 — full-bleed photo + left scrim */
+  .kbox{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#fff;line-height:1;background:var(--brand-cta);padding:7px 12px 6px;align-self:flex-start;border-radius:4px}
+  [data-brand="hd"] .kbox{background:var(--brand-primary)}
+  .scrimL{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,16,26,.9) 0%,rgba(8,16,26,.66) 34%,rgba(8,16,26,.18) 60%,rgba(8,16,26,0) 80%)}
+  .overlayL{position:absolute;left:0;top:0;bottom:0;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:0 7% 0 54px}
+
+  /* Article Template 2 — 75px bar + full-image hero, centered text */
+  .bar{height:75px;display:flex;align-items:center;justify-content:center;background:var(--brand-bar-bg);position:relative;z-index:5}
+  .barlogo{height:42px;width:240px;background:var(--brand-bar-logo) no-repeat center/contain}
+  .canvas{position:relative;height:600px;overflow:hidden;background:var(--brand-bg-subtle)}
+  .softdark{position:absolute;inset:0;z-index:1;background:rgba(10,28,46,.52)}
+  .centerwrap{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:0 110px}
+  .tt{font-family:var(--font-display);font-weight:700;line-height:1.06;letter-spacing:-.015em;margin:0;color:#fff;white-space:nowrap}
+
+  /* Post Template 2 — square, full-bleed + bottom scrim, centered logo at base */
+  .scrimB{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(8,16,26,.9) 0%,rgba(8,16,26,.3) 42%,rgba(8,16,26,0) 70%)}
+  .logo-c{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);z-index:4;height:54px;width:300px;background:var(--brand-logo-dark) no-repeat center/contain}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <h1>Week 12</h1>
+  <span class="meta">Q2 · 2026 · all brands · Father&rsquo;s Day</span>
+  <a class="back" href="index.html">← System Home</a>
+</div></div>
+
+<div class="note"><div class="card">
+  <b>Template 2 — full-bleed photo + scrim</b> across every piece. Each photo is a drop-ready slot — drag the final image straight onto it and it sticks. Placeholders are stand-ins. Tell me a crop (CENTER / LEFT / RIGHT / TOP / BOTTOM, ZOOM IN/OUT) per piece when the photos land.
+</div></div>
+
+<div class="page">
+
+  <!-- ===================== OES GLOBAL ===================== -->
+  <div class="brand-sec" data-brand="oes">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>OES Global</b><span>B12 · Father&rsquo;s Day · Celebrating Fathers</span></div>
+
+    <div class="group-h">LinkedIn article · Template 2 · 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="560" data-screen-label="q2-w12-article-oes">
+          <div class="bar"><div class="barlogo"></div></div>
+          <div class="canvas">
+            <div class="img" style="background-image:url('assets/imagery/oes/oes-crew-team.jpg');background-position:50% 40%"></div>
+            <div class="softdark"></div>
+            <div class="centerwrap">
+              <div style="display:flex;align-items:center;gap:16px"><hr class="rule" style="width:34px"><span class="kick" style="font-size:16px;color:#fff">Celebrating Fathers</span><hr class="rule" style="width:34px"></div>
+              <h2 class="tt" style="font-size:54px">The People Behind<br>the Operations</h2>
+              <p class="bdy" style="font-size:23px;max-width:66%">Road crews, outdoor workers, warehouse fathers, hospitality teams. This week we see them.</p>
+              <span class="pill" style="font-size:18px;padding:14px 28px;margin-top:6px">Read Article →</span>
+            </div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w12-article-oes</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="340" data-screen-label="q2-w12-post-oes">
+          <div class="img" style="background-image:url('assets/imagery/oes/oes-worker-smiling.jpg');background-position:50% 28%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:150px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">Celebrating Fathers</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:60px">This Week We<br>Recognize the Dads</h2>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w12-post-oes</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== TRAFFIC CONES FOR LESS ===================== -->
+  <div class="brand-sec" data-brand="tcfl">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>Traffic Cones For Less</b><span>B12 · Father&rsquo;s Day · No Day Off</span></div>
+
+    <div class="group-h">Blog header · Template 2 · 1200×240</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="240" data-disp="560" data-screen-label="q2-w12-blog-tcfl">
+          <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-blog-banner.jpg');background-position:50% 50%"></div>
+          <div class="scrimL"></div>
+          <div class="overlayL">
+            <div class="kbox" style="font-size:15px;margin-bottom:13px">Father&rsquo;s Day Weekend</div>
+            <h2 class="head" style="font-size:42px">Work Zones Don&rsquo;t<br>Close for Father&rsquo;s Day</h2>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w12-blog-tcfl</b> · 1200×240</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn article · Template 2 · 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="560" data-screen-label="q2-w12-article-tcfl">
+          <div class="bar"><div class="barlogo"></div></div>
+          <div class="canvas">
+            <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-roadwork-crew.jpg');background-position:50% 35%"></div>
+            <div class="softdark"></div>
+            <div class="centerwrap">
+              <div style="display:flex;align-items:center;gap:16px"><hr class="rule" style="width:34px"><span class="kick" style="font-size:16px;color:#fff">Father&rsquo;s Day Weekend</span><hr class="rule" style="width:34px"></div>
+              <h2 class="tt" style="font-size:52px">Work Zones Don&rsquo;t<br>Close for Father&rsquo;s Day</h2>
+              <p class="bdy" style="font-size:23px;max-width:68%">The equipment operators choose this weekend determines whether their crews make it home.</p>
+              <span class="pill" style="font-size:18px;padding:14px 28px;margin-top:6px">Read Article →</span>
+            </div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w12-article-tcfl</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="340" data-screen-label="q2-w12-post-tcfl">
+          <div class="img" style="background-image:url('assets/imagery/tcfl/tcfl-cone-bridge.jpg');background-position:52% 40%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:150px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">No Day Off</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:62px">Some Dads Work<br>the Holiday</h2>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w12-post-tcfl</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HYDRATION DEPOT ===================== -->
+  <div class="brand-sec" data-brand="hd">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>Hydration Depot</b><span>B12 · Father&rsquo;s Day · Same Heat</span></div>
+
+    <div class="group-h">Blog header · Template 2 · 1200×240</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="240" data-disp="560" data-screen-label="q2-w12-blog-hd">
+          <div class="img" style="background-image:url('assets/imagery/hd/hd-blog-banner.jpg');background-position:50% 50%"></div>
+          <div class="scrimL"></div>
+          <div class="overlayL">
+            <div class="kbox" style="font-size:15px;margin-bottom:13px">Father&rsquo;s Day Weekend</div>
+            <h2 class="head" style="font-size:44px">Backyard or Job Site.<br>Dad Needs to Hydrate.</h2>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w12-blog-hd</b> · 1200×240</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn article · Template 2 · 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="560" data-screen-label="q2-w12-article-hd">
+          <div class="bar"><div class="barlogo"></div></div>
+          <div class="canvas">
+            <div class="img" style="background-image:url('assets/imagery/hd/hd-cookout-crew.jpg');background-position:50% 35%"></div>
+            <div class="softdark"></div>
+            <div class="centerwrap">
+              <div style="display:flex;align-items:center;gap:16px"><hr class="rule" style="width:34px"><span class="kick" style="font-size:16px;color:#fff">Father&rsquo;s Day Weekend</span><hr class="rule" style="width:34px"></div>
+              <h2 class="tt" style="font-size:50px">The Cookout Dad and<br>the Crew Dad. Same Problem.</h2>
+              <p class="bdy" style="font-size:23px;max-width:70%">Whether he&rsquo;s grilling or working in 95 degrees, heat depletes electrolytes fast. Here&rsquo;s what actually helps.</p>
+              <span class="pill" style="font-size:18px;padding:14px 28px;margin-top:6px">Read Article →</span>
+            </div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w12-article-hd</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="340" data-screen-label="q2-w12-post-hd">
+          <div class="img" style="background-image:url('assets/imagery/hd/hd-thumbsup-bridge.jpg');background-position:42% 42%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:150px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">Happy Father&rsquo;s Day</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:58px">To Every Dad<br>Working in the Heat</h2>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w12-post-hd</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SD2K VALET ===================== -->
+  <div class="brand-sec" data-brand="sd2k">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>SD2K Valet</b><span>B12 · Father&rsquo;s Day · Peak Night</span></div>
+
+    <div class="group-h">Blog header · Template 2 · 1200×240</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="240" data-disp="560" data-screen-label="q2-w12-blog-sd2k">
+          <div class="img" style="background-image:url('assets/imagery/sd2k/sd2k-blog-banner.jpg');background-position:50% 50%"></div>
+          <div class="scrimL"></div>
+          <div class="overlayL">
+            <div class="kbox" style="font-size:15px;margin-bottom:13px">Peak Night Ahead</div>
+            <h2 class="head" style="font-size:42px">Your Busiest Night<br>Exposes Every Gap</h2>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w12-blog-sd2k</b> · 1200×240</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn article · Template 2 · 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="560" data-screen-label="q2-w12-article-sd2k">
+          <div class="bar"><div class="barlogo"></div></div>
+          <div class="canvas">
+            <div class="img" style="background-image:url('assets/imagery/sd2k/sd2k-family-arrival.jpg');background-position:50% 30%"></div>
+            <div class="softdark"></div>
+            <div class="centerwrap">
+              <div style="display:flex;align-items:center;gap:16px"><hr class="rule" style="width:34px"><span class="kick" style="font-size:16px;color:#fff">Father&rsquo;s Day Weekend</span><hr class="rule" style="width:34px"></div>
+              <h2 class="tt" style="font-size:54px">Is Your Property Ready<br>for Its Busiest Night?</h2>
+              <p class="bdy" style="font-size:23px;max-width:66%">Father&rsquo;s Day is a top-5 dining occasion. If your entry zone isn&rsquo;t set up for the surge, guests feel it first.</p>
+              <span class="pill" style="font-size:18px;padding:14px 28px;margin-top:6px">Read Article →</span>
+            </div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w12-article-sd2k</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="340" data-screen-label="q2-w12-post-sd2k">
+          <div class="img" style="background-image:url('assets/imagery/sd2k/sd2k-keys-post.jpg');background-position:50% 32%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:150px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">Father&rsquo;s Day Weekend</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:58px">Dad Deserves a<br>Seamless Arrival</h2>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w12-post-sd2k</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== ABSORBENTS FOR LESS ===================== -->
+  <div class="brand-sec" data-brand="afl">
+    <div class="brand-head"><span class="brand-chip" style="background:var(--brand-primary)"></span><b>Absorbents For Less</b><span>B12 · Father&rsquo;s Day · Safety Is Personal</span></div>
+
+    <div class="group-h">Blog header · Template 2 · 1200×240</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="240" data-disp="560" data-screen-label="q2-w12-blog-afl">
+          <div class="img" style="background-image:url('assets/imagery/afl/afl-clean-warehouse.png');background-position:50% 55%"></div>
+          <div class="scrimL"></div>
+          <div class="overlayL">
+            <div class="kbox" style="font-size:15px;margin-bottom:13px">Safety Is Personal</div>
+            <h2 class="head" style="font-size:40px">The Workers on Your<br>Floor Are Someone&rsquo;s Dad</h2>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w12-blog-afl</b> · 1200×240</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn article · Template 2 · 1200×675</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1200" data-h="675" data-disp="560" data-screen-label="q2-w12-article-afl">
+          <div class="bar"><div class="barlogo"></div></div>
+          <div class="canvas">
+            <div class="img" style="background-image:url('assets/imagery/afl/afl-clean-warehouse.png');background-position:50% 50%"></div>
+            <div class="softdark"></div>
+            <div class="centerwrap">
+              <div style="display:flex;align-items:center;gap:16px"><hr class="rule" style="width:34px"><span class="kick" style="font-size:16px;color:#fff">Safety Is Personal</span><hr class="rule" style="width:34px"></div>
+              <h2 class="tt" style="font-size:48px">The Most Important Thing<br>You Can Give a Dad at Work</h2>
+              <p class="bdy" style="font-size:23px;max-width:68%">Industrial workers are someone&rsquo;s father. The safety of the facility you run determines how healthy they return home.</p>
+              <span class="pill" style="font-size:18px;padding:14px 28px;margin-top:6px">Read Article →</span>
+            </div>
+          </div>
+        </div></div>
+        <div class="cap"><b>q2-w12-article-afl</b> · 1200×675</div>
+      </div>
+    </div>
+
+    <div class="group-h">LinkedIn post · 1000×1000</div>
+    <div class="row">
+      <div class="item">
+        <div class="frame"><div class="art" data-w="1000" data-h="1000" data-disp="340" data-screen-label="q2-w12-post-afl">
+          <div class="img" style="background-image:url('assets/imagery/afl/afl-spill-kit.png');background-position:52% 32%"></div>
+          <div class="scrimB"></div>
+          <div style="position:absolute;left:0;right:0;bottom:150px;z-index:3;text-align:center;padding:0 70px">
+            <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick" style="font-size:15px">Dads on the Floor</span><hr class="rule"></div>
+            <h2 class="cond" style="font-size:62px">The Floor Is Full<br>of Fathers</h2>
+          </div>
+          <div class="logo-c"></div>
+        </div></div>
+        <div class="cap"><b>q2-w12-post-afl</b> · 1000×1000</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="image-slot.js"></script>
+<script>
+  function layout(){
+    document.querySelectorAll('.art').forEach(a=>{
+      const w=+a.dataset.w,h=+a.dataset.h; a.style.width=w+'px';a.style.height=h+'px';
+      const disp=+a.dataset.disp||540; const s=Math.min(1,disp/w);
+      a.style.transform='scale('+s+')';
+      const fr=a.closest('.frame'); fr.style.width=Math.round(w*s)+'px'; fr.style.height=Math.round(h*s)+'px';
+    });
+  }
+  layout(); window.addEventListener('resize',layout);
+</script>
+</body>
+</html>

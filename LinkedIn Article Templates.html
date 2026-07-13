@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinkedIn Article Templates — OES</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .switch{position:sticky;top:0;z-index:50;background:#10202e;padding:13px 32px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .switch .sl{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#7f97a8;margin-right:6px}
+  .switch button{font-family:var(--font-primary);font-weight:500;font-size:13px;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;background:rgba(255,255,255,.1);color:#cdd8e2;transition:background .15s}
+  .switch button:hover{background:rgba(255,255,255,.2)}
+  .switch button.on{background:#fff;color:#10202e}
+  .page{max-width:920px;margin:0 auto;padding:30px 32px 120px}
+  h1{font-family:var(--font-display);font-weight:700;font-size:28px;margin:0 0 6px;color:#10202e}
+  .lede{font-size:15px;line-height:1.6;color:#5C6B77;margin:0 0 8px;max-width:760px}
+  .ref{background:#fff;border:1px solid #dfe3e7;border-radius:10px;padding:16px 20px;margin:6px 0 8px;max-width:760px}
+  .ref b{font-family:var(--font-primary);color:#10202e;font-size:14px}
+  .ref ul{margin:8px 0 0;padding-left:18px;color:#5C6B77;font-size:13.5px;line-height:1.7}
+  .ref code{font-family:var(--font-condensed);font-weight:700;color:#2E6CB4}
+  .section-title{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#2E6CB4;border-bottom:2px solid #d4d8dd;padding-bottom:10px;margin:34px 0 22px}
+  .item{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+  .cap{font-family:var(--font-condensed);font-size:12px;color:#5C6B77}
+  .cap b{font-weight:700;color:#10202e;font-family:var(--font-primary)}
+  .frame{box-shadow:0 8px 24px rgba(16,32,46,.16);overflow:hidden;border-radius:4px}
+
+  .article{position:relative;width:1200px;height:675px;transform-origin:top left;background:#fff;overflow:hidden}
+  .bar{height:75px;display:flex;align-items:center;justify-content:center;background:var(--brand-bar-bg)}
+  .barlogo{height:42px;width:240px;background:var(--brand-bar-logo) no-repeat center/contain}
+  .canvas{position:relative;height:600px;overflow:hidden;background:var(--brand-bg-subtle)}
+  .canvas .photo{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+
+  .kick{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:16px;margin:0;color:rgba(255,255,255,.85)}
+  .rule{width:46px;height:3px;border:0;margin:0;background:var(--brand-accent)}
+  .tt{font-family:var(--font-display);font-weight:700;line-height:1.06;letter-spacing:-.015em;margin:0;color:#fff}
+  .bdy{font-family:var(--font-primary);font-weight:500;line-height:1.5;margin:0;color:rgba(255,255,255,.9)}
+  .pill{font-family:var(--font-display);font-weight:600;color:#fff;background:var(--brand-cta);border-radius:8px;display:inline-flex;align-items:center;gap:10px;border:0;white-space:nowrap;align-self:flex-start}
+  .pill::after{content:"\2192";font-weight:700}
+
+  /* Template 1 · editorial vertical split (navy panel + accent seam) */
+  .vcol{position:absolute;left:0;top:0;bottom:0;width:50%;z-index:2;background:var(--brand-hero-bg);clip-path:polygon(0 0,100% 0,calc(100% - 86px) 100%,0 100%);display:flex;flex-direction:column;justify-content:center;gap:20px;padding:0 13% 0 60px}
+  .vseam{position:absolute;left:50%;top:-14%;height:128%;width:5px;background:var(--brand-accent);transform:rotate(8.2deg);transform-origin:top center;z-index:3}
+
+  /* Template 2 · full-image hero (dark overlay, centered text) */
+  .softdark{position:absolute;inset:0;z-index:1;background:rgba(10,28,46,.72)}
+  .centerwrap{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:0 110px}
+
+  /* Template 3 · diagonal brand wedge across the bottom */
+  .wedge3{position:absolute;left:0;right:0;bottom:0;z-index:4;height:360px}
+  .wedge3 svg{position:absolute;inset:0;width:100%;height:100%}
+  .wedge3 .wc{position:absolute;left:60px;right:60px;bottom:46px;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:18px}
+  .tt .acc{color:var(--brand-accent)}
+  .topscrim{position:absolute;inset:0;z-index:1;background:radial-gradient(120% 90% at 78% 18%,rgba(8,16,26,0),rgba(8,16,26,.4))}
+
+  /* Template 5 · right-aligned, right-heavy gradient + subtitle */
+  .rightscrim{position:absolute;inset:0;z-index:1;background:linear-gradient(270deg,rgba(8,16,26,.94) 0%,rgba(8,16,26,.64) 42%,rgba(8,16,26,.12) 72%,rgba(8,16,26,0) 100%)}
+  .rightwrap{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:18px;text-align:right;padding:0 60px 0 220px}
+
+  /* Template 4 · bottom-left, outline pill eyebrow */
+  .t5scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(8,16,26,.90) 0%,rgba(8,16,26,.44) 38%,rgba(8,16,26,.1) 65%,rgba(8,16,26,0) 100%)}
+  .t5wrap{position:absolute;left:60px;bottom:50px;z-index:3;display:flex;flex-direction:column;align-items:flex-start;gap:16px;max-width:700px}
+  .pill-outline{display:inline-flex;align-items:center;border:1.5px solid rgba(255,255,255,.75);border-radius:999px;padding:7px 20px 6px;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:14px;color:rgba(255,255,255,.9);width:fit-content}
+</style>
+</head>
+<body>
+<div class="switch">
+  <span class="sl">Brand</span>
+  <button data-b="oes">OES Global</button>
+  <button data-b="tcfl" class="on">Traffic Cones</button>
+  <button data-b="hd">Hydration Depot</button>
+  <button data-b="afl">Absorbents</button>
+  <button data-b="sd2k">SD2K Valet</button>
+</div>
+<div class="page">
+  <h1>LinkedIn Article Templates</h1>
+  <p class="lede">Constant <b>75px top bar</b> (brand color + logo) over a <b>1200×600</b> canvas — frame is <b>1200×675</b>. Two locked templates below; switch brand above to re-theme colors + logos. Copy is neutral placeholder.</p>
+  <div class="ref">
+    <b>Image placement vocabulary</b> — tell me one and I&rsquo;ll set the crop so the subject reads best:
+    <ul>
+      <li><code>CENTER</code> · <code>LEFT</code> · <code>RIGHT</code> · <code>TOP</code> · <code>BOTTOM</code> (and combos like <code>TOP-RIGHT</code>, <code>BOTTOM-LEFT</code>)</li>
+      <li>Plus <code>ZOOM IN</code> / <code>ZOOM OUT</code> to tighten or loosen the crop.</li>
+    </ul>
+  </div>
+
+  <div id="stage" data-brand="tcfl">
+
+  <!-- Template 1 -->
+  <div class="section-title">Template 1 · Editorial split (panel + accent seam)</div>
+  <div class="item"><div class="frame"><div class="article" data-w="1200" data-h="675" data-disp="840">
+    <div class="bar"><div class="barlogo"></div></div>
+    <div class="canvas">
+      <image-slot class="photo" id="a1" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image (RIGHT)"></image-slot>
+      <div class="vcol">
+        <div style="display:flex;align-items:center;gap:14px"><hr class="rule"><span class="kick">Eyebrow Label</span></div>
+        <h2 class="tt" style="font-size:54px">Short Punchy<br>Title Goes Here</h2>
+        <p class="bdy" style="font-size:22px;max-width:92%">Slightly longer supporting subtitle sits here in one or two lines.</p>
+        <span class="pill" style="font-size:19px;padding:14px 26px;margin-top:4px">Read Article</span>
+      </div>
+      <div class="vseam"></div>
+    </div>
+  </div></div><div class="cap"><b>article · Template 1</b> · 1200×675 · panel left, image RIGHT</div></div>
+
+  <!-- Template 2 -->
+  <div class="section-title">Template 2 · Full-image hero (centered)</div>
+  <div class="item"><div class="frame"><div class="article" data-w="1200" data-h="675" data-disp="840">
+    <div class="bar"><div class="barlogo"></div></div>
+    <div class="canvas">
+      <image-slot class="photo" id="a2" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image"></image-slot>
+      <div class="softdark"></div>
+      <div class="centerwrap">
+        <div style="display:flex;align-items:center;gap:16px"><hr class="rule" style="width:34px"><span class="kick" style="color:#fff">Eyebrow Label</span><hr class="rule" style="width:34px"></div>
+        <h2 class="tt" style="font-size:56px">Short Punchy Title<br>Goes Right Here</h2>
+        <p class="bdy" style="font-size:22px;max-width:64%">Slightly longer supporting subtitle sits here in one or two lines.</p>
+      </div>
+    </div>
+  </div></div><div class="cap"><b>article · Template 2</b> · 1200×675 · full-image + dark overlay, centered</div></div>
+
+  <!-- Template 3 -->
+  <div class="section-title">Template 3 · Diagonal wedge (brand band)</div>
+  <div class="item"><div class="frame"><div class="article" data-w="1200" data-h="675" data-disp="840">
+    <div class="bar"><div class="barlogo"></div></div>
+    <div class="canvas">
+      <image-slot class="photo" id="a3" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image"></image-slot>
+      <div class="topscrim"></div>
+      <div class="wedge3">
+        <svg viewBox="0 0 1200 360" preserveAspectRatio="none"><polygon points="0,150 1200,0 1200,360 0,360" fill="var(--brand-hero-bg)"></polygon></svg>
+        <div class="wc">
+          <h2 class="tt" style="font-size:50px">Short Punchy Title With<br>An <span class="acc">Emphasis</span> Word</h2>
+          <span class="pill" style="font-size:18px;padding:13px 24px;margin-top:2px;align-self:flex-end">Read Article</span>
+        </div>
+      </div>
+    </div>
+  </div></div><div class="cap"><b>article · Template 3</b> · 1200×675 · full-image + diagonal brand wedge, accent emphasis word</div></div>
+
+  <!-- Template 4 -->
+  <div class="section-title">Template 4 · Bottom-left + outline pill eyebrow</div>
+  <div class="item"><div class="frame"><div class="article" data-w="1200" data-h="675" data-disp="840">
+    <div class="bar"><div class="barlogo"></div></div>
+    <div class="canvas">
+      <image-slot class="photo" id="a5" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image"></image-slot>
+      <div class="t5scrim"></div>
+      <div class="t5wrap">
+        <span class="pill-outline">Eyebrow Label</span>
+        <h2 class="tt" style="font-size:56px">Short Punchy Title<br>With an <span class="acc">Emphasis</span> Word</h2>
+        <span class="pill" style="font-size:18px;padding:13px 24px">Read Article</span>
+      </div>
+    </div>
+  </div></div><div class="cap"><b>article · Template 4</b> · 1200×675 · bottom-left · outline pill eyebrow · accent word + CTA</div></div>
+
+  <!-- Template 5 -->
+  <div class="section-title">Template 5 · Right-aligned + right-heavy gradient</div>
+  <div class="item"><div class="frame"><div class="article" data-w="1200" data-h="675" data-disp="840">
+    <div class="bar"><div class="barlogo"></div></div>
+    <div class="canvas">
+      <image-slot class="photo" id="a4" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image (LEFT subject)"></image-slot>
+      <div class="rightscrim"></div>
+      <div class="rightwrap">
+        <div style="display:flex;align-items:center;gap:14px"><hr class="rule" style="width:34px"><span class="kick">Eyebrow Label</span></div>
+        <h2 class="tt" style="font-size:54px">Short Punchy Title<br>With an <span class="acc">Emphasis</span> Word</h2>
+      </div>
+    </div>
+  </div></div><div class="cap"><b>article · Template 5</b> · 1200×675 · right-aligned · gradient right-heavy · accent word</div></div>
+
+  </div>
+</div>
+<script src="image-slot.js"></script>
+<script>
+  const stage=document.getElementById('stage');
+  document.querySelectorAll('.switch button').forEach(b=>{
+    b.addEventListener('click',()=>{document.querySelectorAll('.switch button').forEach(x=>x.classList.remove('on'));b.classList.add('on');stage.dataset.brand=b.dataset.b;});
+  });
+  function layout(){
+    document.querySelectorAll('.article').forEach(a=>{
+      const w=+a.dataset.w,h=+a.dataset.h; const disp=+a.dataset.disp||840; const s=Math.min(1,disp/w);
+      a.style.transform='scale('+s+')';
+      const fr=a.closest('.frame'); fr.style.width=Math.round(w*s)+'px'; fr.style.height=Math.round(h*s)+'px';
+    });
+  }
+  layout(); window.addEventListener('resize',layout);
+</script>
+</body>
+</html>

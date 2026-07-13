@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Visual Motifs" subtitle="Edge block · layered panels · icon watermark" viewport="700x180" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;font-family:var(--font-primary);background:var(--oes-light-gray);padding:20px;display:flex;gap:16px}
+  .panel{flex:1;border-radius:var(--radius-md);overflow:hidden;position:relative;background:#fff;box-shadow:var(--shadow-sm);min-height:130px}
+  .cap{position:absolute;left:14px;bottom:12px;font-family:var(--font-condensed);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted);z-index:3}
+
+  /* edge block */
+  .edge::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--oes-accent)}
+  .edge .t{position:absolute;top:14px;left:18px;font-weight:700;font-size:15px;color:var(--fg-strong)}
+
+  /* layered panels */
+  .layers{background:var(--grad-oes-steel)}
+  .layers .b{position:absolute;border-radius:8px}
+  .b1{width:90px;height:64px;background:rgba(255,255,255,.16);top:22px;left:22px}
+  .b2{width:90px;height:64px;background:rgba(255,255,255,.26);top:40px;left:54px;backdrop-filter:blur(2px)}
+
+  /* icon watermark */
+  .water{background:var(--oes-navy)}
+  .water img{position:absolute;right:-14px;top:-10px;width:120px;opacity:.14}
+  .water .t{position:absolute;top:22px;left:18px;color:#fff;font-weight:700;font-size:15px;max-width:130px;line-height:1.2}
+</style></head>
+<body>
+  <div class="panel edge"><span class="t">Edge Block</span><span class="cap">Accent stripe</span></div>
+  <div class="panel layers"><span class="b b1"></span><span class="b b2"></span><span class="cap" style="color:#fff">Layered panels</span></div>
+  <div class="panel water"><img src="../assets/oes-icon-white.svg"><span class="t">We Find a Way</span><span class="cap" style="color:#B7C6D2">Icon watermark</span></div>
+</body></html>

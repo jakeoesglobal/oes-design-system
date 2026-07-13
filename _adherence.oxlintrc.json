@@ -1,0 +1,298 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "export/**",
+              "image-slot.js",
+              "ui_kits/oes-global/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Roboto|Roboto Condensed|Poppins))/i]",
+        "message": "Font not provided by the design system. Available: Roboto, Roboto Condensed, Poppins."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Brand'] > JSXAttribute > JSXIdentifier[name!=/^(?:id|name|role|tagline|domain|desc|parent|key|ref|className|style|children)$/]",
+        "message": "<Brand> doesn't accept that prop. Declared props: id, name, role, tagline, domain, desc, parent."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Footer'] > JSXAttribute > JSXIdentifier[name!=/^(?:onSubmit|key|ref|className|style|children)$/]",
+        "message": "<Footer> doesn't accept that prop. Declared props: onSubmit."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Header'] > JSXAttribute > JSXIdentifier[name!=/^(?:onNav|active|key|ref|className|style|children)$/]",
+        "message": "<Header> doesn't accept that prop. Declared props: onNav, active."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Hero'] > JSXAttribute > JSXIdentifier[name!=/^(?:onNav|key|ref|className|style|children)$/]",
+        "message": "<Hero> doesn't accept that prop. Declared props: onNav."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "App": {
+        "replaces": []
+      },
+      "Brand": {
+        "replaces": []
+      },
+      "Footer": {
+        "replaces": []
+      },
+      "Header": {
+        "replaces": []
+      },
+      "Hero": {
+        "replaces": []
+      },
+      "Primitives": {
+        "replaces": []
+      },
+      "ValueSection": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--bg",
+      "--bg-hero",
+      "--bg-hero-alt",
+      "--bg-subtle",
+      "--border",
+      "--brand-accent",
+      "--brand-accent-grad",
+      "--brand-accent-hover",
+      "--brand-bar-bg",
+      "--brand-bar-logo",
+      "--brand-bg",
+      "--brand-bg-subtle",
+      "--brand-border",
+      "--brand-cta",
+      "--brand-grad-cool",
+      "--brand-hero-bg",
+      "--brand-hero-grad",
+      "--brand-icon",
+      "--brand-icon-dark",
+      "--brand-ink",
+      "--brand-logo",
+      "--brand-logo-dark",
+      "--brand-mid",
+      "--brand-muted",
+      "--brand-name",
+      "--brand-on-dark",
+      "--brand-on-dark-muted",
+      "--brand-primary",
+      "--brand-primary-hover",
+      "--brand-soft",
+      "--container-max",
+      "--divider",
+      "--dur-base",
+      "--dur-fast",
+      "--dur-slow",
+      "--ease-standard",
+      "--edge-block-color",
+      "--edge-block-width",
+      "--fg",
+      "--fg-link",
+      "--fg-muted",
+      "--fg-on-dark",
+      "--fg-on-dark-muted",
+      "--fg-strong",
+      "--font-condensed",
+      "--font-display",
+      "--font-primary",
+      "--fw-black",
+      "--fw-bold",
+      "--fw-light",
+      "--fw-medium",
+      "--fw-regular",
+      "--grad-oes-deep",
+      "--grad-oes-deeper",
+      "--grad-oes-steel",
+      "--leading-body",
+      "--leading-snug",
+      "--leading-tight",
+      "--oes-accent",
+      "--oes-blue",
+      "--oes-deeper-dark",
+      "--oes-light-gray",
+      "--oes-mid",
+      "--oes-navy",
+      "--oes-near-black",
+      "--oes-primary",
+      "--oes-steel",
+      "--oes-white",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--shadow-lg",
+      "--shadow-md",
+      "--shadow-sm",
+      "--space-1",
+      "--space-10",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--surface",
+      "--text-2xl",
+      "--text-3xl",
+      "--text-4xl",
+      "--text-5xl",
+      "--text-base",
+      "--text-lg",
+      "--text-sm",
+      "--text-xl",
+      "--text-xs",
+      "--tracking-label",
+      "--tracking-tight"
+    ],
+    "tokenKinds": {
+      "--oes-primary": "color",
+      "--oes-accent": "color",
+      "--oes-mid": "color",
+      "--oes-white": "color",
+      "--oes-light-gray": "color",
+      "--oes-steel": "color",
+      "--oes-blue": "color",
+      "--oes-deeper-dark": "color",
+      "--oes-navy": "color",
+      "--oes-near-black": "color",
+      "--bg": "color",
+      "--bg-subtle": "color",
+      "--bg-hero": "color",
+      "--bg-hero-alt": "color",
+      "--surface": "color",
+      "--border": "color",
+      "--divider": "color",
+      "--fg": "color",
+      "--fg-strong": "color",
+      "--fg-muted": "color",
+      "--fg-on-dark": "color",
+      "--fg-on-dark-muted": "color",
+      "--fg-link": "color",
+      "--grad-oes-deep": "color",
+      "--grad-oes-deeper": "color",
+      "--grad-oes-steel": "color",
+      "--font-primary": "font",
+      "--font-condensed": "font",
+      "--font-display": "font",
+      "--fw-light": "font",
+      "--fw-regular": "font",
+      "--fw-medium": "font",
+      "--fw-bold": "font",
+      "--fw-black": "font",
+      "--text-xs": "font",
+      "--text-sm": "font",
+      "--text-base": "font",
+      "--text-lg": "font",
+      "--text-xl": "font",
+      "--text-2xl": "font",
+      "--text-3xl": "font",
+      "--text-4xl": "font",
+      "--text-5xl": "font",
+      "--leading-tight": "font",
+      "--leading-snug": "font",
+      "--leading-body": "font",
+      "--tracking-label": "font",
+      "--tracking-tight": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-10": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-pill": "radius",
+      "--shadow-sm": "shadow",
+      "--shadow-md": "shadow",
+      "--shadow-lg": "shadow",
+      "--edge-block-width": "spacing",
+      "--edge-block-color": "color",
+      "--ease-standard": "other",
+      "--dur-fast": "other",
+      "--dur-base": "other",
+      "--dur-slow": "other",
+      "--container-max": "spacing",
+      "--brand-name": "other",
+      "--brand-primary": "color",
+      "--brand-primary-hover": "color",
+      "--brand-accent": "color",
+      "--brand-accent-hover": "color",
+      "--brand-ink": "color",
+      "--brand-muted": "color",
+      "--brand-bg": "color",
+      "--brand-bg-subtle": "color",
+      "--brand-border": "color",
+      "--brand-hero-bg": "color",
+      "--brand-hero-grad": "color",
+      "--brand-accent-grad": "color",
+      "--brand-on-dark": "color",
+      "--brand-on-dark-muted": "color",
+      "--brand-cta": "color",
+      "--brand-bar-bg": "color",
+      "--brand-bar-logo": "other",
+      "--brand-logo": "other",
+      "--brand-logo-dark": "other",
+      "--brand-icon": "other",
+      "--brand-icon-dark": "other",
+      "--brand-soft": "color",
+      "--brand-mid": "color",
+      "--brand-grad-cool": "color"
+    },
+    "fontFamilies": [
+      "Poppins",
+      "Roboto",
+      "Roboto Condensed"
+    ]
+  }
+}

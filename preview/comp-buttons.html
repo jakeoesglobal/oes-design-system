@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Buttons" subtitle="Primary, secondary, steel, ghost, condensed" viewport="700x130" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--oes-white);padding:24px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  button{font-family:var(--font-primary);font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--radius-md);border:0;cursor:pointer;transition:background var(--dur-base) var(--ease-standard)}
+  .primary{background:var(--oes-primary);color:#fff}
+  .primary:hover{background:#264a66}
+  .secondary{background:transparent;color:var(--oes-primary);border:1.5px solid var(--oes-primary)}
+  .secondary:hover{background:rgba(48,91,125,.07)}
+  .ghost{background:transparent;color:var(--oes-primary);padding:12px 14px}
+  .ghost:hover{color:#264a66}
+  .onaccent{background:var(--oes-accent);color:var(--oes-navy)}
+  .lab{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--oes-primary);padding:13px 22px;border-radius:var(--radius-md);border:0;cursor:pointer}
+</style></head>
+<body>
+  <button class="primary">Primary Action</button>
+  <button class="secondary">Secondary</button>
+  <button class="onaccent">Steel</button>
+  <button class="ghost">Ghost link →</button>
+  <button class="lab">Condensed</button>
+</body></html>

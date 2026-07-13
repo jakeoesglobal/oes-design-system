@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Badges & Tags" subtitle="Solid, soft, steel, outline, status dot" viewport="700x130" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--oes-white);padding:24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .badge{font-family:var(--font-condensed);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:var(--radius-pill)}
+  .solid{background:var(--oes-primary);color:#fff}
+  .soft{background:rgba(48,91,125,.12);color:var(--oes-primary)}
+  .steel{background:var(--oes-accent);color:var(--oes-navy)}
+  .outline{border:1.5px solid var(--oes-primary);color:var(--oes-primary)}
+  .navy{background:var(--oes-navy);color:#fff}
+  .dot{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-primary);font-weight:500;font-size:13px;color:var(--fg)}
+  .dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--oes-accent)}
+</style></head>
+<body>
+  <span class="badge solid">Parent</span>
+  <span class="badge soft">Family of Brands</span>
+  <span class="badge steel">Active</span>
+  <span class="badge outline">Corporate</span>
+  <span class="badge navy">We Find a Way</span>
+  <span class="dot">Operational</span>
+</body></html>

@@ -1,0 +1,11 @@
+/* ============================================================
+   OES GLOBAL — Design System entry point
+   Consumers link this one file. It pulls in the shared
+   foundations + every brand theme.
+   ============================================================ */
+@import url('colors_and_type.css');
+@import url('brands/oes-global.css');
+@import url('brands/traffic-cones.css');
+@import url('brands/hydration-depot.css');
+@import url('brands/absorbents.css');
+@import url('brands/sd2k-valet.css');

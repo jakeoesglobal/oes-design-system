@@ -1,0 +1,26 @@
+/* OES GLOBAL — parent theme (explicit, for scoped / multi-brand pages).
+   Identical to the :root defaults in colors_and_type.css.
+   Personality: corporate, authoritative, cool. */
+[data-brand="oes"]{
+  --brand-name:          "OES Global"; /* @kind other */
+  --brand-primary:       #305B7D;
+  --brand-primary-hover: #264A66;
+  --brand-accent:        #7C9CB6;
+  --brand-accent-hover:  #6A8AA4;
+  --brand-ink:           #232323;
+  --brand-muted:         #5C6B77;
+  --brand-bg:            #FFFFFF;
+  --brand-bg-subtle:     #EEEEEE;
+  --brand-border:        #DDE3E8;
+  --brand-hero-bg:       #0A2737;
+  --brand-hero-grad:     linear-gradient(135deg, #000000 0%, #0A2737 55%, #214662 100%); /* @kind color */
+  --brand-accent-grad:   linear-gradient(135deg, #10465B 0%, #305B7D 55%, #7B9CB6 100%); /* @kind color */
+  --brand-on-dark:       #FFFFFF;
+  --brand-on-dark-muted: #B7C6D2;
+  --brand-cta:           #305B7D;
+  --brand-bar-bg:        #EEEEEE;
+  --brand-bar-logo:      url("assets/logos/oes/oes-horizontal.svg"); /* @kind other */
+  --brand-logo:          url("assets/logos/oes/oes-horizontal.svg"); /* @kind other */
+  --brand-logo-dark:     url("assets/logos/oes/oes-horizontal-white.svg"); /* @kind other */
+  --brand-icon:          url("assets/logos/oes/oes-icon.svg"); /* @kind other */
+}

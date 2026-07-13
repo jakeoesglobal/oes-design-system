@@ -1,0 +1,27 @@
+/* TRAFFIC CONES FOR LESS — Safety Supply
+   trafficconesforless.com
+   Personality: direct, bold, no-nonsense. Blue + safety orange. */
+[data-brand="tcfl"]{
+  --brand-name:          "Traffic Cones For Less"; /* @kind other */
+  --brand-primary:       #2E6CB4;   /* PRIMARY */
+  --brand-primary-hover: #255891;
+  --brand-accent:        #FF5100;   /* safety orange — CTAs, highlights */
+  --brand-accent-hover:  #D94500;
+  --brand-cta:           #FF5100;   /* SHOP NOW pill */
+  --brand-bar-bg:        #2E6CB4;   /* blue article top-bar (white logo) */
+  --brand-bar-logo:      url("assets/logos/tcfl/tcfl-horizontal-onblue.png"); /* @kind other */
+  --brand-ink:           #232323;
+  --brand-muted:         #919191;   /* mid gray */
+  --brand-bg:            #FFFFFF;
+  --brand-bg-subtle:     #EEEEEE;
+  --brand-border:        #E0E0E0;
+  --brand-hero-bg:       #162750;   /* deep navy */
+  --brand-hero-grad:     linear-gradient(135deg, #0D1830 0%, #162750 55%, #2E6CB4 100%); /* @kind color */
+  --brand-accent-grad:   linear-gradient(135deg, #162750 0%, #2E6CB4 55%, #FF5100 100%); /* @kind color */
+  --brand-on-dark:       #FFFFFF;
+  --brand-on-dark-muted: #AEBDD6;
+  --brand-logo:          url("assets/logos/tcfl/tcfl-horizontal.png"); /* @kind other */
+  --brand-logo-dark:     url("assets/logos/tcfl/tcfl-horizontal-white.png"); /* @kind other */
+  --brand-icon:          url("assets/logos/tcfl/tcfl-stacked.png"); /* @kind other */
+  --brand-icon-dark:     url("assets/logos/tcfl/tcfl-stacked-white.png"); /* @kind other */
+}

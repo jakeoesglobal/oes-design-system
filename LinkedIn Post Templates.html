@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinkedIn Post Templates — OES</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .switch{position:sticky;top:0;z-index:50;background:#10202e;padding:13px 32px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .switch .sl{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#7f97a8;margin-right:6px}
+  .switch button{font-family:var(--font-primary);font-weight:500;font-size:13px;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;background:rgba(255,255,255,.1);color:#cdd8e2;transition:background .15s}
+  .switch button:hover{background:rgba(255,255,255,.2)}
+  .switch button.on{background:#fff;color:#10202e}
+  .page{max-width:920px;margin:0 auto;padding:30px 32px 120px}
+  h1{font-family:var(--font-display);font-weight:700;font-size:28px;margin:0 0 6px;color:#10202e}
+  .lede{font-size:15px;line-height:1.6;color:#5C6B77;margin:0 0 8px;max-width:760px}
+  .ref{background:#fff;border:1px solid #dfe3e7;border-radius:10px;padding:16px 20px;margin:6px 0 8px;max-width:760px}
+  .ref b{font-family:var(--font-primary);color:#10202e;font-size:14px}
+  .ref ul{margin:8px 0 0;padding-left:18px;color:#5C6B77;font-size:13.5px;line-height:1.7}
+  .ref code{font-family:var(--font-condensed);font-weight:700;color:#2E6CB4}
+  .section-title{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#2E6CB4;border-bottom:2px solid #d4d8dd;padding-bottom:10px;margin:34px 0 22px}
+  .row{display:flex;flex-wrap:wrap;gap:30px}
+  .item{display:flex;flex-direction:column;gap:10px}
+  .cap{font-family:var(--font-condensed);font-size:12px;color:#5C6B77;max-width:340px}
+  .cap b{font-weight:700;color:#10202e;font-family:var(--font-primary)}
+  .frame{box-shadow:0 8px 24px rgba(16,32,46,.16);overflow:hidden;border-radius:6px}
+
+  .post{position:relative;width:1000px;height:1000px;transform-origin:top left;overflow:hidden;background:#10202e}
+  .post .photo{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .scrimB{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(8,16,26,.9) 0%,rgba(8,16,26,.3) 42%,rgba(8,16,26,0) 70%)}
+  .cond{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:.94;margin:0;color:#fff}
+  .rule{width:46px;height:3px;border:0;margin:0;background:var(--brand-accent)}
+  .kick{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(255,255,255,.9);font-size:15px}
+  .pill{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:var(--brand-cta);border-radius:8px;display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
+  .logo-c{position:absolute;left:50%;bottom:56px;transform:translateX(-50%);z-index:4;height:66px;width:360px;background:var(--brand-logo-dark) no-repeat center/contain}
+  [data-brand="hd"] .pill{background:var(--brand-primary)}
+
+  /* Template 4 · bottom-right aligned + eyebrow rule */
+  .scrimBR{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(8,16,26,0) 30%,rgba(8,16,26,.88) 100%)}
+  .logo-tl{position:absolute;left:56px;top:56px;z-index:4;height:54px;width:280px;background:var(--brand-logo-dark) no-repeat left center/contain}
+  .br-wrap{position:absolute;right:60px;top:50%;transform:translateY(-50%);z-index:3;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:20px}
+  .br-logo{height:60px;width:300px;background:var(--brand-logo-dark) no-repeat right center/contain;margin-bottom:6px}
+  .eyebrow-rule-r{display:flex;align-items:center;gap:12px;justify-content:flex-end}
+  .eyebrow-rule-r hr{width:40px;height:2px;border:0;background:rgba(255,255,255,.6);margin:0}\n  .eyebrow-rule-r span{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:15px;color:rgba(255,255,255,.9)}
+  .logo-top{position:absolute;left:50%;top:56px;transform:translateX(-50%);z-index:4;height:66px;width:360px;background:var(--brand-logo-dark) no-repeat center/contain}
+  .acc{color:var(--brand-accent)}
+
+  /* Template 5 · title top center + bottom gradient logo */
+  .top-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,16,26,.72) 0%,rgba(8,16,26,.0) 35%,rgba(8,16,26,.0) 60%,rgba(8,16,26,.82) 100%)}
+</style>
+</head>
+<body>
+<div class="switch">
+  <span class="sl">Brand</span>
+  <button data-b="oes">OES Global</button>
+  <button data-b="tcfl" class="on">Traffic Cones</button>
+  <button data-b="hd">Hydration Depot</button>
+  <button data-b="afl">Absorbents</button>
+  <button data-b="sd2k">SD2K Valet</button>
+</div>
+<div class="page">
+  <h1>LinkedIn Post Templates</h1>
+  <p class="lede">Square <b>1000×1000</b>. Full-bleed image with a legibility scrim; the brand logo always sits centered at the base. Two locked templates; switch brand above to re-theme. Copy is neutral placeholder.</p>
+  <div class="ref">
+    <b>Image placement vocabulary</b> — tell me one and I&rsquo;ll set the crop so the subject reads best:
+    <ul>
+      <li><code>CENTER</code> · <code>LEFT</code> · <code>RIGHT</code> · <code>TOP</code> · <code>BOTTOM</code> (and combos like <code>TOP-RIGHT</code>, <code>BOTTOM-LEFT</code>)</li>
+      <li>Plus <code>ZOOM IN</code> / <code>ZOOM OUT</code> to tighten or loosen the crop.</li>
+    </ul>
+  </div>
+
+  <div id="stage" data-brand="tcfl">
+  <div class="section-title">Template 1 &amp; 2 · square posts</div>
+  <div class="section-title">Template 1 · Eyebrow + headline + logo</div>
+  <div class="row">
+    <!-- Template 1 -->
+    <div class="item">
+      <div class="frame"><div class="post" data-w="1000" data-h="1000" data-disp="360">
+        <image-slot class="photo" id="p1" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image"></image-slot>
+        <div class="scrimB"></div>
+        <div style="position:absolute;left:0;right:0;bottom:150px;z-index:3;text-align:center;padding:0 70px">
+          <div style="display:inline-flex;align-items:center;gap:13px;margin-bottom:16px"><hr class="rule"><span class="kick">Eyebrow Label</span><hr class="rule"></div>
+          <h2 class="cond" style="font-size:62px">Short Punchy<br>Headline</h2>
+        </div>
+        <div class="logo-c"></div>
+      </div></div>
+      <div class="cap"><b>Template 1</b> · eyebrow + headline + centered logo</div>
+    </div>
+  </div>
+
+  <div class="section-title">Template 2 · Large headline + logo</div>
+  <div class="row">
+    <!-- Template 2 -->
+    <div class="item">
+      <div class="frame"><div class="post" data-w="1000" data-h="1000" data-disp="360">
+        <image-slot class="photo" id="p2" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image"></image-slot>
+        <div class="scrimB"></div>
+        <h2 class="cond" style="position:absolute;left:0;right:0;bottom:180px;z-index:3;text-align:center;padding:0 60px;font-size:82px">Short Punchy<br>Headline</h2>
+        <div class="logo-c"></div>
+      </div></div>
+      <div class="cap"><b>Template 2</b> · headline + centered logo (no CTA — let a strong image speak)</div>
+    </div>
+
+  </div>
+
+  <div class="section-title">Template 3 · Center spotlight badge</div>
+  <div class="row">
+    <div class="item">
+      <div class="frame"><div class="post" data-w="1000" data-h="1000" data-disp="360">
+        <image-slot class="photo" id="p3" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image"></image-slot>
+        <div style="position:absolute;inset:0;z-index:1;background:rgba(8,16,26,.52)"></div>
+        <div class="logo-top"></div>
+        <div style="position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:0 80px">
+          <span class="kick" style="font-size:20px;background:var(--brand-cta);padding:10px 24px 9px;border-radius:4px">Eyebrow Label</span>
+          <h2 class="cond" style="font-size:96px;line-height:.92">Short Punchy<br><span class="acc">Headline</span></h2>
+        </div>
+      </div></div>
+      <div class="cap"><b>Template 3</b> · center brand oval · eyebrow + headline + accent word + logo</div>
+    </div>
+  </div>
+
+  <div class="section-title">Template 4 · Right-aligned + logo above headline</div>
+  <div class="row">
+    <div class="item">
+      <div class="frame"><div class="post" data-w="1000" data-h="1000" data-disp="360">
+        <image-slot class="photo" id="p4" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image"></image-slot>
+        <div class="scrimBR"></div>
+        <div class="br-wrap">
+          <div class="br-logo"></div>
+          <h2 class="cond" style="font-size:72px;line-height:.94">Short Punchy<br>Headline <span class="acc">Here</span></h2>
+        </div>
+      </div></div>
+      <div class="cap"><b>Template 4</b> · center-right text · logo above headline · accent word</div>
+    </div>
+  </div>
+
+  <div class="section-title">Template 5 · Top headline bar + logo</div>
+  <div class="row">
+    <div class="item">
+      <div class="frame"><div class="post" data-w="1000" data-h="1000" data-disp="360">
+        <image-slot class="photo" id="p5" shape="rect" src="assets/placeholders/tcfl.jpg" placeholder="Drop image"></image-slot>
+        <div class="top-scrim"></div>
+        <h2 class="cond" style="position:absolute;left:0;right:0;top:120px;z-index:3;text-align:center;padding:0 60px;font-size:96px;line-height:.92">Short Punchy<br>Headline <span class="acc">Here</span></h2>
+        <div class="logo-c" style="bottom:100px"></div>
+      </div></div>
+      <div class="cap"><b>Template 5</b> · top dark bar headline + logo bottom</div>
+    </div>
+  </div>
+  </div>
+</div>
+<script src="image-slot.js"></script>
+<script>
+  const stage=document.getElementById('stage');
+  document.querySelectorAll('.switch button').forEach(b=>{
+    b.addEventListener('click',()=>{document.querySelectorAll('.switch button').forEach(x=>x.classList.remove('on'));b.classList.add('on');stage.dataset.brand=b.dataset.b;});
+  });
+  function layout(){
+    document.querySelectorAll('.post').forEach(p=>{
+      const w=+p.dataset.w,h=+p.dataset.h; const disp=+p.dataset.disp||360; const s=Math.min(1,disp/w);
+      p.style.transform='scale('+s+')';
+      const fr=p.closest('.frame'); fr.style.width=Math.round(w*s)+'px'; fr.style.height=Math.round(h*s)+'px';
+    });
+  }
+  layout(); window.addEventListener('resize',layout);
+</script>
+</body>
+</html>

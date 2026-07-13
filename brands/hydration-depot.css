@@ -1,0 +1,33 @@
+/* HYDRATION DEPOT — Hydration Solutions
+   hydrationdepot.com
+   Personality: clean, fresh, energetic. Water blues + orange energy. */
+[data-brand="hd"]{
+  --brand-name:          "Hydration Depot"; /* @kind other */
+  --brand-primary:       #5BA6DD;   /* PRIMARY */
+  --brand-primary-hover: #3D8FCE;
+  --brand-accent:        #FF5100;   /* orange — CTA energy, highlights */
+  --brand-accent-hover:  #D94500;
+  --brand-cta:           #FF5100;   /* SHOP NOW pill — orange energy */
+  --brand-bar-bg:        #A2C7E1;   /* light-blue article top-bar (color logo) */
+  --brand-bar-logo:      url("assets/logos/hd/hd-horizontal.png"); /* @kind other */
+  --brand-ink:           #232323;
+  --brand-muted:         #5C6B77;
+  --brand-bg:            #FFFFFF;
+  --brand-bg-subtle:     #EEEEEE;
+  --brand-border:        #DCE6EE;
+  --brand-hero-bg:       #0F60B2;   /* mid blue */
+  --brand-hero-grad:     linear-gradient(135deg, #0F60B2 0%, #3D8FCE 55%, #5BA6DD 100%); /* @kind color */
+  --brand-accent-grad:   linear-gradient(135deg, #0F60B2 0%, #5BA6DD 55%, #A2C7E1 100%); /* @kind color */
+  --brand-on-dark:       #FFFFFF;
+  --brand-on-dark-muted: #A2C7E1;
+
+  /* extended HD palette — water blues only */
+  --brand-soft:          #A2C7E1;   /* light blue — card BG, layering */
+  --brand-mid:           #0F60B2;   /* secondary, depth */
+  --brand-grad-cool:     linear-gradient(135deg, #0F60B2 0%, #3D8FCE 55%, #5BA6DD 100%); /* @kind color */
+
+  --brand-logo:          url("assets/logos/hd/hd-horizontal.png"); /* @kind other */
+  --brand-logo-dark:     url("assets/logos/hd/hd-horizontal-white.png"); /* @kind other */
+  --brand-icon:          url("assets/logos/hd/hd-stacked.png"); /* @kind other */
+  --brand-icon-dark:     url("assets/logos/hd/hd-stacked-white.png"); /* @kind other */
+}

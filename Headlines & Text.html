@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OES — Type Lockups Library</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="brands/oes-global.css">
+<link rel="stylesheet" href="brands/traffic-cones.css">
+<link rel="stylesheet" href="brands/hydration-depot.css">
+<link rel="stylesheet" href="brands/absorbents.css">
+<link rel="stylesheet" href="brands/sd2k-valet.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#e7e9ec;font-family:var(--font-primary);color:#232323}
+  .page{max-width:1120px;margin:0 auto;padding:40px 32px 120px}
+  h1{font-family:var(--font-display);font-weight:700;font-size:30px;margin:0 0 6px;color:#10202e}
+  .lede{font-size:15px;line-height:1.6;color:#5C6B77;margin:0;max-width:800px}
+  .section-title{font-family:var(--font-condensed);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#2E6CB4;border-bottom:2px solid #d4d8dd;padding-bottom:10px;margin:42px 0 8px}
+  .section-note{font-size:13.5px;color:#5C6B77;margin:0 0 22px;max-width:760px;line-height:1.5}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .lk{position:relative;height:280px;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(16,32,46,.12);display:flex}
+  .nm{font-family:var(--font-condensed);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#5C6B77;margin:8px 2px 0}
+  .ph{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+  .sc{position:absolute;inset:0;z-index:1}
+  .pad{position:relative;z-index:3;padding:32px;display:flex;flex-direction:column;justify-content:center;width:100%}
+  .pad.center{align-items:center;text-align:center}
+  .pad.bottom{justify-content:flex-end}
+
+  /* text atoms */
+  .ey{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:14px;margin:0}
+  .ttl{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;line-height:.92;margin:0}
+  .ttlp{font-family:var(--font-display);font-weight:700;line-height:1.05;margin:0;letter-spacing:-.01em}
+  .subM{font-family:var(--font-display);font-weight:600;font-size:23px;line-height:1.15;margin:0}
+  .subS{font-family:var(--font-primary);font-weight:400;font-size:16px;line-height:1.45;margin:0}
+  .body{font-family:var(--font-primary);font-weight:300;font-size:15px;line-height:1.5;margin:0}
+  .price{font-family:var(--font-display);font-weight:700;font-size:40px;margin:0}
+  .price small{font-size:.46em;color:#8a97a1;text-decoration:line-through;margin-left:8px;font-weight:500}
+  .cta{align-self:flex-start;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:var(--brand-cta);border-radius:999px;padding:11px 20px;font-size:13px;display:inline-flex;gap:8px}
+  .cta.c{align-self:center}.cta::after{content:"›";font-size:1.3em;line-height:.55}
+  .box{display:inline-block;background:var(--brand-cta);color:#fff;padding:7px 14px;font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:13px}
+  .boxA{background:var(--brand-primary)}
+  .hl{background:var(--brand-accent);color:#fff;padding:.02em .26em;border-radius:3px}
+  .ul{display:inline-block;border-bottom:4px solid var(--brand-accent);padding-bottom:8px}
+  .g6{height:8px}.g10{height:12px}.g16{height:18px}.g22{height:24px}
+  .wh{color:#fff}.whd{color:rgba(255,255,255,.86)}.acc{color:var(--brand-accent)}.prim{color:var(--brand-primary)}.ctaC{color:var(--brand-cta)}
+  .lt{font-weight:300}.med{font-weight:500}
+  .vbar{border-left:6px solid var(--brand-accent);padding-left:18px}
+  .ruleline{width:54px;height:4px;background:var(--brand-accent);border:0}
+  .meta{font-family:var(--font-condensed);font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:13px}
+  .numbig{font-family:var(--font-condensed);font-weight:700;line-height:.78}
+  .rr{display:flex;align-items:center;gap:14px}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Type Lockups Library</h1>
+  <p class="lede">Fully fleshed-out text &ldquo;groups&rdquo; — reusable across every piece of content. Each is a title + supporting elements in a defined hierarchy, scale, placement, and color. Pick one, drop it over any background, pair with a callout. Sizes shown are relative; they scale to the canvas.</p>
+
+  <!-- TITLE + SUBTITLE -->
+  <div class="section-title">Title + subtitle relationships</div>
+  <p class="section-note">The core workhorses — how the supporting line relates to the headline.</p>
+  <div class="grid">
+    <div><div class="lk" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(8,18,30,.78),rgba(8,18,30,.2))"></div><div class="pad bottom"><h2 class="ttl wh" style="font-size:52px">Safer Work Zones</h2><div class="g16"></div><p class="subM whd">Set up in five steps.</p></div></div><div class="nm">1 · Title + medium subtitle (below)</div></div>
+
+    <div><div class="lk" data-brand="afl"><div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(0,55,75,.8),rgba(0,55,75,.2))"></div><div class="pad bottom"><h2 class="ttl wh" style="font-size:50px">Numbers Don&rsquo;t Lie</h2><div class="g10"></div><p class="subS whd" style="max-width:74%">Same materials, same performance — at a fraction of the brand-name price.</p></div></div><div class="nm">2 · Title + small subtitle (longer)</div></div>
+
+    <div><div class="lk" data-brand="hd"><div class="ph" style="background-image:url('assets/placeholders/hd.jpg')"></div><div class="sc" style="background:rgba(0,38,63,.5)"></div><div class="pad"><p class="ey acc">Stay Ready</p><div class="g10"></div><h2 class="ttl wh" style="font-size:54px">Beat the Heat</h2></div></div><div class="nm">3 · Subtitle above, accent color</div></div>
+
+    <div><div class="lk" data-brand="sd2k"><div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div><div class="sc" style="background:rgba(0,0,0,.5)"></div><div class="pad"><span class="box">Premium Valet</span><div class="g16"></div><h2 class="ttl wh" style="font-size:50px">Arrive in Style</h2></div></div><div class="nm">4 · Subtitle in color box, above</div></div>
+
+    <div><div class="lk" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(8,18,30,.8),rgba(8,18,30,.2))"></div><div class="pad bottom"><h2 class="ttl wh" style="font-size:50px">Bulk Cone Bundles</h2><div class="g16"></div><span class="box">Save 40% This Month</span></div></div><div class="nm">5 · Subtitle in color box, below</div></div>
+
+    <div><div class="lk" data-brand="afl" style="background:#fff"><div class="pad"><h2 class="ttlp prim" style="font-size:46px">Spill-Free<br>Facility</h2><div class="g10"></div><p class="subS" style="color:#5C6B77;max-width:80%">A cleaner site is a safer, healthier workplace for every crew.</p></div></div><div class="nm">6 · On light · title + muted body</div></div>
+  </div>
+
+  <!-- EYEBROW + CTA -->
+  <div class="section-title">With eyebrow, CTA &amp; price</div>
+  <p class="section-note">Add a kicker for context, a CTA to drive action, or a price for promo pieces.</p>
+  <div class="grid">
+    <div><div class="lk" data-brand="afl"><div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(0,55,75,.82),rgba(0,55,75,.25))"></div><div class="pad bottom"><p class="ey acc">Spill Kits</p><div class="g6"></div><h2 class="ttl wh" style="font-size:44px">Ready When You Are</h2><div class="g6"></div><p class="subS whd">Restock before the next inspection.</p><div class="g16"></div><span class="cta">Order Today</span></div></div><div class="nm">7 · Eyebrow + title + subtitle + CTA</div></div>
+
+    <div><div class="lk" data-brand="tcfl" style="background:var(--brand-bg-subtle)"><div class="pad"><h2 class="ttl prim" style="font-size:50px">Cones for<br>Every Job</h2><div class="g22"></div><span class="cta">Shop the Range</span></div></div><div class="nm">8 · Title + CTA (on light)</div></div>
+
+    <div><div class="lk" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="sc" style="background:linear-gradient(90deg,rgba(8,18,30,.82),rgba(8,18,30,0) 80%)"></div><div class="pad"><h2 class="ttl wh" style="font-size:38px">28&Prime; PVC Cone</h2><div class="g10"></div><p class="price wh">$89<small>$119</small></p><div class="g16"></div><span class="cta">Shop Now</span></div></div><div class="nm">9 · Title + price + CTA</div></div>
+
+    <div><div class="lk" data-brand="sd2k"><div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div><div class="sc" style="background:rgba(0,0,0,.55)"></div><div class="pad"><span class="box boxA" style="background:#fff;color:#111">New This Week</span><div class="g16"></div><h2 class="ttl wh" style="font-size:46px">Built to Last</h2><div class="g6"></div><p class="subS whd">Equipment that earns its keep.</p></div></div><div class="nm">10 · Box kicker + title + subtitle</div></div>
+
+    <div><div class="lk" data-brand="hd"><div class="ph" style="background-image:url('assets/placeholders/hd.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(0,38,63,.8),rgba(0,38,63,.15) 55%,rgba(0,38,63,.3))"></div><div class="pad bottom"><p class="ey acc">Workforce Program</p><div class="g10"></div><h2 class="ttlp wh" style="font-size:40px">Hydration, Handled.</h2><div class="g16"></div><span class="cta">Get a Quote</span></div></div><div class="nm">11 · Eyebrow + title + CTA</div></div>
+
+    <div><div class="lk" data-brand="afl"><div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div><div class="sc" style="background:rgba(0,55,75,.55)"></div><div class="pad center"><p class="ey wh" style="opacity:.8">Limited Offer</p><div class="g10"></div><h2 class="ttl wh" style="font-size:44px">Save 40%<br>on Spill Kits</h2><div class="g16"></div><span class="cta c">Order Today</span></div></div><div class="nm">12 · Centered promo stack</div></div>
+  </div>
+
+  <!-- EMPHASIS -->
+  <div class="section-title">Emphasis &amp; color treatments</div>
+  <p class="section-note">Ways to make a word or phrase pop without adding clutter.</p>
+  <div class="grid">
+    <div><div class="lk" data-brand="hd"><div class="ph" style="background-image:url('assets/placeholders/hd.jpg')"></div><div class="sc" style="background:rgba(0,38,63,.45)"></div><div class="pad center"><h2 class="ttl wh" style="font-size:56px">Cool Down.<br><span class="acc">Power Up.</span></h2></div></div><div class="nm">13 · Two-tone (accent word)</div></div>
+
+    <div><div class="lk" data-brand="sd2k"><div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div><div class="sc" style="background:rgba(0,0,0,.5)"></div><div class="pad"><h2 class="ttlp wh" style="font-size:40px">Master the Art of<br><em class="ctaC" style="font-style:italic">Event Valet</em></h2></div></div><div class="nm">14 · Italic emphasis word</div></div>
+
+    <div><div class="lk" data-brand="afl" style="background:#fff"><div class="pad center"><h2 class="ttlp" style="font-size:36px;color:#1b2630">A clean facility is a<br><span class="hl">healthier workplace</span></h2></div></div><div class="nm">15 · Highlight keyword box</div></div>
+
+    <div><div class="lk" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(8,18,30,.78),rgba(8,18,30,.2))"></div><div class="pad bottom"><h2 class="ttl wh ul" style="font-size:48px">Set the Standard</h2></div></div><div class="nm">16 · Underline accent</div></div>
+
+    <div><div class="lk" data-brand="oes"><div class="ph" style="background:var(--brand-hero-grad)"></div><div class="pad"><h2 class="ttl" style="font-size:54px;color:#fff;line-height:.9">National<br><span style="color:#9fc6ec">Safety</span><br><span style="color:#6aa8e0">Month</span></h2></div></div><div class="nm">17 · Stacked multi-tone scale</div></div>
+
+    <div><div class="lk" data-brand="hd"><div class="ph" style="background-image:url('assets/placeholders/hd.jpg')"></div><div class="sc" style="background:linear-gradient(90deg,rgba(0,77,147,.85),rgba(0,77,147,0) 78%)"></div><div class="pad"><div style="background:var(--brand-primary);padding:22px 26px;max-width:80%"><h2 class="ttlp wh" style="font-size:30px">Every Brand.<br>Every Flavor.</h2><div class="g6"></div><p class="subS" style="color:rgba(255,255,255,.9)">One program. Every crew.</p></div></div></div><div class="nm">18 · Title + body in color panel</div></div>
+  </div>
+
+  <!-- STATEMENTS -->
+  <div class="section-title">Statements &amp; minimal</div>
+  <div class="grid">
+    <div><div class="lk" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(8,18,30,.7),rgba(8,18,30,.2))"></div><div class="pad bottom"><h2 class="ttl wh" style="font-size:84px">Stay<br>Visible.</h2></div></div><div class="nm">19 · Title only (max impact)</div></div>
+
+    <div><div class="lk" data-brand="oes"><div class="ph" style="background:var(--brand-hero-grad)"></div><div class="pad center"><h2 class="ttlp wh" style="font-size:46px">&ldquo;We Find<br>a Way.&rdquo;</h2><div class="g16"></div><p class="ey" style="color:var(--brand-accent)">OES Global</p></div></div><div class="nm">20 · Statement + attribution</div></div>
+
+    <div><div class="lk" data-brand="sd2k"><div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div><div class="sc" style="background:rgba(0,0,0,.45)"></div><div class="pad"><p class="subM wh" style="font-weight:300">Bad first impressions</p><h2 class="ttlp wh" style="font-size:42px">Cost More<br>Than You Think</h2></div></div><div class="nm">21 · Small lead-in + big title</div></div>
+  </div>
+
+  <!-- SIZE & WEIGHT CONTRAST -->
+  <div class="section-title">Size &amp; weight contrast</div>
+  <p class="section-note">Mixing weights and sizes inside one lockup creates rhythm and a clear focal word.</p>
+  <div class="grid">
+    <div><div class="lk" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(8,18,30,.78),rgba(8,18,30,.2))"></div><div class="pad bottom"><h2 class="ttlp wh" style="font-size:28px"><span class="lt">Plan for</span></h2><h2 class="ttl wh" style="font-size:60px">Big Savings</h2></div></div><div class="nm">22 · Light line + black title</div></div>
+
+    <div><div class="lk" data-brand="afl"><div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div><div class="sc" style="background:rgba(0,55,75,.6)"></div><div class="pad bottom"><h2 class="ttl wh" style="font-size:96px">Bulk</h2><p class="subM whd" style="font-weight:400;letter-spacing:.02em">absorbent bundles, priced right</p></div></div><div class="nm">23 · Oversized first word</div></div>
+
+    <div><div class="lk" data-brand="sd2k"><div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div><div class="sc" style="background:rgba(0,0,0,.5)"></div><div class="pad"><p class="ttlp wh lt" style="font-size:26px;font-style:italic">Master the art of</p><div class="g6"></div><h2 class="ttl wh" style="font-size:54px">Event Valet</h2></div></div><div class="nm">24 · Mixed case + font (italic + condensed)</div></div>
+
+    <div><div class="lk" data-brand="hd"><div class="ph" style="background:var(--brand-hero-grad)"></div><div class="pad"><div class="rr"><span class="numbig acc" style="font-size:108px">40%</span><h2 class="ttl wh" style="font-size:30px">Off<br>Everything</h2></div></div></div><div class="nm">25 · Big stat + supporting word</div></div>
+  </div>
+
+  <!-- COLOR COMBINATIONS -->
+  <div class="section-title">Color combinations</div>
+  <p class="section-note">Which element carries the accent changes the whole feel.</p>
+  <div class="grid">
+    <div><div class="lk" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(8,18,30,.78),rgba(8,18,30,.2))"></div><div class="pad bottom"><h2 class="ttl wh" style="font-size:48px">Shipped Fast</h2><div class="g10"></div><p class="subM acc">On site by Friday.</p></div></div><div class="nm">26 · White title + accent subtitle</div></div>
+
+    <div><div class="lk" data-brand="afl"><div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div><div class="sc" style="background:rgba(0,55,75,.62)"></div><div class="pad bottom"><h2 class="ttl acc" style="font-size:48px">Contain It Fast</h2><div class="g10"></div><p class="subM wh">Spill kits, ready to deploy.</p></div></div><div class="nm">27 · Accent title + white subtitle</div></div>
+
+    <div><div class="lk" data-brand="hd"><div class="ph" style="background:var(--brand-hero-grad)"></div><div class="pad center"><h2 class="ttl" style="font-size:62px;color:var(--brand-soft)">Hydrate<br>the Crew</h2></div></div><div class="nm">28 · All-accent (tonal) title</div></div>
+
+    <div><div class="lk" data-brand="afl" style="background:#fff"><div class="pad"><h2 class="ttlp prim" style="font-size:44px">Honest Pricing</h2><div class="g10"></div><p class="subS" style="color:#8a97a1">No brand-name markup, ever.</p></div></div><div class="nm">29 · Brand-color title + muted subtitle</div></div>
+  </div>
+
+  <!-- PLACEMENT -->
+  <div class="section-title">Placement</div>
+  <p class="section-note">Where the type sits — and how it splits — to work with different images.</p>
+  <div class="grid">
+    <div><div class="lk" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="sc" style="background:linear-gradient(180deg,rgba(8,18,30,.8),rgba(8,18,30,0) 60%)"></div><div class="pad" style="justify-content:flex-start"><h2 class="ttl wh" style="font-size:46px">Top-Aligned</h2><div class="g10"></div><p class="subS whd">Headline anchored to the top edge.</p></div></div><div class="nm">30 · Top-aligned</div></div>
+
+    <div><div class="lk" data-brand="sd2k"><div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div><div class="sc" style="background:linear-gradient(270deg,rgba(0,0,0,.8),rgba(0,0,0,0) 70%)"></div><div class="pad" style="align-items:flex-end;text-align:right"><h2 class="ttl wh" style="font-size:46px">Right<br>Aligned</h2></div></div><div class="nm">31 · Right-aligned</div></div>
+
+    <div><div class="lk" data-brand="afl"><div class="ph" style="background-image:url('assets/placeholders/afl.jpg')"></div><div class="sc" style="background:rgba(0,55,75,.5)"></div><div class="pad" style="justify-content:space-between"><p class="ey acc">Spill Control</p><h2 class="ttl wh" style="font-size:46px">Always Ready</h2></div></div><div class="nm">32 · Split (kicker top, title bottom)</div></div>
+
+    <div><div class="lk" data-brand="hd"><div class="ph" style="background:var(--brand-hero-grad)"></div><div class="pad" style="flex-direction:row;align-items:center;gap:18px"><span class="meta wh" style="writing-mode:vertical-rl;transform:rotate(180deg);opacity:.7">June 2026</span><h2 class="ttl wh" style="font-size:50px">Stay<br>Cool</h2></div></div><div class="nm">33 · Vertical side label + title</div></div>
+  </div>
+
+  <!-- DETAILS -->
+  <div class="section-title">Details &amp; finishing elements</div>
+  <p class="section-note">Small structural touches that add polish and brand cohesion.</p>
+  <div class="grid">
+    <div><div class="lk" data-brand="oes"><div class="ph" style="background:var(--brand-hero-grad)"></div><div class="pad"><div class="vbar"><p class="ey acc" style="margin-bottom:8px">A Family of Brands</p><h2 class="ttl wh" style="font-size:44px">We Find<br>a Way</h2></div></div></div><div class="nm">34 · Vertical accent bar (edge block)</div></div>
+
+    <div><div class="lk" data-brand="afl" style="background:#fff"><div class="pad center"><hr class="ruleline" style="margin:0 auto 14px"><p class="ey prim">Global Health Month</p><div class="g10"></div><h2 class="ttlp prim" style="font-size:36px">Healthier Sites</h2><hr class="ruleline" style="margin:14px auto 0"></div></div><div class="nm">35 · Rules above &amp; below (centered)</div></div>
+
+    <div><div class="lk" data-brand="tcfl"><div class="ph" style="background-image:url('assets/placeholders/tcfl.jpg')"></div><div class="sc" style="background:linear-gradient(0deg,rgba(8,18,30,.78),rgba(8,18,30,.2))"></div><div class="pad bottom"><div class="rr"><span class="numbig" style="font-size:80px;color:var(--brand-accent)">01</span><h2 class="ttl wh" style="font-size:34px">Set Up the<br>Work Zone</h2></div></div></div><div class="nm">36 · Numbered step</div></div>
+
+    <div><div class="lk" data-brand="sd2k"><div class="ph" style="background-image:url('assets/placeholders/sd2k.jpg')"></div><div class="sc" style="background:rgba(0,0,0,.5)"></div><div class="pad bottom"><h2 class="ttl wh" style="font-size:48px">Built to Last</h2><div class="g14"></div><p class="meta" style="color:var(--brand-accent)">Premium &middot; Valet &middot; Since 2018</p></div></div><div class="nm">37 · Title + meta row</div></div>
+  </div>
+
+</div>
+</body>
+</html>

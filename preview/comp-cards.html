@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Cards" subtitle="Standard + edge-block motif" viewport="700x220" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--oes-light-gray);padding:22px;display:flex;gap:16px}
+  .card{flex:1;background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden;position:relative}
+  .card.edge{padding-left:0}
+  .card.edge::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--oes-accent)}
+  .pad{padding:18px 20px 20px}
+  .eyebrow{font-family:var(--font-condensed);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oes-primary);margin:0 0 8px}
+  .title{font-family:var(--font-primary);font-weight:700;font-size:18px;color:var(--fg-strong);margin:0 0 6px}
+  .desc{font-family:var(--font-primary);font-weight:400;font-size:13.5px;line-height:1.55;color:var(--fg-muted);margin:0}
+  .cap{font-family:var(--font-condensed);font-size:10px;color:var(--fg-muted);letter-spacing:.04em;padding:0 20px 14px}
+</style></head>
+<body>
+  <div class="card edge">
+    <div class="pad">
+      <p class="eyebrow">Brand Family</p>
+      <h3 class="title">Safety Supply</h3>
+      <p class="desc">Traffic Cones For Less — specialized safety equipment under the OES umbrella.</p>
+    </div>
+    <div class="cap">Card · edge-block motif</div>
+  </div>
+  <div class="card">
+    <div class="pad">
+      <p class="eyebrow">Parent Company</p>
+      <h3 class="title">OES Global</h3>
+      <p class="desc">Corporate, authoritative, cool. The standard card: white surface, soft cool shadow, modest radius.</p>
+    </div>
+    <div class="cap">Card · standard</div>
+  </div>
+</body></html>
